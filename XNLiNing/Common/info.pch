@@ -1,0 +1,15 @@
+//
+//  info.pch
+//  XNLiNing
+//
+//  Created by xunan on 16/9/10.
+//  Copyright © 2016年 xunan. All rights reserved.
+//
+
+#ifndef info_pch
+#define info_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* info_pch */
