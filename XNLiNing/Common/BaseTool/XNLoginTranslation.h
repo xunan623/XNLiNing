@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface XNLoginTranslation : NSObject
+@interface XNLoginTranslation : NSObject<UIViewControllerAnimatedTransitioning>
+
+@property (assign, nonatomic) BOOL reverse;
+
+- (instancetype)initWithView:(UIView *)btnView;
+- (void)stopAnimation;
 
 @end

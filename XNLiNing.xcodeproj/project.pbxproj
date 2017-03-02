@@ -22,9 +22,12 @@
 		7102E1321E66ADDA006117B6 /* XNBaseReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 7102E1311E66ADDA006117B6 /* XNBaseReq.m */; };
 		7102E1381E66BE15006117B6 /* XNBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7102E1371E66BE15006117B6 /* XNBaseNavigationController.m */; };
 		7102E13B1E66BE48006117B6 /* XNBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7102E13A1E66BE47006117B6 /* XNBaseViewController.m */; };
-		7102E13F1E66BEAF006117B6 /* XNLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7102E13D1E66BEAF006117B6 /* XNLoginController.m */; };
-		7102E1401E66BEAF006117B6 /* XNLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7102E13E1E66BEAF006117B6 /* XNLoginController.xib */; };
 		7102E1421E66BF03006117B6 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7102E1411E66BF03006117B6 /* libsqlite3.0.tbd */; };
+		7121E8C21E67E7F500EF8D4B /* XNLoginTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7121E8C11E67E7F500EF8D4B /* XNLoginTranslation.m */; };
+		7121E8C81E67F37800EF8D4B /* UIView+EasyShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7121E8C71E67F37800EF8D4B /* UIView+EasyShow.m */; };
+		7121E8D11E68039000EF8D4B /* XNTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7121E8D01E68039000EF8D4B /* XNTabbarController.m */; };
+		7121E8D51E68063000EF8D4B /* XNLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7121E8D31E68063000EF8D4B /* XNLoginController.m */; };
+		7121E8D61E68063000EF8D4B /* XNLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7121E8D41E68063000EF8D4B /* XNLoginController.xib */; };
 		7174296F1D845B5400EC2910 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7174296E1D845B5400EC2910 /* main.m */; };
 		717429721D845B5400EC2910 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 717429711D845B5400EC2910 /* AppDelegate.m */; };
 		7174297A1D845B5400EC2910 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 717429791D845B5400EC2910 /* Assets.xcassets */; };
@@ -66,10 +69,16 @@
 		7102E1371E66BE15006117B6 /* XNBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNBaseNavigationController.m; sourceTree = "<group>"; };
 		7102E1391E66BE47006117B6 /* XNBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNBaseViewController.h; sourceTree = "<group>"; };
 		7102E13A1E66BE47006117B6 /* XNBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNBaseViewController.m; sourceTree = "<group>"; };
-		7102E13C1E66BEAF006117B6 /* XNLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNLoginController.h; sourceTree = "<group>"; };
-		7102E13D1E66BEAF006117B6 /* XNLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNLoginController.m; sourceTree = "<group>"; };
-		7102E13E1E66BEAF006117B6 /* XNLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNLoginController.xib; sourceTree = "<group>"; };
 		7102E1411E66BF03006117B6 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		7121E8C01E67E7F500EF8D4B /* XNLoginTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNLoginTranslation.h; sourceTree = "<group>"; };
+		7121E8C11E67E7F500EF8D4B /* XNLoginTranslation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNLoginTranslation.m; sourceTree = "<group>"; };
+		7121E8C61E67F37800EF8D4B /* UIView+EasyShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EasyShow.h"; sourceTree = "<group>"; };
+		7121E8C71E67F37800EF8D4B /* UIView+EasyShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+EasyShow.m"; sourceTree = "<group>"; };
+		7121E8CF1E68039000EF8D4B /* XNTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNTabbarController.h; sourceTree = "<group>"; };
+		7121E8D01E68039000EF8D4B /* XNTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNTabbarController.m; sourceTree = "<group>"; };
+		7121E8D21E68063000EF8D4B /* XNLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNLoginController.h; sourceTree = "<group>"; };
+		7121E8D31E68063000EF8D4B /* XNLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNLoginController.m; sourceTree = "<group>"; };
+		7121E8D41E68063000EF8D4B /* XNLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNLoginController.xib; sourceTree = "<group>"; };
 		7174296A1D845B5400EC2910 /* XNLiNing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XNLiNing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7174296E1D845B5400EC2910 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		717429701D845B5400EC2910 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -144,6 +153,9 @@
 		7102E1041E66AAF0006117B6 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7121E8D21E68063000EF8D4B /* XNLoginController.h */,
+				7121E8D31E68063000EF8D4B /* XNLoginController.m */,
+				7121E8D41E68063000EF8D4B /* XNLoginController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -165,6 +177,8 @@
 		7102E1071E66AB4E006117B6 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				7121E8C61E67F37800EF8D4B /* UIView+EasyShow.h */,
+				7121E8C71E67F37800EF8D4B /* UIView+EasyShow.m */,
 				7102E1081E66AB4E006117B6 /* Foundation+Log.m */,
 				7102E1091E66AB4E006117B6 /* NSDate+Ext.h */,
 				7102E10A1E66AB4E006117B6 /* NSDate+Ext.m */,
@@ -218,6 +232,48 @@
 			path = BaseModel;
 			sourceTree = "<group>";
 		};
+		7121E8BF1E67E7E200EF8D4B /* BaseTool */ = {
+			isa = PBXGroup;
+			children = (
+				7121E8C01E67E7F500EF8D4B /* XNLoginTranslation.h */,
+				7121E8C11E67E7F500EF8D4B /* XNLoginTranslation.m */,
+			);
+			path = BaseTool;
+			sourceTree = "<group>";
+		};
+		7121E8CB1E68035900EF8D4B /* TabBarVC */ = {
+			isa = PBXGroup;
+			children = (
+				7121E8CC1E68036F00EF8D4B /* Controller */,
+				7121E8CD1E68036F00EF8D4B /* Model */,
+				7121E8CE1E68036F00EF8D4B /* View */,
+			);
+			path = TabBarVC;
+			sourceTree = "<group>";
+		};
+		7121E8CC1E68036F00EF8D4B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7121E8CF1E68039000EF8D4B /* XNTabbarController.h */,
+				7121E8D01E68039000EF8D4B /* XNTabbarController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7121E8CD1E68036F00EF8D4B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7121E8CE1E68036F00EF8D4B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		717429611D845B5400EC2910 = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +320,7 @@
 		717429851D845C5500EC2910 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7121E8CB1E68035900EF8D4B /* TabBarVC */,
 				7102E1031E66AAF0006117B6 /* Login */,
 				7194D0A81E666AF200C463A3 /* Home */,
 				7194D0AC1E666AF200C463A3 /* Root */,
@@ -274,6 +331,7 @@
 		717429861D845CCA00EC2910 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				7121E8BF1E67E7E200EF8D4B /* BaseTool */,
 				7102E12F1E66AD07006117B6 /* BaseModel */,
 				717429871D845FC400EC2910 /* info.pch */,
 				718C44031E666D3E00A4C599 /* XNAppURL.h */,
@@ -295,9 +353,6 @@
 		7194D0A91E666AF200C463A3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7102E13C1E66BEAF006117B6 /* XNLoginController.h */,
-				7102E13D1E66BEAF006117B6 /* XNLoginController.m */,
-				7102E13E1E66BEAF006117B6 /* XNLoginController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -398,7 +453,7 @@
 			files = (
 				7174297D1D845B5400EC2910 /* LaunchScreen.storyboard in Resources */,
 				7174297A1D845B5400EC2910 /* Assets.xcassets in Resources */,
-				7102E1401E66BEAF006117B6 /* XNLoginController.xib in Resources */,
+				7121E8D61E68063000EF8D4B /* XNLoginController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,20 +517,23 @@
 				7102E1201E66AB4E006117B6 /* UIImage+Reflection.m in Sources */,
 				7102E11F1E66AB4E006117B6 /* SSKeychain.m in Sources */,
 				718C44051E666D3E00A4C599 /* XNAppURL.m in Sources */,
+				7121E8C81E67F37800EF8D4B /* UIView+EasyShow.m in Sources */,
 				7102E11E1E66AB4E006117B6 /* NSString+Ext.m in Sources */,
 				7102E12D1E66AB59006117B6 /* RWDatabase.m in Sources */,
 				7102E12E1E66AB59006117B6 /* RWDatabaseManager.m in Sources */,
 				717429721D845B5400EC2910 /* AppDelegate.m in Sources */,
+				7121E8C21E67E7F500EF8D4B /* XNLoginTranslation.m in Sources */,
 				7174296F1D845B5400EC2910 /* main.m in Sources */,
 				7102E1381E66BE15006117B6 /* XNBaseNavigationController.m in Sources */,
 				7102E1231E66AB4E006117B6 /* XNSimpleTool.m in Sources */,
 				7102E1211E66AB4E006117B6 /* UITextField+Ext.m in Sources */,
-				7102E13F1E66BEAF006117B6 /* XNLoginController.m in Sources */,
 				7102E1221E66AB4E006117B6 /* XNGCDHelper.m in Sources */,
 				7102E11D1E66AB4E006117B6 /* NSObject+Notification.m in Sources */,
 				7102E11B1E66AB4E006117B6 /* Foundation+Log.m in Sources */,
+				7121E8D11E68039000EF8D4B /* XNTabbarController.m in Sources */,
 				7102E12C1E66AB59006117B6 /* CocoaCracker.m in Sources */,
 				7102E1321E66ADDA006117B6 /* XNBaseReq.m in Sources */,
+				7121E8D51E68063000EF8D4B /* XNLoginController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

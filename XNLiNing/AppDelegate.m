@@ -22,6 +22,8 @@
     self.window.frame = [UIScreen mainScreen].bounds;
     self.window.backgroundColor = [UIColor whiteColor];
     
+    
+    
     XNLoginController *vc = [[XNLoginController alloc] init];
     self.window.rootViewController = vc;
     
@@ -31,7 +33,7 @@
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-
+    
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {

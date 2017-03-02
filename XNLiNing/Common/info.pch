@@ -11,5 +11,6 @@
 
 #import "XNAppURL.h"
 #import "XNGlobalConst.h"
+#import "XNConstDefine.h"
 
 #endif /* info_pch */
