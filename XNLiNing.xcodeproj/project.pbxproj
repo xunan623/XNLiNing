@@ -28,6 +28,8 @@
 		7121E8D11E68039000EF8D4B /* XNTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7121E8D01E68039000EF8D4B /* XNTabbarController.m */; };
 		7121E8D51E68063000EF8D4B /* XNLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7121E8D31E68063000EF8D4B /* XNLoginController.m */; };
 		7121E8D61E68063000EF8D4B /* XNLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7121E8D41E68063000EF8D4B /* XNLoginController.xib */; };
+		7121E8DC1E68109D00EF8D4B /* UITableView+EmptyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7121E8DB1E68109D00EF8D4B /* UITableView+EmptyData.m */; };
+		7121E8DF1E6813D300EF8D4B /* AppDelegate+Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7121E8DE1E6813D300EF8D4B /* AppDelegate+Reachability.m */; };
 		7174296F1D845B5400EC2910 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7174296E1D845B5400EC2910 /* main.m */; };
 		717429721D845B5400EC2910 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 717429711D845B5400EC2910 /* AppDelegate.m */; };
 		7174297A1D845B5400EC2910 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 717429791D845B5400EC2910 /* Assets.xcassets */; };
@@ -79,6 +81,10 @@
 		7121E8D21E68063000EF8D4B /* XNLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNLoginController.h; sourceTree = "<group>"; };
 		7121E8D31E68063000EF8D4B /* XNLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNLoginController.m; sourceTree = "<group>"; };
 		7121E8D41E68063000EF8D4B /* XNLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNLoginController.xib; sourceTree = "<group>"; };
+		7121E8DA1E68109D00EF8D4B /* UITableView+EmptyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+EmptyData.h"; sourceTree = "<group>"; };
+		7121E8DB1E68109D00EF8D4B /* UITableView+EmptyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+EmptyData.m"; sourceTree = "<group>"; };
+		7121E8DD1E6813D300EF8D4B /* AppDelegate+Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Reachability.h"; sourceTree = "<group>"; };
+		7121E8DE1E6813D300EF8D4B /* AppDelegate+Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Reachability.m"; sourceTree = "<group>"; };
 		7174296A1D845B5400EC2910 /* XNLiNing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XNLiNing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7174296E1D845B5400EC2910 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		717429701D845B5400EC2910 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -198,6 +204,10 @@
 				7102E1181E66AB4E006117B6 /* XNGlobalConst.h */,
 				7102E1191E66AB4E006117B6 /* XNSimpleTool.h */,
 				7102E11A1E66AB4E006117B6 /* XNSimpleTool.m */,
+				7121E8DA1E68109D00EF8D4B /* UITableView+EmptyData.h */,
+				7121E8DB1E68109D00EF8D4B /* UITableView+EmptyData.m */,
+				7121E8DD1E6813D300EF8D4B /* AppDelegate+Reachability.h */,
+				7121E8DE1E6813D300EF8D4B /* AppDelegate+Reachability.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -521,9 +531,11 @@
 				7102E11E1E66AB4E006117B6 /* NSString+Ext.m in Sources */,
 				7102E12D1E66AB59006117B6 /* RWDatabase.m in Sources */,
 				7102E12E1E66AB59006117B6 /* RWDatabaseManager.m in Sources */,
+				7121E8DC1E68109D00EF8D4B /* UITableView+EmptyData.m in Sources */,
 				717429721D845B5400EC2910 /* AppDelegate.m in Sources */,
 				7121E8C21E67E7F500EF8D4B /* XNLoginTranslation.m in Sources */,
 				7174296F1D845B5400EC2910 /* main.m in Sources */,
+				7121E8DF1E6813D300EF8D4B /* AppDelegate+Reachability.m in Sources */,
 				7102E1381E66BE15006117B6 /* XNBaseNavigationController.m in Sources */,
 				7102E1231E66AB4E006117B6 /* XNSimpleTool.m in Sources */,
 				7102E1211E66AB4E006117B6 /* UITextField+Ext.m in Sources */,

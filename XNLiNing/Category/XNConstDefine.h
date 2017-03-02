@@ -22,5 +22,7 @@
 #import "UITextField+Ext.h"
 #import "XNGCDHelper.h"
 #import "XNSimpleTool.h"
+#import "UITableView+EmptyData.h"
+#import "AppDelegate+Reachability.h"
 
 #endif /* XNConstDefine_h */

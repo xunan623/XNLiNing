@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "XNLoginController.h"
+#import "AppDelegate+Reachability.h"
 
 @interface AppDelegate ()
 
@@ -18,11 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [self reachabilityInternet];
+    
     self.window = [[UIWindow alloc] init];
     self.window.frame = [UIScreen mainScreen].bounds;
     self.window.backgroundColor = [UIColor whiteColor];
-    
-    
     
     XNLoginController *vc = [[XNLoginController alloc] init];
     self.window.rootViewController = vc;
