@@ -6,8 +6,8 @@
 //  Copyright © 2017年 xunan. All rights reserved.
 //
 
-#import "XNBaseNavigationController.h"
+#import "XNBaseViewController.h"
 
-@interface XNLoginController : XNBaseNavigationController
+@interface XNLoginController : XNBaseViewController
 
 @end

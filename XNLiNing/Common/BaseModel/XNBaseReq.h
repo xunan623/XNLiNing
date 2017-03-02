@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <JSONModel.h>
 
-@interface XNBaseReq : NSObject
+@interface XNBaseReq : JSONModel
+
++ (void)requestGetWithUrl:(NSString *)urlString
+                params:(NSDictionary *)params
+          responseSucceed:(void(^)(NSDictionary *res))succeedBlock
+           responseFailed:(void(^)(NSString *error))fieldBlock;
 
 @end

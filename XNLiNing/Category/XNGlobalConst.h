@@ -65,4 +65,4 @@
 #define XNLogFunc NSLog(@"%s", __func__)
 #endif
 
-#endif /* XNGlobalConst_h */
+
