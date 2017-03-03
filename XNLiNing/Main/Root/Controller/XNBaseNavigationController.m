@@ -17,7 +17,26 @@
 
 @implementation XNBaseNavigationController
 
++ (void)initialize {
+    UINavigationBar *bar = [UINavigationBar appearance];
+    [bar setTintColor:[UIColor whiteColor]];
 
+    [bar setTitleTextAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:20],
+                                  NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    [bar setBarTintColor:XNAPPNormalColor];
+    [bar setAlpha:1];
+    
+    UIImage *backButtonImage = [[UIImage imageNamed:@"icon-back"]
+                                resizableImageWithCapInsets:UIEdgeInsetsMake(0, 20, 0, 0)];
+    
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage
+                                                      forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    //将返回按钮的文字position设置不在屏幕上显示
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin)
+                                                         forBarMetrics:UIBarMetricsDefault];
+    
+    
+}
 
 
 - (void)viewDidLoad {
@@ -27,6 +46,7 @@
     
     self.enableRightGesture = YES;
     self.interactivePopGestureRecognizer.delegate = self;
+    
 }
 
 

@@ -8,6 +8,7 @@
 
 #import "XNLoginController.h"
 #import "XNTabbarController.h"
+#import "XNBaseReq.h"
 
 @interface XNLoginController ()<UITextFieldDelegate, UIViewControllerTransitioningDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userNameField;
@@ -24,7 +25,6 @@
     [super viewDidLoad];
     
     [self setupUI];
-
 }
 
 - (void)setupUI {

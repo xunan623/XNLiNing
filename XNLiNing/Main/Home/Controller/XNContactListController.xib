@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XNContactListController">
             <connections>
+                <outlet property="tableView" destination="ZmL-V5-bIG" id="AtQ-hB-Ova"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,26 +22,64 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVZ-zE-0Bw">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrx-ka-Ixx">
+                            <rect key="frame" x="138" y="20" width="100" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="Wjo-Rr-pIU"/>
+                                <constraint firstAttribute="width" constant="100" id="XJN-tN-0nT"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o21-sd-pxd">
+                            <rect key="frame" x="315" y="20" width="60" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="bRf-5N-mq0"/>
+                                <constraint firstAttribute="width" constant="60" id="es3-eg-33x"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <inset key="titleEdgeInsets" minX="0.0" minY="20" maxX="18" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="18" minY="0.0" maxX="0.0" maxY="12"/>
+                            <state key="normal" title="消息" image="home_message"/>
+                            <connections>
+                                <action selector="messageBtnClick" destination="-1" eventType="touchUpInside" id="e2K-4J-F5N"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" red="0.92941176469999998" green="0.1960784314" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="A0F-tY-TNg"/>
+                        <constraint firstItem="xrx-ka-Ixx" firstAttribute="top" secondItem="fVZ-zE-0Bw" secondAttribute="top" constant="20" id="Gp9-7k-rZv"/>
+                        <constraint firstItem="xrx-ka-Ixx" firstAttribute="centerX" secondItem="fVZ-zE-0Bw" secondAttribute="centerX" id="UHT-6d-PnS"/>
+                        <constraint firstAttribute="trailing" secondItem="o21-sd-pxd" secondAttribute="trailing" id="ca4-a1-mEu"/>
+                        <constraint firstAttribute="bottom" secondItem="o21-sd-pxd" secondAttribute="bottom" id="dw5-cZ-9wW"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rTO-Mv-YtT">
-                    <rect key="frame" x="141" y="161" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZmL-V5-bIG">
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
-                        <action selector="btnClick" destination="-1" eventType="touchUpInside" id="ege-M2-U3b"/>
+                        <outlet property="dataSource" destination="-1" id="Ybl-Bv-g0K"/>
+                        <outlet property="delegate" destination="-1" id="0HK-ae-fpS"/>
                     </connections>
-                </button>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="fVZ-zE-0Bw" secondAttribute="trailing" id="2Ua-nt-neO"/>
+                <constraint firstAttribute="bottom" secondItem="ZmL-V5-bIG" secondAttribute="bottom" id="8FG-yh-msN"/>
                 <constraint firstItem="fVZ-zE-0Bw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Zdt-3A-Stv"/>
+                <constraint firstItem="ZmL-V5-bIG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hBt-tW-muc"/>
+                <constraint firstItem="ZmL-V5-bIG" firstAttribute="top" secondItem="fVZ-zE-0Bw" secondAttribute="bottom" id="i5o-0I-mHi"/>
+                <constraint firstAttribute="trailing" secondItem="ZmL-V5-bIG" secondAttribute="trailing" id="iKO-Tn-4Ms"/>
                 <constraint firstItem="fVZ-zE-0Bw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="rU8-9b-Z7p"/>
             </constraints>
+            <point key="canvasLocation" x="32.5" y="59.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="home_message" width="16" height="16"/>
+    </resources>
 </document>

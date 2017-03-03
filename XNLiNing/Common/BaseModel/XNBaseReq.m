@@ -27,6 +27,11 @@
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     NSString *url = [NSString stringWithFormat:@"%@%@", AppRequestURL, urlString];
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:
+                                                         @"application/json",
+                                                         @"text/json",
+                                                         @"text/javascript",
+                                                         @"text/html",nil];
     [manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask *task, NSDictionary *responseObject) {
         
         if (succeedBlock) succeedBlock(responseObject);

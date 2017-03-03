@@ -1,5 +1,5 @@
 //
-//  XNSecondController.h
+//  XNMessageListController.h
 //  XNLiNing
 //
 //  Created by xunan on 2017/3/3.
@@ -8,6 +8,6 @@
 
 #import "XNBaseViewController.h"
 
-@interface XNSecondController : XNBaseViewController
+@interface XNMessageListController : XNBaseViewController
 
 @end
