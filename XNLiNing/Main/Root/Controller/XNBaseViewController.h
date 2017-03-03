@@ -11,9 +11,13 @@
 
 @interface XNBaseViewController : UIViewController<UIViewControllerTransitioningDelegate>
 
+
+/** 动画相关 */
 @property (strong, nonatomic) UIButton *presentBtn;
 @property (strong, nonatomic) XNLoginTranslation* login;
-
-/** 停止动画 */
 - (void)finishAnimationWithBtn:(UIButton *)presentBtn Delay:(NSTimeInterval)time;
+
+
+// 默认返回为YES,表示支持右滑返回  手势返回
+- (BOOL)gestureRecognizerShouldBegin;
 @end

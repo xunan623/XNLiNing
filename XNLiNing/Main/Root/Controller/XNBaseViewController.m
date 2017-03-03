@@ -27,8 +27,20 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = XNAPPNormalBGColor;
-
+    
 }
+
+
+
+#pragma mark - 手势返回相关
+
+- (BOOL)gestureRecognizerShouldBegin {
+    return YES;
+}
+
+
+
+#pragma mark 动画相关
 
 - (void)finishAnimationWithBtn:(UIButton *)presentBtn Delay:(NSTimeInterval)time {
     self.presentBtn = presentBtn;
