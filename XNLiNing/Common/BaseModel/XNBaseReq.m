@@ -10,6 +10,7 @@
 #import <AFNetworking.h>
 #import <SVProgressHUD.h>
 #import <Reachability.h>
+#import <MJExtension.h>
 
 @implementation XNBaseReq
 
@@ -33,7 +34,7 @@
                                                          @"text/javascript",
                                                          @"text/html",nil];
     [manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask *task, NSDictionary *responseObject) {
-        
+        XNLog(@"%@ \n \n %@", responseObject, responseObject.mj_JSONString);
         if (succeedBlock) succeedBlock(responseObject);
 
     } failure:^(NSURLSessionDataTask *task, NSError *error) {

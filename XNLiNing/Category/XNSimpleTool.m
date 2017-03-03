@@ -143,6 +143,15 @@
     
 }
 
++ (NSString *)getIOSVersion
+{
+    return [[UIDevice currentDevice] systemVersion] ;
+}
 
++ (NSString *)getApplyVersion {
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    return [infoDictionary objectForKey:@"CFBundleShortVersionString"];
+
+}
 
 @end

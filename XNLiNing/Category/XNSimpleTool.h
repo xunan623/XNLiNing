@@ -33,4 +33,13 @@
  */
 + (NSString *)getCurrentDeviceModel;
 
+/**
+ * 获取当前系统版本
+ */
++ (NSString *)getIOSVersion;
+
+/**
+ * 获取当前app版本
+ */
++ (NSString *)getApplyVersion;
 @end

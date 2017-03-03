@@ -9,6 +9,8 @@
 #import "XNLoginController.h"
 #import "XNTabbarController.h"
 #import "XNBaseReq.h"
+#import <JSONModel.h>
+#import "XNLoginModel.h"
 
 @interface XNLoginController ()<UITextFieldDelegate, UIViewControllerTransitioningDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *userNameField;
@@ -37,7 +39,7 @@
 
 #pragma mark - TextFieldDelegate
 - (IBAction)textFieldDidChange:(UITextField *)textField {
-    if (_userNameField.text.length > 6 && _passwordFiled.text.length > 6) {
+    if (_userNameField.text.length >=4 && _passwordFiled.text.length >= 6) {
         self.submmitBtn.backgroundColor = XNAPPNormalColor;
         
         self.submmitBtn.userInteractionEnabled = YES;
@@ -50,6 +52,27 @@
 #pragma mark - 请求接口
 - (IBAction)submitClick:(UIButton *)sender {
     XNLog(@"提交按钮");
+    
+    NSDictionary *params = @{@"param.userName" : self.userNameField.text,
+                             @"param.passWord" : self.passwordFiled.text,
+                             @"param.from"     : @"iOS",
+                             @"param.version"  : [XNSimpleTool getApplyVersion]};
+    
+    [XNBaseReq requestGetWithUrl:AppRequestURL_loginApp
+                          params:params
+                 responseSucceed:^(NSDictionary *res) {
+        XNLoginModel *model = [[XNLoginModel alloc] initWithDictionary:res error:nil];
+        if ([model.retVal boolValue]) {
+                     
+        } else {
+                     
+        }
+                     
+    } responseFailed:^(NSString *error) {
+        XNLog(@"%@", error);
+        
+
+    }];
     
     XNTabbarController *tabbarVC = [[XNTabbarController alloc] init];
     tabbarVC.transitioningDelegate = self;
