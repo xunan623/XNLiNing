@@ -24,5 +24,6 @@
 #import "XNSimpleTool.h"
 #import "UITableView+EmptyData.h"
 #import "AppDelegate+Reachability.h"
+#import "XNAlertView.h"
 
 #endif /* XNConstDefine_h */

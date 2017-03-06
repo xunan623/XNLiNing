@@ -61,17 +61,18 @@
     [XNBaseReq requestGetWithUrl:AppRequestURL_loginApp
                           params:params
                  responseSucceed:^(NSDictionary *res) {
+                     [XNAlertView showWithTitle:@"请求成功"];
         XNLoginModel *model = [[XNLoginModel alloc] initWithDictionary:res error:nil];
         if ([model.retVal boolValue]) {
                      
         } else {
-                     
+            
         }
                      
     } responseFailed:^(NSString *error) {
         XNLog(@"%@", error);
-        
-
+        [XNAlertView showWithTitle:error];
+    
     }];
     
     XNTabbarController *tabbarVC = [[XNTabbarController alloc] init];

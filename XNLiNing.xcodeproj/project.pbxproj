@@ -46,6 +46,7 @@
 		7174297A1D845B5400EC2910 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 717429791D845B5400EC2910 /* Assets.xcassets */; };
 		7174297D1D845B5400EC2910 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7174297B1D845B5400EC2910 /* LaunchScreen.storyboard */; };
 		718C44051E666D3E00A4C599 /* XNAppURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 718C44041E666D3E00A4C599 /* XNAppURL.m */; };
+		71B7DB001E6D58690052E450 /* XNAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B7DAFF1E6D58690052E450 /* XNAlertView.m */; };
 		71F618321E6972A600E5F223 /* XNLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F618311E6972A600E5F223 /* XNLoginModel.m */; };
 		71F618371E69755200E5F223 /* XNBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F618361E69755200E5F223 /* XNBaseModel.m */; };
 		E1350CEE173178D577914CF6 /* libPods-XNLiNing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1A7DC8DA331D5B230EC7A7 /* libPods-XNLiNing.a */; };
@@ -124,6 +125,8 @@
 		717429871D845FC400EC2910 /* info.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = info.pch; sourceTree = "<group>"; };
 		718C44031E666D3E00A4C599 /* XNAppURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNAppURL.h; sourceTree = "<group>"; };
 		718C44041E666D3E00A4C599 /* XNAppURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNAppURL.m; sourceTree = "<group>"; };
+		71B7DAFE1E6D58690052E450 /* XNAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNAlertView.h; sourceTree = "<group>"; };
+		71B7DAFF1E6D58690052E450 /* XNAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNAlertView.m; sourceTree = "<group>"; };
 		71F618301E6972A600E5F223 /* XNLoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNLoginModel.h; sourceTree = "<group>"; };
 		71F618311E6972A600E5F223 /* XNLoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNLoginModel.m; sourceTree = "<group>"; };
 		71F618351E69755200E5F223 /* XNBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNBaseModel.h; sourceTree = "<group>"; };
@@ -221,6 +224,8 @@
 		7102E1071E66AB4E006117B6 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				71B7DAFE1E6D58690052E450 /* XNAlertView.h */,
+				71B7DAFF1E6D58690052E450 /* XNAlertView.m */,
 				7121E8C61E67F37800EF8D4B /* UIView+EasyShow.h */,
 				7121E8C71E67F37800EF8D4B /* UIView+EasyShow.m */,
 				7102E1081E66AB4E006117B6 /* Foundation+Log.m */,
@@ -679,6 +684,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7102E11C1E66AB4E006117B6 /* NSDate+Ext.m in Sources */,
+				71B7DB001E6D58690052E450 /* XNAlertView.m in Sources */,
 				7102E1201E66AB4E006117B6 /* UIImage+Reflection.m in Sources */,
 				7102E11F1E66AB4E006117B6 /* SSKeychain.m in Sources */,
 				718C44051E666D3E00A4C599 /* XNAppURL.m in Sources */,
