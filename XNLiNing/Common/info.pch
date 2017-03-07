@@ -13,5 +13,6 @@
 #import "XNGlobalConst.h"
 #import "XNConstDefine.h"
 #import "XNBaseReq.h"
+#import "XNUserDefaults.h"
 
 #endif /* info_pch */

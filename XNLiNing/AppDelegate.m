@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import "XNLoginController.h"
 #import "AppDelegate+Reachability.h"
+#import "XNUserDefaults.h"
+#import "UIWindow+Extension.h"
+
 
 @interface AppDelegate ()
 
@@ -19,14 +22,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    [[RWUserDefaults shareInstance] registerClass:[XNUserDefaults class]];
+    
     [self reachabilityInternet];
     
     self.window = [[UIWindow alloc] init];
     self.window.frame = [UIScreen mainScreen].bounds;
     self.window.backgroundColor = [UIColor whiteColor];
     
-    XNLoginController *vc = [[XNLoginController alloc] init];
-    self.window.rootViewController = vc;
+    [self.window switchRootViewController];
     
     [self.window makeKeyAndVisible];
 

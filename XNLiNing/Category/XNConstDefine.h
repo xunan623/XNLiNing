@@ -25,5 +25,6 @@
 #import "UITableView+EmptyData.h"
 #import "AppDelegate+Reachability.h"
 #import "XNAlertView.h"
+#import "RWUserDefaults.h"
 
 #endif /* XNConstDefine_h */

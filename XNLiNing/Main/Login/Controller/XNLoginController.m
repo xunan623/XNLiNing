@@ -11,12 +11,14 @@
 #import "XNBaseReq.h"
 #import <JSONModel.h>
 #import "XNLoginModel.h"
+#import "XNSaveUserDefault.h"
+#import "UIWindow+Extension.h"
 
 @interface XNLoginController ()<UITextFieldDelegate, UIViewControllerTransitioningDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *userNameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordFiled;
 @property (weak, nonatomic) IBOutlet UIButton *submmitBtn;
-
 
 @end
 
@@ -40,11 +42,10 @@
 #pragma mark - TextFieldDelegate
 - (IBAction)textFieldDidChange:(UITextField *)textField {
     if (_userNameField.text.length >=4 && _passwordFiled.text.length >= 6) {
-        self.submmitBtn.backgroundColor = XNAPPNormalColor;
-        
+        [self.submmitBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         self.submmitBtn.userInteractionEnabled = YES;
     } else {
-        self.submmitBtn.backgroundColor = [UIColor lightGrayColor];
+        [self.submmitBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
         self.submmitBtn.userInteractionEnabled = NO;
     }
 }
@@ -52,7 +53,7 @@
 #pragma mark - 请求接口
 - (IBAction)submitClick:(UIButton *)sender {
     XNLog(@"提交按钮");
-    
+    sender.userInteractionEnabled = NO;
     NSDictionary *params = @{@"param.userName" : self.userNameField.text,
                              @"param.passWord" : self.passwordFiled.text,
                              @"param.from"     : @"iOS",
@@ -61,27 +62,33 @@
     [XNBaseReq requestGetWithUrl:AppRequestURL_loginApp
                           params:params
                  responseSucceed:^(NSDictionary *res) {
-                     [XNAlertView showWithTitle:@"请求成功"];
+                     
         XNLoginModel *model = [[XNLoginModel alloc] initWithDictionary:res error:nil];
         if ([model.retVal boolValue]) {
-                     
-        } else {
             
+            [XNSaveUserDefault saveUserDefaultWith:model.userInfo];
+            
+            [XNAlertView  showWithTitle:model.failMessage done:^{
+                
+                XNTabbarController *tabbarVC = [[XNTabbarController alloc] init];
+                tabbarVC.transitioningDelegate = self;
+                UIWindow *window = [UIApplication sharedApplication].keyWindow;
+                window.rootViewController = tabbarVC;
+                
+                [window saveVersionToNSUserDefault];
+            }];
+        } else {
+            [XNAlertView showWithTitle:model.failMessage done:^{
+                sender.userInteractionEnabled = YES;
+            }];;
         }
                      
     } responseFailed:^(NSString *error) {
         XNLog(@"%@", error);
+        sender.userInteractionEnabled = YES;
         [XNAlertView showWithTitle:error];
     
     }];
-    
-    XNTabbarController *tabbarVC = [[XNTabbarController alloc] init];
-    tabbarVC.transitioningDelegate = self;
-    
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    window.rootViewController = tabbarVC;
-    
-
 }
 
 

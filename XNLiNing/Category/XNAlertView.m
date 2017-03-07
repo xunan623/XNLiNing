@@ -10,9 +10,7 @@
 
 static CGFloat ViewHeight = 64;
 
-@interface XNAlertView() {
-    dispatch_block_t _block;
-}
+@interface XNAlertView()
 
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) UILabel *titleLabel;
@@ -93,8 +91,8 @@ static CGFloat ViewHeight = 64;
             self.alpha = 0.0;
             self.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -ViewHeight);
         } completion:^(BOOL finished) {
+            block();
             [self removeFromSuperview];
-            if (_block) block();
         }];
     });
 }

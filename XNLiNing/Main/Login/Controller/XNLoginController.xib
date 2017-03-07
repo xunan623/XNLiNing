@@ -77,8 +77,10 @@
                 </view>
                 <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JEa-0R-97q">
                     <rect key="frame" x="24" y="264" width="327" height="45"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <state key="normal" title="登录"/>
+                    <color key="backgroundColor" red="0.92941176469999998" green="0.1960784314" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="登录">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                     <connections>
                         <action selector="submitClick:" destination="-1" eventType="touchUpInside" id="Cbn-MH-CzR"/>
                     </connections>
