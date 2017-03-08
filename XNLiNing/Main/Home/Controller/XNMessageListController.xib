@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,7 +18,64 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wAs-3k-PgM">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="消息列表" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckH-8U-Mfx">
+                            <rect key="frame" x="138" y="20" width="100" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="PNe-yB-124"/>
+                                <constraint firstAttribute="height" constant="44" id="uEL-td-mui"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UGy-2a-yp9">
+                            <rect key="frame" x="0.0" y="20" width="50" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="Xid-Cy-svc"/>
+                                <constraint firstAttribute="width" constant="50" id="ysD-CL-S32"/>
+                            </constraints>
+                            <state key="normal" image="icon-back"/>
+                            <connections>
+                                <action selector="backClick" destination="-1" eventType="touchUpInside" id="dIA-f6-hTI"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.92941176469999998" green="0.1960784314" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="ckH-8U-Mfx" firstAttribute="centerX" secondItem="wAs-3k-PgM" secondAttribute="centerX" id="1B2-aQ-wPC"/>
+                        <constraint firstAttribute="bottom" secondItem="UGy-2a-yp9" secondAttribute="bottom" id="LDt-0v-WTT"/>
+                        <constraint firstAttribute="height" constant="64" id="OYw-cb-1XN"/>
+                        <constraint firstItem="UGy-2a-yp9" firstAttribute="leading" secondItem="wAs-3k-PgM" secondAttribute="leading" id="k4S-GW-IBW"/>
+                        <constraint firstItem="ckH-8U-Mfx" firstAttribute="top" secondItem="wAs-3k-PgM" secondAttribute="top" constant="20" id="xRx-7n-tq2"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wBA-uU-SZd">
+                    <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Y6e-st-PWW"/>
+                        <outlet property="delegate" destination="-1" id="Od8-Gf-Yqv"/>
+                    </connections>
+                </tableView>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="wBA-uU-SZd" secondAttribute="trailing" id="0OB-qC-379"/>
+                <constraint firstItem="wBA-uU-SZd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8da-16-Ri4"/>
+                <constraint firstItem="wAs-3k-PgM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="GnR-y8-iex"/>
+                <constraint firstAttribute="bottom" secondItem="wBA-uU-SZd" secondAttribute="bottom" id="Wei-9n-wh7"/>
+                <constraint firstAttribute="trailing" secondItem="wAs-3k-PgM" secondAttribute="trailing" id="YVH-Sj-1O5"/>
+                <constraint firstItem="wAs-3k-PgM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iZg-VT-VCy"/>
+                <constraint firstItem="wBA-uU-SZd" firstAttribute="top" secondItem="wAs-3k-PgM" secondAttribute="bottom" id="nka-qp-LwX"/>
+            </constraints>
+            <point key="canvasLocation" x="-175" y="-110"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon-back" width="22" height="22"/>
+    </resources>
 </document>

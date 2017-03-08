@@ -8,7 +8,7 @@
 
 #import "XNMessageListController.h"
 
-@interface XNMessageListController ()
+@interface XNMessageListController ()<UITableViewDelegate, UITableViewDataSource>
 
 @end
 
@@ -16,7 +16,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
 }
 
+#pragma mark - TableViewDelegate
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 100;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellName = @"cellname";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellName];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
+    }
+    return cell;
+}
+
+- (IBAction)backClick {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end

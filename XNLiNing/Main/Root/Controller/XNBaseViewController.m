@@ -27,10 +27,8 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = XNAPPNormalBGColor;
-    
+
 }
-
-
 
 #pragma mark - 手势返回相关
 
@@ -58,6 +56,9 @@
 {
     self.login.reverse = NO;
     return self.login;
+}
+- (IBAction)backClick {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 

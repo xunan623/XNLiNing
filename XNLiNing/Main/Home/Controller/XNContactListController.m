@@ -29,13 +29,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // 请求数据
-    [self loadData];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.tableView.mj_header = [XNHeaderView headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
 
 }
 
-- (void)loadData {
-    
+- (void)loadNewData {
+    __weak typeof(self) weakSelf = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [weakSelf endRefresh];
+    });
+}
+
+- (void)endRefresh {
+    // 刷新表格
+    [self.tableView reloadData];
+    // 拿到当前的下拉刷新控件，结束刷新状态
+    [self.tableView.mj_header endRefreshing];
 }
 
 

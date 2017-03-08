@@ -11,7 +11,6 @@
 
 @interface XNBaseViewController : UIViewController<UIViewControllerTransitioningDelegate>
 
-
 /** 动画相关 */
 @property (strong, nonatomic) UIButton *presentBtn;
 @property (strong, nonatomic) XNLoginTranslation* login;

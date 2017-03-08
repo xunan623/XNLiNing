@@ -47,6 +47,8 @@
 		7121E90C1E681F1B00EF8D4B /* XNSettingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7121E90A1E681F1B00EF8D4B /* XNSettingController.xib */; };
 		7122B2B41E6E55BE00068216 /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7122B2B31E6E55BE00068216 /* UIWindow+Extension.m */; };
 		7122B2B71E6E5DB500068216 /* XNBaseRes.m in Sources */ = {isa = PBXBuildFile; fileRef = 7122B2B61E6E5DB500068216 /* XNBaseRes.m */; };
+		713F4CED1E6FB75F00CDC534 /* XNHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F4CEC1E6FB75F00CDC534 /* XNHeaderView.m */; };
+		713F4CF01E6FB79300CDC534 /* XNFrashLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F4CEF1E6FB79300CDC534 /* XNFrashLayer.m */; };
 		7174296F1D845B5400EC2910 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7174296E1D845B5400EC2910 /* main.m */; };
 		717429721D845B5400EC2910 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 717429711D845B5400EC2910 /* AppDelegate.m */; };
 		7174297A1D845B5400EC2910 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 717429791D845B5400EC2910 /* Assets.xcassets */; };
@@ -133,6 +135,10 @@
 		7122B2B31E6E55BE00068216 /* UIWindow+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+Extension.m"; sourceTree = "<group>"; };
 		7122B2B51E6E5DB500068216 /* XNBaseRes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNBaseRes.h; sourceTree = "<group>"; };
 		7122B2B61E6E5DB500068216 /* XNBaseRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNBaseRes.m; sourceTree = "<group>"; };
+		713F4CEB1E6FB75F00CDC534 /* XNHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNHeaderView.h; sourceTree = "<group>"; };
+		713F4CEC1E6FB75F00CDC534 /* XNHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNHeaderView.m; sourceTree = "<group>"; };
+		713F4CEE1E6FB79300CDC534 /* XNFrashLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNFrashLayer.h; sourceTree = "<group>"; };
+		713F4CEF1E6FB79300CDC534 /* XNFrashLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNFrashLayer.m; sourceTree = "<group>"; };
 		7174296A1D845B5400EC2910 /* XNLiNing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XNLiNing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7174296E1D845B5400EC2910 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		717429701D845B5400EC2910 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -459,6 +465,17 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		713F4CEA1E6FB74100CDC534 /* XNRefreshView */ = {
+			isa = PBXGroup;
+			children = (
+				713F4CEB1E6FB75F00CDC534 /* XNHeaderView.h */,
+				713F4CEC1E6FB75F00CDC534 /* XNHeaderView.m */,
+				713F4CEE1E6FB79300CDC534 /* XNFrashLayer.h */,
+				713F4CEF1E6FB79300CDC534 /* XNFrashLayer.m */,
+			);
+			path = XNRefreshView;
+			sourceTree = "<group>";
+		};
 		717429611D845B5400EC2910 = {
 			isa = PBXGroup;
 			children = (
@@ -519,6 +536,7 @@
 		717429861D845CCA00EC2910 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				713F4CEA1E6FB74100CDC534 /* XNRefreshView */,
 				71B7DB041E6D5F120052E450 /* UserInfo */,
 				7121E8BF1E67E7E200EF8D4B /* BaseTool */,
 				7102E12F1E66AD07006117B6 /* BaseModel */,
@@ -737,6 +755,7 @@
 				7121E8C81E67F37800EF8D4B /* UIView+EasyShow.m in Sources */,
 				7102E11E1E66AB4E006117B6 /* NSString+Ext.m in Sources */,
 				7102E12D1E66AB59006117B6 /* RWDatabase.m in Sources */,
+				713F4CF01E6FB79300CDC534 /* XNFrashLayer.m in Sources */,
 				710972B31E6E9053000DEA1E /* XNSettingHeaderView.m in Sources */,
 				7102E12E1E66AB59006117B6 /* RWDatabaseManager.m in Sources */,
 				71B7DB031E6D5EC70052E450 /* RWUserDefaults.m in Sources */,
@@ -767,6 +786,7 @@
 				7102E12C1E66AB59006117B6 /* CocoaCracker.m in Sources */,
 				7102E1321E66ADDA006117B6 /* XNBaseReq.m in Sources */,
 				7121E8D51E68063000EF8D4B /* XNLoginController.m in Sources */,
+				713F4CED1E6FB75F00CDC534 /* XNHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

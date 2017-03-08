@@ -48,7 +48,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" returnKeyType="send" secureTextEntry="YES"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
                     <connections>
                         <action selector="textFieldDidChange:" destination="-1" eventType="editingChanged" id="0Nx-V8-hgR"/>
                         <outlet property="delegate" destination="-1" id="ZIS-c9-sdK"/>
@@ -125,7 +125,7 @@
                 <constraint firstItem="JEa-0R-97q" firstAttribute="trailing" secondItem="vmo-hJ-QeA" secondAttribute="trailing" id="wwd-k8-PhO"/>
                 <constraint firstItem="JEa-0R-97q" firstAttribute="leading" secondItem="vmo-hJ-QeA" secondAttribute="leading" id="zzL-6L-SbE"/>
             </constraints>
-            <point key="canvasLocation" x="-1061" y="-164"/>
+            <point key="canvasLocation" x="-1366" y="-187"/>
         </view>
     </objects>
     <resources>

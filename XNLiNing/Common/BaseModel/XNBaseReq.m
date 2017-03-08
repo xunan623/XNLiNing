@@ -25,6 +25,7 @@
         if (fieldBlock) fieldBlock(@"无网络连接");
         return;
     }
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     NSString *url = [NSString stringWithFormat:@"%@%@", AppRequestURL, urlString];
@@ -35,9 +36,11 @@
                                                          @"text/html",nil];
     [manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask *task, NSDictionary *responseObject) {
         XNLog(@"%@ \n \n %@", responseObject, responseObject.mj_JSONString);
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         if (succeedBlock) succeedBlock(responseObject);
 
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         if (fieldBlock) fieldBlock([error localizedDescription]);
     }];
 }

@@ -26,5 +26,7 @@
 #import "AppDelegate+Reachability.h"
 #import "XNAlertView.h"
 #import "RWUserDefaults.h"
+#import "XNHeaderView.h"
+
 
 #endif /* XNConstDefine_h */
