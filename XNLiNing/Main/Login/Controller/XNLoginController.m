@@ -53,6 +53,7 @@
 #pragma mark - 请求接口
 - (IBAction)submitClick:(UIButton *)sender {
     XNLog(@"提交按钮");
+    [self.view endEditing:YES];
     sender.userInteractionEnabled = NO;
     NSDictionary *params = @{@"param.userName" : self.userNameField.text,
                              @"param.passWord" : self.passwordFiled.text,

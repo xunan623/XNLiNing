@@ -6,7 +6,7 @@
 //  Copyright © 2017年 xunan. All rights reserved.
 //
 
-#import "XNBaseModel.h"
+#import "XNBaseRes.h"
 
 @interface XNLoginContent : JSONModel
 
@@ -28,7 +28,7 @@
 
 @end
 
-@interface XNLoginModel : XNBaseModel
+@interface XNLoginModel : XNBaseRes
 
 @property (strong, nonatomic) XNLoginContent<Optional> *userInfo;
 

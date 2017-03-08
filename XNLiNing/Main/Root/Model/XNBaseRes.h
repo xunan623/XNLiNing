@@ -1,14 +1,14 @@
 //
-//  XNBaseModel.h
+//  XNBaseRes.h
 //  XNLiNing
 //
-//  Created by xunan on 2017/3/3.
+//  Created by xunan on 2017/3/7.
 //  Copyright © 2017年 xunan. All rights reserved.
 //
 
 #import <JSONModel/JSONModel.h>
 
-@interface XNBaseModel : JSONModel
+@interface XNBaseRes : JSONModel
 
 @property (nonatomic, copy) NSString *failMessage;
 @property (nonatomic, copy) NSString *maxPage;
