@@ -54,6 +54,8 @@
 		7167DDD41E712B5600F61886 /* XNDatabaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7167DDD31E712B5600F61886 /* XNDatabaseService.m */; };
 		7167DDD71E712E1B00F61886 /* XNContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7167DDD61E712E1B00F61886 /* XNContactModel.m */; };
 		7167DDDB1E7139F500F61886 /* ChineseToPinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7167DDDA1E7139F500F61886 /* ChineseToPinyin.m */; };
+		7167DDDF1E714DFA00F61886 /* XNContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7167DDDD1E714DFA00F61886 /* XNContactCell.m */; };
+		7167DDE01E714DFA00F61886 /* XNContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7167DDDE1E714DFA00F61886 /* XNContactCell.xib */; };
 		7174296F1D845B5400EC2910 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7174296E1D845B5400EC2910 /* main.m */; };
 		717429721D845B5400EC2910 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 717429711D845B5400EC2910 /* AppDelegate.m */; };
 		7174297A1D845B5400EC2910 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 717429791D845B5400EC2910 /* Assets.xcassets */; };
@@ -153,6 +155,9 @@
 		7167DDD61E712E1B00F61886 /* XNContactModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNContactModel.m; sourceTree = "<group>"; };
 		7167DDD91E7139F500F61886 /* ChineseToPinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseToPinyin.h; sourceTree = "<group>"; };
 		7167DDDA1E7139F500F61886 /* ChineseToPinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseToPinyin.m; sourceTree = "<group>"; };
+		7167DDDC1E714DFA00F61886 /* XNContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNContactCell.h; sourceTree = "<group>"; };
+		7167DDDD1E714DFA00F61886 /* XNContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNContactCell.m; sourceTree = "<group>"; };
+		7167DDDE1E714DFA00F61886 /* XNContactCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNContactCell.xib; sourceTree = "<group>"; };
 		7174296A1D845B5400EC2910 /* XNLiNing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XNLiNing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7174296E1D845B5400EC2910 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		717429701D845B5400EC2910 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -619,6 +624,9 @@
 		7194D0AB1E666AF200C463A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7167DDDC1E714DFA00F61886 /* XNContactCell.h */,
+				7167DDDD1E714DFA00F61886 /* XNContactCell.m */,
+				7167DDDE1E714DFA00F61886 /* XNContactCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -718,6 +726,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7121E9031E681EBF00EF8D4B /* XNTaskController.xib in Resources */,
+				7167DDE01E714DFA00F61886 /* XNContactCell.xib in Resources */,
 				715364031E7106F600102FB6 /* XNSettingCollectionHeaderView.xib in Resources */,
 				7174297D1D845B5400EC2910 /* LaunchScreen.storyboard in Resources */,
 				7167DDCF1E712AB400F61886 /* store_data.db in Resources */,
@@ -804,6 +813,7 @@
 				7121E8DC1E68109D00EF8D4B /* UITableView+EmptyData.m in Sources */,
 				717429721D845B5400EC2910 /* AppDelegate.m in Sources */,
 				7122B2B41E6E55BE00068216 /* UIWindow+Extension.m in Sources */,
+				7167DDDF1E714DFA00F61886 /* XNContactCell.m in Sources */,
 				7122B2B71E6E5DB500068216 /* XNBaseRes.m in Sources */,
 				7121E8C21E67E7F500EF8D4B /* XNLoginTranslation.m in Sources */,
 				7174296F1D845B5400EC2910 /* main.m in Sources */,

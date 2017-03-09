@@ -14,6 +14,7 @@
 #import "XNContactModel.h"
 #import <MJExtension.h>
 #import "ChineseToPinyin.h"
+#import "XNContactCell.h"
 
 
 @interface XNContactListController ()<UITableViewDelegate, UITableViewDataSource>
@@ -49,9 +50,19 @@
 
 - (void)setupTableView {
     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.tableView.backgroundColor = XNAPPNormalBGColor;
     self.tableView.mj_header = [XNHeaderView headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     [self.tableView.mj_header beginRefreshing];
     self.tableView.rowHeight = 50;
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([XNContactCell class])
+                                               bundle:[NSBundle mainBundle]]
+         forCellReuseIdentifier:NSStringFromClass([XNContactCell class])];
+    // 设置索引的背景色为透明色
+    if ([_tableView respondsToSelector:@selector(setSectionIndexColor:)]) {
+        _tableView.sectionIndexBackgroundColor = [UIColor clearColor];
+        _tableView.sectionIndexTrackingBackgroundColor = [UIColor clearColor];
+    }
+    self.tableView.sectionIndexColor = XNColor_RGB(30, 30, 30);
 }
 
 - (void)loadNewData {
@@ -74,59 +85,40 @@
 
 #pragma mark - UITableViewDataSource
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return [self.dataSource count] +1;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [self.dataSource count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
-        return 0;
-    }
+
     [tableView tableViewDisplayWithMsg:@"暂无消息" withRowCount:self.dataSource.count];
-    return [[self.dataSource objectAtIndex:(section - 1)] count];
+    return [[self.dataSource objectAtIndex:section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    if (indexPath.section == 0 && indexPath.row == 0) {
-        return [[UITableViewCell alloc] init];
-    }
-    static NSString *cellName = @"contactList";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellName];
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
-    }
-    XNContactModel *model = [[self.dataSource objectAtIndex:(indexPath.section -1)] objectAtIndex:indexPath.row];
-    cell.textLabel.text = model.name;
+    XNContactCell *cell = [XNContactCell msGetInstance];
+    XNContactModel *model = [[self.dataSource objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    cell.nameLabel.text = model.name;
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (section == 0 || [[self.dataSource objectAtIndex:(section - 1)] count] == 0)
-    {
-        return 0;
-    }
-    else{
-        return 22;
-    }
+    if ([[self.dataSource objectAtIndex:section] count]== 0) return 0;
+    return 22;
 }
 /**
  *  section头部视图的View   组的头部
  */
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    
-    if (section == 0 || [[self.dataSource objectAtIndex:(section - 1)] count] == 0)
-    {
-        return nil;
-    }
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if ([[self.dataSource objectAtIndex:section] count] == 0) return nil;
     
     UIView *contentView = [[UIView alloc] init];
-    contentView.backgroundColor = XNColor_RGB(239, 239, 239);
+    contentView.backgroundColor = XNAPPNormalBGColor;
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, 22)];
     label.backgroundColor = [UIColor clearColor];
-    [label setText:[self.sectionTitles objectAtIndex:(section - 1)]];
+    label.textColor = XNColor_RGB(170, 170, 170);
+    label.font = [UIFont systemFontOfSize:15.0f];
+    [label setText:[self.sectionTitles objectAtIndex:section]];
     [contentView addSubview:label];
     return contentView;
 }
@@ -143,7 +135,6 @@
             [existTitles addObject:[self.sectionTitles objectAtIndex:i]];
         }
     }
-    
     return existTitles;
 }
 
@@ -162,8 +153,8 @@
     //返回27，是a－z和＃
     NSInteger highSection = [self.sectionTitles count];
     //tableView 会被分成27个section
-    NSMutableArray *sortedArray = [NSMutableArray arrayWithCapacity:highSection-1];
-    for (int i = 0; i <= highSection; i++) {
+    NSMutableArray *sortedArray = [NSMutableArray arrayWithCapacity:highSection];
+    for (int i = 0; i < highSection; i++) {
         NSMutableArray *sectionArray = [NSMutableArray array];
         [sortedArray addObject:sectionArray];
     }
