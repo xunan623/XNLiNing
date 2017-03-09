@@ -10,4 +10,7 @@
 
 @interface XNSettingCell : UICollectionViewCell
 
+@property (strong, nonatomic) UIImageView *titleImage;
+@property (strong, nonatomic) UILabel *tittleLabel;
+
 @end

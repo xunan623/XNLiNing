@@ -24,10 +24,7 @@
 		7102E1421E66BF03006117B6 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7102E1411E66BF03006117B6 /* libsqlite3.0.tbd */; };
 		710630971E6964E1008A181D /* XNMessageListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710630951E6964E1008A181D /* XNMessageListController.m */; };
 		710630981E6964E1008A181D /* XNMessageListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 710630961E6964E1008A181D /* XNMessageListController.xib */; };
-		710972B31E6E9053000DEA1E /* XNSettingHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 710972B21E6E9053000DEA1E /* XNSettingHeaderView.m */; };
-		710972B51E6E905C000DEA1E /* XNSettingHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 710972B41E6E905C000DEA1E /* XNSettingHeaderView.xib */; };
 		710972B91E6EA4D4000DEA1E /* XNSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 710972B71E6EA4D4000DEA1E /* XNSettingCell.m */; };
-		710972BA1E6EA4D4000DEA1E /* XNSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 710972B81E6EA4D4000DEA1E /* XNSettingCell.xib */; };
 		71144F1C1E69091A003EDBFC /* XNBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71144F1A1E69091A003EDBFC /* XNBaseViewController.m */; };
 		71144F1D1E69091A003EDBFC /* XNBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71144F1B1E69091A003EDBFC /* XNBaseViewController.xib */; };
 		7121E8C21E67E7F500EF8D4B /* XNLoginTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7121E8C11E67E7F500EF8D4B /* XNLoginTranslation.m */; };
@@ -49,6 +46,10 @@
 		7122B2B71E6E5DB500068216 /* XNBaseRes.m in Sources */ = {isa = PBXBuildFile; fileRef = 7122B2B61E6E5DB500068216 /* XNBaseRes.m */; };
 		713F4CED1E6FB75F00CDC534 /* XNHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F4CEC1E6FB75F00CDC534 /* XNHeaderView.m */; };
 		713F4CF01E6FB79300CDC534 /* XNFrashLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F4CEF1E6FB79300CDC534 /* XNFrashLayer.m */; };
+		715364021E7106F600102FB6 /* XNSettingCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 715364001E7106F600102FB6 /* XNSettingCollectionHeaderView.m */; };
+		715364031E7106F600102FB6 /* XNSettingCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 715364011E7106F600102FB6 /* XNSettingCollectionHeaderView.xib */; };
+		715364071E710ACB00102FB6 /* XNSettingCollectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 715364051E710ACB00102FB6 /* XNSettingCollectionFooterView.m */; };
+		715364081E710ACB00102FB6 /* XNSettingCollectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 715364061E710ACB00102FB6 /* XNSettingCollectionFooterView.xib */; };
 		7174296F1D845B5400EC2910 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7174296E1D845B5400EC2910 /* main.m */; };
 		717429721D845B5400EC2910 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 717429711D845B5400EC2910 /* AppDelegate.m */; };
 		7174297A1D845B5400EC2910 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 717429791D845B5400EC2910 /* Assets.xcassets */; };
@@ -97,12 +98,8 @@
 		710630941E6964E1008A181D /* XNMessageListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNMessageListController.h; sourceTree = "<group>"; };
 		710630951E6964E1008A181D /* XNMessageListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNMessageListController.m; sourceTree = "<group>"; };
 		710630961E6964E1008A181D /* XNMessageListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNMessageListController.xib; sourceTree = "<group>"; };
-		710972B11E6E9053000DEA1E /* XNSettingHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNSettingHeaderView.h; sourceTree = "<group>"; };
-		710972B21E6E9053000DEA1E /* XNSettingHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNSettingHeaderView.m; sourceTree = "<group>"; };
-		710972B41E6E905C000DEA1E /* XNSettingHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNSettingHeaderView.xib; sourceTree = "<group>"; };
 		710972B61E6EA4D4000DEA1E /* XNSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNSettingCell.h; sourceTree = "<group>"; };
 		710972B71E6EA4D4000DEA1E /* XNSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNSettingCell.m; sourceTree = "<group>"; };
-		710972B81E6EA4D4000DEA1E /* XNSettingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNSettingCell.xib; sourceTree = "<group>"; };
 		71144F191E69091A003EDBFC /* XNBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNBaseViewController.h; sourceTree = "<group>"; };
 		71144F1A1E69091A003EDBFC /* XNBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNBaseViewController.m; sourceTree = "<group>"; };
 		71144F1B1E69091A003EDBFC /* XNBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNBaseViewController.xib; sourceTree = "<group>"; };
@@ -139,6 +136,12 @@
 		713F4CEC1E6FB75F00CDC534 /* XNHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNHeaderView.m; sourceTree = "<group>"; };
 		713F4CEE1E6FB79300CDC534 /* XNFrashLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNFrashLayer.h; sourceTree = "<group>"; };
 		713F4CEF1E6FB79300CDC534 /* XNFrashLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNFrashLayer.m; sourceTree = "<group>"; };
+		715363FF1E7106F600102FB6 /* XNSettingCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNSettingCollectionHeaderView.h; sourceTree = "<group>"; };
+		715364001E7106F600102FB6 /* XNSettingCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNSettingCollectionHeaderView.m; sourceTree = "<group>"; };
+		715364011E7106F600102FB6 /* XNSettingCollectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNSettingCollectionHeaderView.xib; sourceTree = "<group>"; };
+		715364041E710ACB00102FB6 /* XNSettingCollectionFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNSettingCollectionFooterView.h; sourceTree = "<group>"; };
+		715364051E710ACB00102FB6 /* XNSettingCollectionFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNSettingCollectionFooterView.m; sourceTree = "<group>"; };
+		715364061E710ACB00102FB6 /* XNSettingCollectionFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNSettingCollectionFooterView.xib; sourceTree = "<group>"; };
 		7174296A1D845B5400EC2910 /* XNLiNing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XNLiNing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7174296E1D845B5400EC2910 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		717429701D845B5400EC2910 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -455,12 +458,14 @@
 		7121E9071E681EE200EF8D4B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				710972B11E6E9053000DEA1E /* XNSettingHeaderView.h */,
-				710972B21E6E9053000DEA1E /* XNSettingHeaderView.m */,
-				710972B41E6E905C000DEA1E /* XNSettingHeaderView.xib */,
 				710972B61E6EA4D4000DEA1E /* XNSettingCell.h */,
 				710972B71E6EA4D4000DEA1E /* XNSettingCell.m */,
-				710972B81E6EA4D4000DEA1E /* XNSettingCell.xib */,
+				715363FF1E7106F600102FB6 /* XNSettingCollectionHeaderView.h */,
+				715364001E7106F600102FB6 /* XNSettingCollectionHeaderView.m */,
+				715364011E7106F600102FB6 /* XNSettingCollectionHeaderView.xib */,
+				715364041E710ACB00102FB6 /* XNSettingCollectionFooterView.h */,
+				715364051E710ACB00102FB6 /* XNSettingCollectionFooterView.m */,
+				715364061E710ACB00102FB6 /* XNSettingCollectionFooterView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -678,12 +683,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				710972B51E6E905C000DEA1E /* XNSettingHeaderView.xib in Resources */,
 				7121E9031E681EBF00EF8D4B /* XNTaskController.xib in Resources */,
+				715364031E7106F600102FB6 /* XNSettingCollectionHeaderView.xib in Resources */,
 				7174297D1D845B5400EC2910 /* LaunchScreen.storyboard in Resources */,
 				7174297A1D845B5400EC2910 /* Assets.xcassets in Resources */,
-				710972BA1E6EA4D4000DEA1E /* XNSettingCell.xib in Resources */,
 				7121E8F91E681E8800EF8D4B /* XNContactListController.xib in Resources */,
+				715364081E710ACB00102FB6 /* XNSettingCollectionFooterView.xib in Resources */,
 				7121E8FE1E681EA800EF8D4B /* XNChatListController.xib in Resources */,
 				71144F1D1E69091A003EDBFC /* XNBaseViewController.xib in Resources */,
 				710630981E6964E1008A181D /* XNMessageListController.xib in Resources */,
@@ -747,6 +752,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				715364021E7106F600102FB6 /* XNSettingCollectionHeaderView.m in Sources */,
 				7102E11C1E66AB4E006117B6 /* NSDate+Ext.m in Sources */,
 				71B7DB001E6D58690052E450 /* XNAlertView.m in Sources */,
 				7102E1201E66AB4E006117B6 /* UIImage+Reflection.m in Sources */,
@@ -756,7 +762,6 @@
 				7102E11E1E66AB4E006117B6 /* NSString+Ext.m in Sources */,
 				7102E12D1E66AB59006117B6 /* RWDatabase.m in Sources */,
 				713F4CF01E6FB79300CDC534 /* XNFrashLayer.m in Sources */,
-				710972B31E6E9053000DEA1E /* XNSettingHeaderView.m in Sources */,
 				7102E12E1E66AB59006117B6 /* RWDatabaseManager.m in Sources */,
 				71B7DB031E6D5EC70052E450 /* RWUserDefaults.m in Sources */,
 				7121E8FD1E681EA800EF8D4B /* XNChatListController.m in Sources */,
@@ -771,6 +776,7 @@
 				710972B91E6EA4D4000DEA1E /* XNSettingCell.m in Sources */,
 				7121E8DF1E6813D300EF8D4B /* AppDelegate+Reachability.m in Sources */,
 				71B7DB0A1E6D5FE30052E450 /* XNUserDefaults.m in Sources */,
+				715364071E710ACB00102FB6 /* XNSettingCollectionFooterView.m in Sources */,
 				7121E90B1E681F1B00EF8D4B /* XNSettingController.m in Sources */,
 				7102E1381E66BE15006117B6 /* XNBaseNavigationController.m in Sources */,
 				7102E1231E66AB4E006117B6 /* XNSimpleTool.m in Sources */,

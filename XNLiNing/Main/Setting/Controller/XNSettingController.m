@@ -7,19 +7,21 @@
 //
 
 #import "XNSettingController.h"
-#import "XNSettingHeaderView.h"
 #import "XNSettingCell.h"
+#import "XNSettingCollectionHeaderView.h"
+#import "XNSettingCollectionFooterView.h"
+#import "XNLoginController.h"
 
 @interface XNSettingController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
-
-@property (strong, nonatomic) XNSettingHeaderView *topView;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *collectionViewConH;
 
 @end
 
-static NSString *headerId = @"XNSettingHeaderView";
+static NSString *headerId = @"XNSettingCollectionHeaderView";
+static NSString *footerId = @"XNSettingCollectionFooterView";
+static NSString *cellId = @"XNSettingCell";
 
 @implementation XNSettingController
 
@@ -27,23 +29,27 @@ static NSString *headerId = @"XNSettingHeaderView";
     [super viewDidLoad];
     
     self.collectionView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
-    [self.collectionView registerClass:[XNSettingCell class] forCellWithReuseIdentifier:@"XNSettingCell"];
+    self.collectionView.backgroundColor = XNAPPNormalBGColor;
+    [self.collectionView registerClass:[XNSettingCell class] forCellWithReuseIdentifier:cellId];
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([XNSettingCollectionHeaderView class])
+                                                    bundle:[NSBundle mainBundle]]
+                                forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+                                       withReuseIdentifier:headerId];
+    [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([XNSettingCollectionFooterView class])
+                                                    bundle:[NSBundle mainBundle]]
+          forSupplementaryViewOfKind:UICollectionElementKindSectionFooter
+                 withReuseIdentifier:footerId];
     
 }
 
 #pragma mark - UICollectionViewDelegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 200;
+    return 20;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    XNSettingCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([XNSettingCell class])
-                                                                    forIndexPath:indexPath];
-    
-    cell.backgroundColor = [UIColor greenColor];
-    if (indexPath.row == 0) {
-        [cell addSubview:self.topView];
-    }
+    XNSettingCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId
+                                                                        forIndexPath:indexPath];
     return cell;
 }
 
@@ -56,9 +62,6 @@ static NSString *headerId = @"XNSettingHeaderView";
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
-        return (CGSize){XNScreen_Width, 200};
-    }
     return (CGSize){(XNScreen_Width-5)/4,(XNScreen_Width-5)/4};
 }
 
@@ -77,13 +80,43 @@ static NSString *headerId = @"XNSettingHeaderView";
     return 1.f;
 }
 
-#pragma mark - Setting && Getting
-- (XNSettingHeaderView *)topView {
-    if (!_topView) {
-        _topView = [XNSettingHeaderView msGetInstance];
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    
+    UICollectionReusableView *reusable = nil;
+    if (kind == UICollectionElementKindSectionHeader) {
+        XNSettingCollectionHeaderView *headerCell = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerId forIndexPath:indexPath];
+        reusable = headerCell;
+    } else if (kind == UICollectionElementKindSectionFooter) {
+        XNSettingCollectionFooterView *footerCell = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:footerId forIndexPath:indexPath];
+        [footerCell setBlock:^(BOOL isLogin) {
+            if (isLogin) {
+                XNUserDefaults *ud = [XNUserDefaults new];
+                ud.userName = @"";
+                ud.userPassword = @"";
+                [XNAlertView showWithTitle:@"退出登录成功" done:^{
+                    UIWindow *window = [[UIApplication sharedApplication].delegate window];
+                    XNLoginController *loginVC = [[XNLoginController alloc] init];
+                    [window setRootViewController:loginVC];
+                }];
+            } else {
+                UIWindow *window = [[UIApplication sharedApplication].delegate window];
+                XNLoginController *loginVC = [[XNLoginController alloc] init];
+                [window setRootViewController:loginVC];
+            }
+        }];
+        reusable = footerCell;
+
     }
-    return _topView;
+    return reusable;
 }
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    return CGSizeMake(XNScreen_Width, 200);
+}
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
+    return CGSizeMake(XNScreen_Width, 80);
+}
+
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
