@@ -10,10 +10,6 @@
 
 @interface XNSettingHeaderView : UIView
 
-@property (weak, nonatomic) IBOutlet UIImageView *headImageView;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *headImageBGView;
-
 + (instancetype)msGetInstance;
 
 @end

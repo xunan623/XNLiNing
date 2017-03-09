@@ -13,7 +13,6 @@
             <connections>
                 <outlet property="collectionView" destination="Nr7-5C-riq" id="1mx-p3-FAo"/>
                 <outlet property="collectionViewConH" destination="VbC-W7-RZq" id="UFQ-Qu-pW9"/>
-                <outlet property="topView" destination="Rnu-OT-OQB" id="Fvr-So-Gol"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Nr7-5C-riq">
-                    <rect key="frame" x="0.0" y="200" width="375" height="467"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2VJ-rg-tOG">
                         <size key="itemSize" width="50" height="50"/>
@@ -36,21 +35,13 @@
                         <outlet property="delegate" destination="-1" id="bNj-bS-WAM"/>
                     </connections>
                 </collectionView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rnu-OT-OQB" customClass="XNSettingHeaderView">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Nr7-5C-riq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="2Ai-yp-N27"/>
                 <constraint firstAttribute="trailing" secondItem="Nr7-5C-riq" secondAttribute="trailing" id="4SQ-kM-eyH"/>
-                <constraint firstAttribute="trailing" secondItem="Rnu-OT-OQB" secondAttribute="trailing" id="7jG-ma-Ua5"/>
-                <constraint firstItem="Rnu-OT-OQB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="DMP-yZ-lzI"/>
                 <constraint firstAttribute="bottom" secondItem="Nr7-5C-riq" secondAttribute="bottom" id="Il5-Tw-fZW"/>
-                <constraint firstItem="Nr7-5C-riq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="200" id="VbC-W7-RZq"/>
-                <constraint firstItem="Rnu-OT-OQB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dD1-AW-kaO"/>
-                <constraint firstItem="Nr7-5C-riq" firstAttribute="top" secondItem="Rnu-OT-OQB" secondAttribute="bottom" id="y0G-EW-GWT"/>
+                <constraint firstItem="Nr7-5C-riq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="VbC-W7-RZq"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <point key="canvasLocation" x="-695" y="-727"/>

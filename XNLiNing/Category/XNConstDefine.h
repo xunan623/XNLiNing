@@ -11,6 +11,7 @@
 
 #define XNAPPNormalBGColor  [UIColor colorWithRed:239/255.0 green:239/255.0 blue:239/255.0 alpha:1]
 #define XNAPPNormalColor    XNColor_RGB(237, 73, 37)
+#define XNAPPASSISTColor    XNColor_RGB(0, 193, 222)
 
 #import "UIView+EasyShow.h"
 #import "Foundation+Log.m"
