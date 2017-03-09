@@ -12,6 +12,7 @@
 #import "XNContactListController.h"
 #import "XNTaskController.h"
 #import "XNChatListController.h"
+#import "XNDatabaseService.h"
 
 @interface XNTabbarController ()
 
@@ -40,6 +41,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [XNDatabaseService openDB];
     
     [self setupChildVC:[[XNContactListController alloc] init] title:@"首页" image:@"tabbar_home" selectedImage:@"tabbar_homeSelected"];
     [self setupChildVC:[[XNChatListController alloc] init] title:@"消息" image:@"tabbar_message" selectedImage:@"tabbar_messageSelected"];

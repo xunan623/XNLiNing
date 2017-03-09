@@ -50,6 +50,9 @@
 		715364031E7106F600102FB6 /* XNSettingCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 715364011E7106F600102FB6 /* XNSettingCollectionHeaderView.xib */; };
 		715364071E710ACB00102FB6 /* XNSettingCollectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 715364051E710ACB00102FB6 /* XNSettingCollectionFooterView.m */; };
 		715364081E710ACB00102FB6 /* XNSettingCollectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 715364061E710ACB00102FB6 /* XNSettingCollectionFooterView.xib */; };
+		7167DDCF1E712AB400F61886 /* store_data.db in Resources */ = {isa = PBXBuildFile; fileRef = 7167DDCE1E712AB400F61886 /* store_data.db */; };
+		7167DDD41E712B5600F61886 /* XNDatabaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7167DDD31E712B5600F61886 /* XNDatabaseService.m */; };
+		7167DDD71E712E1B00F61886 /* XNContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7167DDD61E712E1B00F61886 /* XNContactModel.m */; };
 		7174296F1D845B5400EC2910 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7174296E1D845B5400EC2910 /* main.m */; };
 		717429721D845B5400EC2910 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 717429711D845B5400EC2910 /* AppDelegate.m */; };
 		7174297A1D845B5400EC2910 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 717429791D845B5400EC2910 /* Assets.xcassets */; };
@@ -142,6 +145,11 @@
 		715364041E710ACB00102FB6 /* XNSettingCollectionFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNSettingCollectionFooterView.h; sourceTree = "<group>"; };
 		715364051E710ACB00102FB6 /* XNSettingCollectionFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNSettingCollectionFooterView.m; sourceTree = "<group>"; };
 		715364061E710ACB00102FB6 /* XNSettingCollectionFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNSettingCollectionFooterView.xib; sourceTree = "<group>"; };
+		7167DDCE1E712AB400F61886 /* store_data.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = store_data.db; sourceTree = "<group>"; };
+		7167DDD21E712B5600F61886 /* XNDatabaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNDatabaseService.h; sourceTree = "<group>"; };
+		7167DDD31E712B5600F61886 /* XNDatabaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNDatabaseService.m; sourceTree = "<group>"; };
+		7167DDD51E712E1B00F61886 /* XNContactModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNContactModel.h; sourceTree = "<group>"; };
+		7167DDD61E712E1B00F61886 /* XNContactModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNContactModel.m; sourceTree = "<group>"; };
 		7174296A1D845B5400EC2910 /* XNLiNing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XNLiNing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7174296E1D845B5400EC2910 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		717429701D845B5400EC2910 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -481,6 +489,23 @@
 			path = XNRefreshView;
 			sourceTree = "<group>";
 		};
+		7167DDD01E712B2800F61886 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7167DDD11E712B2800F61886 /* DataBaseService */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		7167DDD11E712B2800F61886 /* DataBaseService */ = {
+			isa = PBXGroup;
+			children = (
+				7167DDD21E712B5600F61886 /* XNDatabaseService.h */,
+				7167DDD31E712B5600F61886 /* XNDatabaseService.m */,
+			);
+			path = DataBaseService;
+			sourceTree = "<group>";
+		};
 		717429611D845B5400EC2910 = {
 			isa = PBXGroup;
 			children = (
@@ -527,6 +552,7 @@
 		717429851D845C5500EC2910 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7167DDD01E712B2800F61886 /* Service */,
 				7121E9041E681EE200EF8D4B /* Setting */,
 				7121E8CB1E68035900EF8D4B /* TabBarVC */,
 				7121E8ED1E681D5A00EF8D4B /* Message */,
@@ -578,6 +604,9 @@
 		7194D0AA1E666AF200C463A3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7167DDCE1E712AB400F61886 /* store_data.db */,
+				7167DDD51E712E1B00F61886 /* XNContactModel.h */,
+				7167DDD61E712E1B00F61886 /* XNContactModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -686,6 +715,7 @@
 				7121E9031E681EBF00EF8D4B /* XNTaskController.xib in Resources */,
 				715364031E7106F600102FB6 /* XNSettingCollectionHeaderView.xib in Resources */,
 				7174297D1D845B5400EC2910 /* LaunchScreen.storyboard in Resources */,
+				7167DDCF1E712AB400F61886 /* store_data.db in Resources */,
 				7174297A1D845B5400EC2910 /* Assets.xcassets in Resources */,
 				7121E8F91E681E8800EF8D4B /* XNContactListController.xib in Resources */,
 				715364081E710ACB00102FB6 /* XNSettingCollectionFooterView.xib in Resources */,
@@ -785,11 +815,13 @@
 				7102E1211E66AB4E006117B6 /* UITextField+Ext.m in Sources */,
 				7102E1221E66AB4E006117B6 /* XNGCDHelper.m in Sources */,
 				7102E11D1E66AB4E006117B6 /* NSObject+Notification.m in Sources */,
+				7167DDD71E712E1B00F61886 /* XNContactModel.m in Sources */,
 				71B7DB071E6D5F460052E450 /* XNSaveUserDefault.m in Sources */,
 				7121E9021E681EBF00EF8D4B /* XNTaskController.m in Sources */,
 				7102E11B1E66AB4E006117B6 /* Foundation+Log.m in Sources */,
 				7121E8D11E68039000EF8D4B /* XNTabbarController.m in Sources */,
 				7102E12C1E66AB59006117B6 /* CocoaCracker.m in Sources */,
+				7167DDD41E712B5600F61886 /* XNDatabaseService.m in Sources */,
 				7102E1321E66ADDA006117B6 /* XNBaseReq.m in Sources */,
 				7121E8D51E68063000EF8D4B /* XNLoginController.m in Sources */,
 				713F4CED1E6FB75F00CDC534 /* XNHeaderView.m in Sources */,

@@ -10,6 +10,9 @@
 
 #import "XNContactListController.h"
 #import "XNMessageListController.h"
+#import "XNDatabaseService.h"
+#import "XNContactModel.h"
+#import <MJExtension.h>
 
 
 @interface XNContactListController ()<UITableViewDelegate, UITableViewDataSource>
@@ -31,14 +34,21 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.tableView.mj_header = [XNHeaderView headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
-
+    
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)loadNewData {
+    [self.dataArray removeAllObjects];
     __weak typeof(self) weakSelf = self;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    [XNDatabaseService eachAllContactsData:^(NSDictionary *dict) {
+        XNLog(@"%@", dict);
+        XNContactModel *model = [XNContactModel mj_objectWithKeyValues:dict];
+        [weakSelf.dataArray addObject:model];
+    } done:^{
+        [weakSelf.tableView reloadData];
         [weakSelf endRefresh];
-    });
+    }];
 }
 
 - (void)endRefresh {
@@ -61,6 +71,8 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
     }
+    XNContactModel *model = self.dataArray[indexPath.row];
+    cell.textLabel.text = model.name;
     return cell;
 }
 
