@@ -45,11 +45,13 @@
     
     [self setupTableView];
     
+    UITabBarItem * item=[self.tabBarController.tabBar.items objectAtIndex:1];
+    item.badgeValue= @"2";
 
 }
 
 - (void)setupTableView {
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    
     self.tableView.backgroundColor = XNAPPNormalBGColor;
     self.tableView.mj_header = [XNHeaderView headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     [self.tableView.mj_header beginRefreshing];
@@ -79,68 +81,11 @@
 
         [weakSelf.tableView reloadData];
         [weakSelf.tableView.mj_header endRefreshing];
-
     }];
 }
 
-#pragma mark - UITableViewDataSource
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [self.dataSource count];
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    [tableView tableViewDisplayWithMsg:@"暂无消息" withRowCount:self.dataSource.count];
-    return [[self.dataSource objectAtIndex:section] count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    XNContactCell *cell = [XNContactCell msGetInstance];
-    XNContactModel *model = [[self.dataSource objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    cell.nameLabel.text = model.name;
-    return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if ([[self.dataSource objectAtIndex:section] count]== 0) return 0;
-    return 22;
-}
 /**
- *  section头部视图的View   组的头部
- */
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    if ([[self.dataSource objectAtIndex:section] count] == 0) return nil;
-    
-    UIView *contentView = [[UIView alloc] init];
-    contentView.backgroundColor = XNAPPNormalBGColor;
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, 22)];
-    label.backgroundColor = [UIColor clearColor];
-    label.textColor = XNColor_RGB(170, 170, 170);
-    label.font = [UIFont systemFontOfSize:15.0f];
-    [label setText:[self.sectionTitles objectAtIndex:section]];
-    [contentView addSubview:label];
-    return contentView;
-}
-
-/**
- *  索引
- */
-- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
-{
-    NSMutableArray * existTitles = [NSMutableArray array];
-    //section数组为空的title过滤掉，不显示
-    for (int i = 0; i < [self.sectionTitles count]; i++) {
-        if ([[self.dataSource objectAtIndex:i] count] > 0) {
-            [existTitles addObject:[self.sectionTitles objectAtIndex:i]];
-        }
-    }
-    return existTitles;
-}
-
-
-/**
- *  索引核心
+ * 排序
  */
 - (NSMutableArray *)sortDataArray:(NSArray *)dataArray
 {
@@ -186,6 +131,59 @@
     }
     
     return sortedArray;
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return [self.dataSource count];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
+    [tableView tableViewDisplayWithMsg:@"暂无消息" withRowCount:self.dataSource.count];
+    return [[self.dataSource objectAtIndex:section] count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    XNContactCell *cell = [XNContactCell msGetInstance];
+    XNContactModel *model = [[self.dataSource objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    cell.nameLabel.text = model.name;
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if ([[self.dataSource objectAtIndex:section] count]== 0) return 0;
+    return 22;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    if ([[self.dataSource objectAtIndex:section] count] == 0) return nil;
+    
+    UIView *contentView = [[UIView alloc] init];
+    contentView.backgroundColor = XNAPPNormalBGColor;
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 0, 100, 22)];
+    label.backgroundColor = [UIColor clearColor];
+    label.textColor = XNColor_RGB(170, 170, 170);
+    label.font = [UIFont systemFontOfSize:15.0f];
+    [label setText:[self.sectionTitles objectAtIndex:section]];
+    [contentView addSubview:label];
+    return contentView;
+}
+
+/**
+ *  索引
+ */
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    NSMutableArray * existTitles = [NSMutableArray array];
+    //section数组为空的title过滤掉，不显示
+    for (int i = 0; i < [self.sectionTitles count]; i++) {
+        if ([[self.dataSource objectAtIndex:i] count] > 0) {
+            [existTitles addObject:[self.sectionTitles objectAtIndex:i]];
+        }
+    }
+    return existTitles;
 }
 
 #pragma mark - 消息列表
