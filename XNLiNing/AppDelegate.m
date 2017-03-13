@@ -11,6 +11,9 @@
 #import "AppDelegate+Reachability.h"
 #import "XNUserDefaults.h"
 #import "UIWindow+Extension.h"
+#import "AppDelegate+XNRongIMKit.h"
+#import <RongIMLib/RongIMLib.h>
+#import <RongIMKit/RongIMKit.h>
 
 
 @interface AppDelegate ()
@@ -24,7 +27,12 @@
     
     [[RWUserDefaults shareInstance] registerClass:[XNUserDefaults class]];
     
+    [AppDelegate rong_application:application didFinishLaunchingWithOptions:launchOptions];
+    
+    [self setupRCData];
+    
     [self reachabilityInternet];
+    
     
     self.window = [[UIWindow alloc] init];
     self.window.frame = [UIScreen mainScreen].bounds;
@@ -42,15 +50,23 @@
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
+    NSInteger ToatalunreadMsgCount = (NSInteger)[[RCIMClient sharedRCIMClient] getUnreadCount:@[@(ConversationType_PRIVATE),@(ConversationType_DISCUSSION),@(ConversationType_GROUP),@(ConversationType_CHATROOM)]];
+    [UIApplication sharedApplication].applicationIconBadgeNumber = ToatalunreadMsgCount;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
+}
+
+
++ (AppDelegate* )shareAppDelegate {
+    return (AppDelegate*)[UIApplication sharedApplication].delegate;
 }
 
 @end

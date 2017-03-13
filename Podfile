@@ -11,5 +11,7 @@ pod 'MJExtension', '~> 3.0.13'
 pod 'MJRefresh', '~> 3.1.12'
 pod 'JSONModel', '~> 1.7.0'
 pod 'RATreeView', '~> 2.1.2'
+pod 'RongCloudIM/IMLib', '~> 2.8.3'
+pod 'RongCloudIM/IMKit', '~> 2.8.3'
 
 end

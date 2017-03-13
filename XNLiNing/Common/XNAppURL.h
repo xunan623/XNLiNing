@@ -30,4 +30,9 @@ FOUNDATION_EXTERN NSString *const AppRequestURL_findUserInfoApp;        // 获�
 FOUNDATION_EXTERN NSString *const AppRequestURL_getItemImgsApp;         // 图片墙
 FOUNDATION_EXTERN NSString *const AppRequestURL_reportApp;              // 查看报表
 
+
+FOUNDATION_EXTERN NSString *const AppRongCloudAppKey;                   // 荣云key
+FOUNDATION_EXTERN NSString *const AA55_Token;                           // AA55_Token
+
+
 @end

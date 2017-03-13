@@ -21,7 +21,7 @@
     UINavigationBar *bar = [UINavigationBar appearance];
     [bar setTintColor:[UIColor whiteColor]];
 
-    [bar setTitleTextAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:20],
+    [bar setTitleTextAttributes:@{NSFontAttributeName : [UIFont systemFontOfSize:18],
                                   NSForegroundColorAttributeName : [UIColor whiteColor]}];
     [bar setBarTintColor:XNAPPNormalColor];
     [bar setAlpha:1];

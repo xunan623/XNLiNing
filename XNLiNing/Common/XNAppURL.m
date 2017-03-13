@@ -11,8 +11,12 @@
 @implementation XNAppURL
 #ifdef DEBUG
 NSString *const AppRequestURL = @"http://124.207.27.112/vi/app/";
+NSString *const AppRongCloudAppKey = @"qd46yzrfq02of";
+
 #else
 NSString *const AppRequestURL = @"http://lnrts.li-ning.com.cn/vi/app/";
+NSString *const AppRongCloudAppKey = @"qd46yzrfq02of";
+
 #endif
 
 NSString *const AppRequestURL_ContactTree = @"getOrgansanListByUpdateApp.action?param.maxPage=0&param.currPage=0";
@@ -33,5 +37,7 @@ NSString *const AppRequestURL_findUserInfoApp = @"findUserInfoApp.action";
 NSString *const AppRequestURL_getItemImgsApp = @"getItemImgsApp.action";
 NSString *const AppRequestURL_reportApp = @"reportApp.action";
 
+
+NSString *const AA55_Token = @"gh9kuhnIT9i3Q1bAtT5/8qEVsRTE5IWpizX0t/0HLwg/y+co1d7yr/g1ThX6ti7AoljwioKlrmzbsNrDdWyPmw==";
 
 @end

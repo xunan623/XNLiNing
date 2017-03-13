@@ -9,12 +9,13 @@
 //
 
 #import "XNContactListController.h"
-#import "XNMessageListController.h"
 #import "XNDatabaseService.h"
 #import "XNContactModel.h"
 #import <MJExtension.h>
 #import "ChineseToPinyin.h"
 #import "XNContactCell.h"
+#import <RongIMKit/RongIMKit.h>
+
 
 
 @interface XNContactListController ()<UITableViewDelegate, UITableViewDataSource>
@@ -40,14 +41,25 @@
     return _sectionTitles;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.navigationController.navigationBar.hidden = YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setupNav];
     
     [self setupTableView];
     
     UITabBarItem * item=[self.tabBarController.tabBar.items objectAtIndex:1];
     item.badgeValue= @"2";
 
+}
+
+- (void)setupNav {
+    self.navigationItem.title = @"联系人";
 }
 
 - (void)setupTableView {
@@ -73,7 +85,6 @@
     __weak typeof(self) weakSelf = self;
     NSMutableArray *contactsSource = [NSMutableArray array];
     [XNDatabaseService eachAllContactsData:^(NSDictionary *dict) {
-        XNLog(@"%@", dict);
         XNContactModel *model = [XNContactModel mj_objectWithKeyValues:dict];
         [contactsSource addObject:model];
     } done:^{
@@ -171,6 +182,22 @@
     return contentView;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    XNContactModel *model = [[self.dataSource objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    
+    RCConversationViewController *chat = [[RCConversationViewController alloc]
+                                          initWithConversationType:ConversationType_PRIVATE
+                                                          targetId:model.id];
+    //设置聊天会话界面要显示的标题
+    chat.title = model.name;
+    chat.hidesBottomBarWhenPushed = YES;
+    self.navigationController.navigationBar.hidden = NO;
+    //显示聊天会话界面
+    [self.navigationController pushViewController:chat animated:YES];
+}
+
+
 /**
  *  索引
  */
@@ -189,9 +216,6 @@
 #pragma mark - 消息列表
 
 - (IBAction)messageBtnClick {
-    XNMessageListController *messageListVC = [[XNMessageListController alloc] init];
-    messageListVC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:messageListVC animated:YES];
 }
 
 
