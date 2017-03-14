@@ -10,7 +10,9 @@
 
 @implementation XNAppURL
 #ifdef DEBUG
-NSString *const AppRequestURL = @"http://124.207.27.112/vi/app/";
+//NSString *const AppRequestURL = @"http://124.207.27.112/vi/app/";
+NSString *const AppRequestURL = @"http://lnrts.li-ning.com.cn/vi/app/";
+
 NSString *const AppRongCloudAppKey = @"qd46yzrfq02of";
 
 #else

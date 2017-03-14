@@ -159,7 +159,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     XNContactCell *cell = [XNContactCell msGetInstance];
     XNContactModel *model = [[self.dataSource objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    cell.nameLabel.text = model.name;
+    cell.nameLabel.text = [NSString stringWithFormat:@"%@_%@", model.name ,model.id];
     return cell;
 }
 

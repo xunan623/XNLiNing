@@ -41,7 +41,6 @@
     XNBaseNavigationBar * navBar = [[XNBaseNavigationBar alloc] init];
     navBar.titleLabel.text = @"消息列表";
     [self.view addSubview:navBar];
-    
     self.conversationListTableView.frame = CGRectMake(0, 44, XNScreen_Width, XNScreen_Height - 44);
 }
 
@@ -57,5 +56,6 @@
     conversationVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:conversationVC animated:YES];
 }
+
 
 @end

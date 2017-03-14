@@ -2,6 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIApplicationShortcutItemType</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortItemType</key>
+			<string>com.aist.share</string>
+			<key>UIApplicationShortItemTitle</key>
+			<string>分享</string>
+		</dict>
+	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>cameraDesciption</string>
 	<key>NSPhotoLibraryUsageDescription</key>

@@ -14,6 +14,7 @@
 #import "AppDelegate+XNRongIMKit.h"
 #import <RongIMLib/RongIMLib.h>
 #import <RongIMKit/RongIMKit.h>
+#import "AppDelegate+XN3DTouch.h"
 
 
 @interface AppDelegate ()
@@ -30,6 +31,8 @@
     [AppDelegate rong_application:application didFinishLaunchingWithOptions:launchOptions];
     
     [self setupRCData];
+    
+    [AppDelegate touch_application:application didFinishLaunchingWithOptions:launchOptions];
     
     [self reachabilityInternet];
     
@@ -64,6 +67,18 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
 }
 
+
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void (^)(BOOL))completionHandler {
+    
+    [AppDelegate touch_application:application performActionForShortcutItem:shortcutItem completionHandler:completionHandler];
+    
+    if([shortcutItem.type isEqualToString:@"com.mycompany.myapp.one"]){
+        NSArray *arr = @[@"hello 3D Touch"];
+        UIActivityViewController *vc = [[UIActivityViewController alloc]initWithActivityItems:arr applicationActivities:nil];
+        [self.window.rootViewController presentViewController:vc animated:YES completion:^{
+        }];
+    }
+}
 
 + (AppDelegate* )shareAppDelegate {
     return (AppDelegate*)[UIApplication sharedApplication].delegate;
