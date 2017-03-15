@@ -7,6 +7,7 @@
 //
 
 #import "XNBaseViewController.h"
+#import <WHC_KeyboardManager.h>
 
 @interface XNBaseViewController ()
 
@@ -27,7 +28,8 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = XNAPPNormalBGColor;
-
+    
+    [[WHC_KeyboardManager share] addMonitorViewController:self];
 }
 
 #pragma mark - 手势返回相关
