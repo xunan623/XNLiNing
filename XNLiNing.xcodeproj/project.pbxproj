@@ -52,6 +52,7 @@
 		7134C7B91E72AC1E005BC6F0 /* RCUserInfo+XNAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 7134C7B81E72AC1E005BC6F0 /* RCUserInfo+XNAddition.m */; };
 		713F4CED1E6FB75F00CDC534 /* XNHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F4CEC1E6FB75F00CDC534 /* XNHeaderView.m */; };
 		713F4CF01E6FB79300CDC534 /* XNFrashLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F4CEF1E6FB79300CDC534 /* XNFrashLayer.m */; };
+		715137B91E78E4AE00399BC0 /* XNTaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 715137B81E78E4AE00399BC0 /* XNTaskModel.m */; };
 		715364021E7106F600102FB6 /* XNSettingCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 715364001E7106F600102FB6 /* XNSettingCollectionHeaderView.m */; };
 		715364031E7106F600102FB6 /* XNSettingCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 715364011E7106F600102FB6 /* XNSettingCollectionHeaderView.xib */; };
 		715364071E710ACB00102FB6 /* XNSettingCollectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 715364051E710ACB00102FB6 /* XNSettingCollectionFooterView.m */; };
@@ -162,6 +163,8 @@
 		713F4CEC1E6FB75F00CDC534 /* XNHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNHeaderView.m; sourceTree = "<group>"; };
 		713F4CEE1E6FB79300CDC534 /* XNFrashLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNFrashLayer.h; sourceTree = "<group>"; };
 		713F4CEF1E6FB79300CDC534 /* XNFrashLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNFrashLayer.m; sourceTree = "<group>"; };
+		715137B71E78E4AE00399BC0 /* XNTaskModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNTaskModel.h; sourceTree = "<group>"; };
+		715137B81E78E4AE00399BC0 /* XNTaskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNTaskModel.m; sourceTree = "<group>"; };
 		715363FF1E7106F600102FB6 /* XNSettingCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNSettingCollectionHeaderView.h; sourceTree = "<group>"; };
 		715364001E7106F600102FB6 /* XNSettingCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNSettingCollectionHeaderView.m; sourceTree = "<group>"; };
 		715364011E7106F600102FB6 /* XNSettingCollectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNSettingCollectionHeaderView.xib; sourceTree = "<group>"; };
@@ -473,6 +476,8 @@
 		7121E8F31E681D5A00EF8D4B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				715137B71E78E4AE00399BC0 /* XNTaskModel.h */,
+				715137B81E78E4AE00399BC0 /* XNTaskModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -850,6 +855,7 @@
 			files = (
 				715364021E7106F600102FB6 /* XNSettingCollectionHeaderView.m in Sources */,
 				7102E11C1E66AB4E006117B6 /* NSDate+Ext.m in Sources */,
+				715137B91E78E4AE00399BC0 /* XNTaskModel.m in Sources */,
 				71B7DB001E6D58690052E450 /* XNAlertView.m in Sources */,
 				71CDBAD31E72376D006AA684 /* AppDelegate+XNRongIMKit.m in Sources */,
 				7102E1201E66AB4E006117B6 /* UIImage+Reflection.m in Sources */,

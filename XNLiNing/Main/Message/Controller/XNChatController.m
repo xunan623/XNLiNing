@@ -28,7 +28,7 @@
     navBar.backButton.hidden = NO;
     [self.view addSubview:navBar];
     
-    self.conversationMessageCollectionView.frame = CGRectMake(0, 44, XNScreen_Width, XNScreen_Height - 44);
+    self.conversationMessageCollectionView.frame = CGRectMake(0, 64, XNScreen_Width, XNScreen_Height - 64);
 }
 
 

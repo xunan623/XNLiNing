@@ -91,7 +91,7 @@ static CGFloat ViewHeight = 64;
             self.alpha = 0.0;
             self.transform = CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -ViewHeight);
         } completion:^(BOOL finished) {
-            block();
+            if (block) block();
             [self removeFromSuperview];
         }];
     });

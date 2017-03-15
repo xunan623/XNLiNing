@@ -52,9 +52,6 @@
     [self setupNav];
     
     [self setupTableView];
-    
-    UITabBarItem * item=[self.tabBarController.tabBar.items objectAtIndex:1];
-    item.badgeValue= @"2";
 
 }
 

@@ -42,6 +42,9 @@
     navBar.titleLabel.text = @"消息列表";
     [self.view addSubview:navBar];
     self.conversationListTableView.frame = CGRectMake(0, 44, XNScreen_Width, XNScreen_Height - 44);
+ 
+    UITabBarItem * item=[self.tabBarController.tabBar.items objectAtIndex:1];
+    item.badgeValue= @"2";
 }
 
 

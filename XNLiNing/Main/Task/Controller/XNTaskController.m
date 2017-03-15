@@ -8,6 +8,7 @@
 
 #import "XNTaskController.h"
 #import "XNAppURL.h"
+#import "XNTaskModel.h"
 
 @interface XNTaskController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -29,18 +30,46 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.mj_header = [XNHeaderView headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    [self.tableView.mj_header beginRefreshing];
+    
     
 }
 
 - (void)loadNewData {
-    
+    self.page = 1;
+    NSDictionary *params = @{@"param.userId"        : [XNUserDefaults new].userName,
+                             @"param.pdaNumber"     : @"",
+                             @"param.roleProperty"  : @"",
+                             @"param.maxPage"       : @(0),
+                             @"param.updateDate"    : @"",
+                             @"param.currPage"      : @(self.page)};
+    __weak typeof(self) weakSelf = self;
+    [XNBaseReq requestGetWithUrl:AppRequestURL_followApp
+                          params:params
+                 responseSucceed:^(NSDictionary *res) {
+        
+        [weakSelf.tableView.mj_header endRefreshing];
+        XNTaskModel *model = [[XNTaskModel alloc] initWithDictionary:res error:nil];
+        if ([model.retVal boolValue]) {
+            [weakSelf.dataArray addObjectsFromArray:model.list];
+            [weakSelf.tableView reloadData];
+        } else {
+            [XNAlertView showWithTitle:model.failMessage];
+        }
+    } responseFailed:^(NSString *error) {
+        [weakSelf.tableView.mj_header endRefreshing];
+        [XNAlertView showWithTitle:error];
+
+    }];
 }
 
 
 #pragma mark - TableViewDelegate
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    [tableView tableViewDisplayWithMsg:@"暂无数据" withRowCount:self.dataArray.count];
+    return self.dataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
