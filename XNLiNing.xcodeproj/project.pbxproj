@@ -53,6 +53,7 @@
 		713F4CED1E6FB75F00CDC534 /* XNHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F4CEC1E6FB75F00CDC534 /* XNHeaderView.m */; };
 		713F4CF01E6FB79300CDC534 /* XNFrashLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 713F4CEF1E6FB79300CDC534 /* XNFrashLayer.m */; };
 		715137B91E78E4AE00399BC0 /* XNTaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 715137B81E78E4AE00399BC0 /* XNTaskModel.m */; };
+		715137BD1E78EF3200399BC0 /* XNSaveModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 715137BC1E78EF3200399BC0 /* XNSaveModel.m */; };
 		715364021E7106F600102FB6 /* XNSettingCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 715364001E7106F600102FB6 /* XNSettingCollectionHeaderView.m */; };
 		715364031E7106F600102FB6 /* XNSettingCollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 715364011E7106F600102FB6 /* XNSettingCollectionHeaderView.xib */; };
 		715364071E710ACB00102FB6 /* XNSettingCollectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 715364051E710ACB00102FB6 /* XNSettingCollectionFooterView.m */; };
@@ -165,6 +166,8 @@
 		713F4CEF1E6FB79300CDC534 /* XNFrashLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNFrashLayer.m; sourceTree = "<group>"; };
 		715137B71E78E4AE00399BC0 /* XNTaskModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNTaskModel.h; sourceTree = "<group>"; };
 		715137B81E78E4AE00399BC0 /* XNTaskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNTaskModel.m; sourceTree = "<group>"; };
+		715137BB1E78EF3200399BC0 /* XNSaveModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNSaveModel.h; sourceTree = "<group>"; };
+		715137BC1E78EF3200399BC0 /* XNSaveModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNSaveModel.m; sourceTree = "<group>"; };
 		715363FF1E7106F600102FB6 /* XNSettingCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNSettingCollectionHeaderView.h; sourceTree = "<group>"; };
 		715364001E7106F600102FB6 /* XNSettingCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNSettingCollectionHeaderView.m; sourceTree = "<group>"; };
 		715364011E7106F600102FB6 /* XNSettingCollectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNSettingCollectionHeaderView.xib; sourceTree = "<group>"; };
@@ -288,6 +291,8 @@
 			children = (
 				71F618301E6972A600E5F223 /* XNLoginModel.h */,
 				71F618311E6972A600E5F223 /* XNLoginModel.m */,
+				715137BB1E78EF3200399BC0 /* XNSaveModel.h */,
+				715137BC1E78EF3200399BC0 /* XNSaveModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -899,6 +904,7 @@
 				7134C7B11E728512005BC6F0 /* XNMessageListCell.m in Sources */,
 				7167DDD71E712E1B00F61886 /* XNContactModel.m in Sources */,
 				71B7DB071E6D5F460052E450 /* XNSaveUserDefault.m in Sources */,
+				715137BD1E78EF3200399BC0 /* XNSaveModel.m in Sources */,
 				7121E9021E681EBF00EF8D4B /* XNTaskController.m in Sources */,
 				7102E11B1E66AB4E006117B6 /* Foundation+Log.m in Sources */,
 				7121E8D11E68039000EF8D4B /* XNTabbarController.m in Sources */,

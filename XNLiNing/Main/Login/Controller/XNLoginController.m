@@ -13,6 +13,8 @@
 #import "XNLoginModel.h"
 #import "XNSaveUserDefault.h"
 #import "UIWindow+Extension.h"
+#import <WHC_ModelSqlite.h>
+#import "XNSaveModel.h"
 
 @interface XNLoginController ()<UITextFieldDelegate, UIViewControllerTransitioningDelegate>
 
@@ -27,6 +29,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [WHCSqlite removeAllModel];
+    NSDictionary *dict = @{ @"failMessage" : @"请求成功",
+                            @"maxPage"     : @"1",
+                            @"userId"      : [XNUserDefaults new].userName,
+                            @"retVal"      : @"0",
+                            @"record"      : @"新字段",
+                            @"content"     : @{ @"name"     : @"许楠",
+                                                @"age"      : @(18),
+                                                @"height"   : @58.4
+                                                }
+                           };
+    XNSaveModel *model = [[XNSaveModel alloc] initWithDictionary:dict error:nil];
+    XNLog(@"%@----",model);
+    
+    // 插入
+    [WHCSqlite insert:model];
+    
+    NSArray *queryArray = [WHCSqlite query:[XNSaveModel class]];
+    XNLog(@"%@-----jaskdlfj", queryArray);
+    
+    /// 9.1 获取数据库版本号
+    NSString * version = [WHCSqlite versionWithModel:[XNSaveModel class]];
+    XNLog(@"version = %@",version);
+    
+    /// 8.1 获取数据库本地路径
+    NSString * path = [WHCSqlite localPathWithModel:[XNSaveModel class]];
+    XNLog(@"localPath = %@",path);
     
     [self setupUI];
 }

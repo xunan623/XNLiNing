@@ -13,6 +13,8 @@
 @implementation UIWindow (Extension)
 
 - (void)switchRootViewController {
+    self.rootViewController = [[XNLoginController alloc] init];
+    return;
     NSString *key = @"CFBundleVersion";
     //存储在沙盒中得版本号(上一次的使用版本)
     NSString *lastVersion =  [[NSUserDefaults standardUserDefaults] objectForKey:key];
