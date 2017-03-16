@@ -33,7 +33,7 @@
     [WHCSqlite removeAllModel];
     NSDictionary *dict = @{ @"failMessage" : @"请求成功",
                             @"maxPage"     : @"1",
-                            @"userId"      : [XNUserDefaults new].userName,
+                            @"userId"      : [XNUserDefaults new].userName ? [XNUserDefaults new].userName : @"",
                             @"retVal"      : @"0",
                             @"record"      : @"新字段",
                             @"content"     : @{ @"name"     : @"许楠",

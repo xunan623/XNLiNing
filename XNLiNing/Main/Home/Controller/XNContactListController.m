@@ -15,13 +15,16 @@
 #import "ChineseToPinyin.h"
 #import "XNContactCell.h"
 #import <RongIMKit/RongIMKit.h>
+#import "XNSearchBar.h"
+#import "XNSearchController.h"
 
 
 
-@interface XNContactListController ()<UITableViewDelegate, UITableViewDataSource>
+@interface XNContactListController ()<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (strong, nonatomic) NSMutableArray *sectionTitles;
+@property (strong, nonatomic) XNSearchBar *searchBar;
 
 @end
 
@@ -39,6 +42,14 @@
         _sectionTitles = [NSMutableArray array];
     }
     return _sectionTitles;
+}
+
+- (XNSearchBar *)searchBar {
+    if (!_searchBar) {
+        _searchBar = [[XNSearchBar alloc] initWithFrame:CGRectMake(0, 0, XNScreen_Width, 44)];
+        _searchBar.delegate = self;
+    }
+    return _searchBar;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -74,6 +85,8 @@
         _tableView.sectionIndexTrackingBackgroundColor = [UIColor clearColor];
     }
     self.tableView.sectionIndexColor = XNColor_RGB(30, 30, 30);
+    
+    self.tableView.tableHeaderView = self.searchBar;
 }
 
 - (void)loadNewData {
@@ -213,7 +226,22 @@
 #pragma mark - 消息列表
 
 - (IBAction)messageBtnClick {
+    
 }
 
 
+
+#pragma mark - 🔌 UISearchBarDelegate Method
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    [self searchHeaderViewClicked:nil];
+}
+#pragma mark - 🔌 CYLSearchHeaderViewDelegate Method
+
+- (void)searchHeaderViewClicked:(id)sender {
+    XNSearchController *controller = [[XNSearchController alloc] init];
+    [controller setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [self  presentViewController:controller animated:YES completion:nil];
+}
 @end

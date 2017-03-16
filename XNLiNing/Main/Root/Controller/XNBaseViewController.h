@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XNLoginTranslation.h"
+#import "XNBaseNavigationBar.h"
 
 @interface XNBaseViewController : UIViewController<UIViewControllerTransitioningDelegate>
 
@@ -15,6 +16,7 @@
 @property (strong, nonatomic) UIButton *presentBtn;
 @property (strong, nonatomic) XNLoginTranslation* login;
 - (void)finishAnimationWithBtn:(UIButton *)presentBtn Delay:(NSTimeInterval)time;
+
 
 
 // 默认返回为YES,表示支持右滑返回  手势返回

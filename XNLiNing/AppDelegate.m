@@ -72,7 +72,7 @@
     
     [AppDelegate touch_application:application performActionForShortcutItem:shortcutItem completionHandler:completionHandler];
     
-    if([shortcutItem.type isEqualToString:@"com.mycompany.myapp.one"]){
+    if([shortcutItem.type isEqualToString:@"com.aist.XNLiNing"]){
         NSArray *arr = @[@"hello 3D Touch"];
         UIActivityViewController *vc = [[UIActivityViewController alloc]initWithActivityItems:arr applicationActivities:nil];
         [self.window.rootViewController presentViewController:vc animated:YES completion:^{

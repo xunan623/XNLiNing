@@ -64,10 +64,13 @@
 		7167DDDB1E7139F500F61886 /* ChineseToPinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7167DDDA1E7139F500F61886 /* ChineseToPinyin.m */; };
 		7167DDDF1E714DFA00F61886 /* XNContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7167DDDD1E714DFA00F61886 /* XNContactCell.m */; };
 		7167DDE01E714DFA00F61886 /* XNContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7167DDDE1E714DFA00F61886 /* XNContactCell.xib */; };
+		716DDD081E794512004CCBE4 /* XNSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 716DDD071E794512004CCBE4 /* XNSearchBar.m */; };
 		7174296F1D845B5400EC2910 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7174296E1D845B5400EC2910 /* main.m */; };
 		717429721D845B5400EC2910 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 717429711D845B5400EC2910 /* AppDelegate.m */; };
 		7174297A1D845B5400EC2910 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 717429791D845B5400EC2910 /* Assets.xcassets */; };
 		7174297D1D845B5400EC2910 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7174297B1D845B5400EC2910 /* LaunchScreen.storyboard */; };
+		717A14461E7A41170039C250 /* XNSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717A14441E7A41170039C250 /* XNSearchController.m */; };
+		717A14471E7A41170039C250 /* XNSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 717A14451E7A41170039C250 /* XNSearchController.xib */; };
 		718C44051E666D3E00A4C599 /* XNAppURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 718C44041E666D3E00A4C599 /* XNAppURL.m */; };
 		71B7DB001E6D58690052E450 /* XNAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B7DAFF1E6D58690052E450 /* XNAlertView.m */; };
 		71B7DB031E6D5EC70052E450 /* RWUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B7DB021E6D5EC70052E450 /* RWUserDefaults.m */; };
@@ -184,6 +187,8 @@
 		7167DDDC1E714DFA00F61886 /* XNContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNContactCell.h; sourceTree = "<group>"; };
 		7167DDDD1E714DFA00F61886 /* XNContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNContactCell.m; sourceTree = "<group>"; };
 		7167DDDE1E714DFA00F61886 /* XNContactCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNContactCell.xib; sourceTree = "<group>"; };
+		716DDD061E794512004CCBE4 /* XNSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNSearchBar.h; sourceTree = "<group>"; };
+		716DDD071E794512004CCBE4 /* XNSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNSearchBar.m; sourceTree = "<group>"; };
 		7174296A1D845B5400EC2910 /* XNLiNing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XNLiNing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7174296E1D845B5400EC2910 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		717429701D845B5400EC2910 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -192,6 +197,9 @@
 		7174297C1D845B5400EC2910 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7174297E1D845B5400EC2910 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		717429871D845FC400EC2910 /* info.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = info.pch; sourceTree = "<group>"; };
+		717A14431E7A41170039C250 /* XNSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNSearchController.h; sourceTree = "<group>"; };
+		717A14441E7A41170039C250 /* XNSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNSearchController.m; sourceTree = "<group>"; };
+		717A14451E7A41170039C250 /* XNSearchController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNSearchController.xib; sourceTree = "<group>"; };
 		718C44031E666D3E00A4C599 /* XNAppURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNAppURL.h; sourceTree = "<group>"; };
 		718C44041E666D3E00A4C599 /* XNAppURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNAppURL.m; sourceTree = "<group>"; };
 		71B7DAFE1E6D58690052E450 /* XNAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNAlertView.h; sourceTree = "<group>"; };
@@ -668,6 +676,9 @@
 				7121E8F51E681E8800EF8D4B /* XNContactListController.h */,
 				7121E8F61E681E8800EF8D4B /* XNContactListController.m */,
 				7121E8F71E681E8800EF8D4B /* XNContactListController.xib */,
+				717A14431E7A41170039C250 /* XNSearchController.h */,
+				717A14441E7A41170039C250 /* XNSearchController.m */,
+				717A14451E7A41170039C250 /* XNSearchController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -688,6 +699,8 @@
 				7167DDDC1E714DFA00F61886 /* XNContactCell.h */,
 				7167DDDD1E714DFA00F61886 /* XNContactCell.m */,
 				7167DDDE1E714DFA00F61886 /* XNContactCell.xib */,
+				716DDD061E794512004CCBE4 /* XNSearchBar.h */,
+				716DDD071E794512004CCBE4 /* XNSearchBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -800,6 +813,7 @@
 				7121E8D61E68063000EF8D4B /* XNLoginController.xib in Resources */,
 				7134C7B21E728512005BC6F0 /* XNMessageListCell.xib in Resources */,
 				7121E90C1E681F1B00EF8D4B /* XNSettingController.xib in Resources */,
+				717A14471E7A41170039C250 /* XNSearchController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,6 +897,7 @@
 				7122B2B71E6E5DB500068216 /* XNBaseRes.m in Sources */,
 				7121E8C21E67E7F500EF8D4B /* XNLoginTranslation.m in Sources */,
 				7122CE941E764CAC00C4F882 /* XNBaseNavigationBar.m in Sources */,
+				716DDD081E794512004CCBE4 /* XNSearchBar.m in Sources */,
 				7174296F1D845B5400EC2910 /* main.m in Sources */,
 				7121E8F81E681E8800EF8D4B /* XNContactListController.m in Sources */,
 				71144F1C1E69091A003EDBFC /* XNBaseViewController.m in Sources */,
@@ -896,6 +911,7 @@
 				7102E1231E66AB4E006117B6 /* XNSimpleTool.m in Sources */,
 				7134C7AC1E7284AA005BC6F0 /* XNMessageListController.m in Sources */,
 				71F618321E6972A600E5F223 /* XNLoginModel.m in Sources */,
+				717A14461E7A41170039C250 /* XNSearchController.m in Sources */,
 				7102E1211E66AB4E006117B6 /* UITextField+Ext.m in Sources */,
 				71DDAA7C1E768D3900A37F09 /* UIView+XNGetController.m in Sources */,
 				7134C7B91E72AC1E005BC6F0 /* RCUserInfo+XNAddition.m in Sources */,

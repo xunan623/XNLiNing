@@ -32,8 +32,6 @@
     [super viewDidLoad];
     self.tableView.mj_header = [XNHeaderView headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     [self.tableView.mj_header beginRefreshing];
-    
-    
 }
 
 - (void)loadNewData {

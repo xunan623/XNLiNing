@@ -14,6 +14,6 @@ pod 'RATreeView', '~> 2.1.2'
 pod 'RongCloudIM/IMLib', '~> 2.8.3'
 pod 'RongCloudIM/IMKit', '~> 2.8.3'
 pod 'WHC_ModelSqliteKit', '~> 1.1.7'
-pod 'WHC_KeyboardManager_oc', '~> 1.1.5'
+#pod 'WHC_KeyboardManager_oc', '~> 1.1.5'
 
 end
