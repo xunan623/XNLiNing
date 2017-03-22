@@ -53,6 +53,7 @@
 
 
 
+
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     if ([self.topViewController isKindOfClass:[XNBaseViewController class]]) {
         if ([self.topViewController respondsToSelector:@selector(gestureRecognizerShouldBegin)]) {
@@ -71,8 +72,13 @@
             self.enableRightGesture = [vc gestureRecognizerShouldBegin];
         }
     }
+    if (self.viewControllers.count >0) {
+        viewController.hidesBottomBarWhenPushed = YES;
+    }
     
     [super pushViewController:viewController animated:YES];
+    
+  
 }
 
 - (NSArray<UIViewController *> *)popToRootViewControllerAnimated:(BOOL)animated {

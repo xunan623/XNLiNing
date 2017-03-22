@@ -56,7 +56,6 @@
     conversationVC.conversationType = model.conversationType;
     conversationVC.targetId = model.targetId;
     conversationVC.title = model.objectName;
-    conversationVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:conversationVC animated:YES];
 }
 

@@ -201,7 +201,6 @@
                                                           targetId:model.id];
     //设置聊天会话界面要显示的标题
     chat.title = model.name;
-    chat.hidesBottomBarWhenPushed = YES;
     self.navigationController.navigationBar.hidden = NO;
     //显示聊天会话界面
     [self.navigationController pushViewController:chat animated:YES];
