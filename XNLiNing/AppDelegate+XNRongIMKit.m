@@ -15,8 +15,13 @@
     
     [[RCIM sharedRCIM] initWithAppKey:AppRongCloudAppKey];
     
+    [[XNRCDataManager shareManager] getUserRCTokenWithBlock:^(BOOL getTokenResult) {
+        XNLog(@"请求成功");
+    }];
+    
     [[RCIM sharedRCIM] connectWithToken:AA55_Token success:^(NSString *userId) {
         XNLog(@"登陆成功。当前登录的用户ID：%@", userId);
+        
     } error:^(RCConnectErrorCode status) {
         XNLog(@"登陆的错误码为:%zd", status);
     } tokenIncorrect:^{

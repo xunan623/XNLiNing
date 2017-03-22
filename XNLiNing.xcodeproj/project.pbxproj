@@ -26,6 +26,7 @@
 		71144F1C1E69091A003EDBFC /* XNBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71144F1A1E69091A003EDBFC /* XNBaseViewController.m */; };
 		71144F1D1E69091A003EDBFC /* XNBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71144F1B1E69091A003EDBFC /* XNBaseViewController.xib */; };
 		711AF9681E77C3E3003A52E4 /* AppDelegate+XN3DTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 711AF9671E77C3E3003A52E4 /* AppDelegate+XN3DTouch.m */; };
+		711F79721E8279F5004D0892 /* XNRCIMBaseReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 711F79711E8279F5004D0892 /* XNRCIMBaseReq.m */; };
 		7121E8C21E67E7F500EF8D4B /* XNLoginTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7121E8C11E67E7F500EF8D4B /* XNLoginTranslation.m */; };
 		7121E8C81E67F37800EF8D4B /* UIView+EasyShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7121E8C71E67F37800EF8D4B /* UIView+EasyShow.m */; };
 		7121E8D11E68039000EF8D4B /* XNTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7121E8D01E68039000EF8D4B /* XNTabbarController.m */; };
@@ -122,6 +123,8 @@
 		71144F1B1E69091A003EDBFC /* XNBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNBaseViewController.xib; sourceTree = "<group>"; };
 		711AF9661E77C3E3003A52E4 /* AppDelegate+XN3DTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+XN3DTouch.h"; sourceTree = "<group>"; };
 		711AF9671E77C3E3003A52E4 /* AppDelegate+XN3DTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+XN3DTouch.m"; sourceTree = "<group>"; };
+		711F79701E8279F5004D0892 /* XNRCIMBaseReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNRCIMBaseReq.h; sourceTree = "<group>"; };
+		711F79711E8279F5004D0892 /* XNRCIMBaseReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNRCIMBaseReq.m; sourceTree = "<group>"; };
 		7121E8C01E67E7F500EF8D4B /* XNLoginTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNLoginTranslation.h; sourceTree = "<group>"; };
 		7121E8C11E67E7F500EF8D4B /* XNLoginTranslation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNLoginTranslation.m; sourceTree = "<group>"; };
 		7121E8C61E67F37800EF8D4B /* UIView+EasyShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+EasyShow.h"; sourceTree = "<group>"; };
@@ -551,6 +554,8 @@
 				7134C7B51E72A904005BC6F0 /* XNRCDataManager.m */,
 				7134C7B71E72AC1E005BC6F0 /* RCUserInfo+XNAddition.h */,
 				7134C7B81E72AC1E005BC6F0 /* RCUserInfo+XNAddition.m */,
+				711F79701E8279F5004D0892 /* XNRCIMBaseReq.h */,
+				711F79711E8279F5004D0892 /* XNRCIMBaseReq.m */,
 			);
 			path = RCDataService;
 			sourceTree = "<group>";
@@ -878,6 +883,7 @@
 				71B7DB001E6D58690052E450 /* XNAlertView.m in Sources */,
 				71CDBAD31E72376D006AA684 /* AppDelegate+XNRongIMKit.m in Sources */,
 				7102E1201E66AB4E006117B6 /* UIImage+Reflection.m in Sources */,
+				711F79721E8279F5004D0892 /* XNRCIMBaseReq.m in Sources */,
 				7102E11F1E66AB4E006117B6 /* SSKeychain.m in Sources */,
 				71DDAA791E7689A400A37F09 /* XNChatController.m in Sources */,
 				7167DDDB1E7139F500F61886 /* ChineseToPinyin.m in Sources */,

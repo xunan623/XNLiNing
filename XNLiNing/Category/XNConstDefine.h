@@ -29,6 +29,7 @@
 #import "RWUserDefaults.h"
 #import "XNHeaderView.h"
 #import "UIView+XNGetController.h"
+#import "XNRCDataManager.h"
 
 
 #endif /* XNConstDefine_h */

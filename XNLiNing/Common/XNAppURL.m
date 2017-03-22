@@ -14,10 +14,13 @@
 NSString *const AppRequestURL = @"http://lnrts.li-ning.com.cn/vi/app/";
 
 NSString *const AppRongCloudAppKey = @"qd46yzrfq02of";
+NSString *const AppRongCloudAppSecret = @"qd46yzrfq02of";
+
 
 #else
 NSString *const AppRequestURL = @"http://lnrts.li-ning.com.cn/vi/app/";
 NSString *const AppRongCloudAppKey = @"qd46yzrfq02of";
+NSString *const AppRongCloudAppSecret = @"qd46yzrfq02of";
 
 #endif
 
@@ -40,6 +43,11 @@ NSString *const AppRequestURL_getItemImgsApp = @"getItemImgsApp.action";
 NSString *const AppRequestURL_reportApp = @"reportApp.action";
 
 
+
+
+
+NSString *const RCIM_TOKEN = @"RCIM_TOKEN";
 NSString *const AA55_Token = @"gh9kuhnIT9i3Q1bAtT5/8qEVsRTE5IWpizX0t/0HLwg/y+co1d7yr/g1ThX6ti7AoljwioKlrmzbsNrDdWyPmw==";
+NSString *const RCIM_GET_TOKEN = @"https://api.cn.rong.io/user/getToken.json";
 
 @end

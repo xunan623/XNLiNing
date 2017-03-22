@@ -13,7 +13,8 @@
  * 大神提供的管理融云逻辑的类
  */
 
-@interface XNRCDataManager : NSObject<RCIMUserInfoDataSource, RCIMGroupInfoDataSource>
+@interface XNRCDataManager : NSObject<RCIMUserInfoDataSource>
+
 
 + (XNRCDataManager *)shareManager;
 
@@ -22,6 +23,10 @@
  */
 - (void)getUserInfoWithUserId:(NSString *)userId completion:(void (^)(RCUserInfo *))completion;
 
+/**
+ * 从融云获取用户token信息
+ */
+- (void)getUserRCTokenWithBlock:(void (^)(BOOL getTokenResult))completion;
 
 /**
  * 从服务器同步好友列表

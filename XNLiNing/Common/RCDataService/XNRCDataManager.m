@@ -9,6 +9,9 @@
 #import "XNRCDataManager.h"
 #import <RongIMLib/RongIMLib.h>
 #import "RCUserInfo+XNAddition.h"
+#import <CommonCrypto/CommonDigest.h>
+#import <AFNetworking.h>
+#import "XNRCIMBaseReq.h"
 
 @implementation XNRCDataManager {
     NSMutableArray *dataSource;
@@ -58,6 +61,25 @@
     }
 }
 
+
+
+- (void)getUserRCTokenWithBlock:(void (^)(BOOL getTokenResult))completion {
+    
+    NSDictionary *params = @{@"userId"      : [XNUserDefaults new].userName,
+                             @"name"        : [XNUserDefaults new].userName,
+                             @"portraitUri" : @"https://www.baidu.com/img/baidu_jgylogo3.gif"
+                            };
+    [XNRCIMBaseReq requestGetWithUrl:RCIM_GET_TOKEN params:params
+                                type:XNReqeustTypePost
+                     responseSucceed:^(NSDictionary *res) {
+                     
+        XNLog(@"%@--", res);
+    } responseFailed:^(NSString *error) {
+        XNLog(@"%@--", error);
+    }];
+}
+
+
 - (void)syncFriendList:(void(^)(NSMutableArray * friends,BOOL isSuccess))completion {
     dataSource = [NSMutableArray array];
     for (NSInteger i = 1; i<7; i++) {
@@ -92,17 +114,7 @@
     } tokenIncorrect:^{
         NSLog(@"token 错误");
     }];
-    
-    
-    
-    
 }
-
-
-
-
-
-
 
 
 
