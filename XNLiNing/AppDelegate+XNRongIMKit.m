@@ -16,7 +16,16 @@
     
     [[RCIM sharedRCIM] initWithAppKey:AppRongCloudAppKey];
     
-    [[XNRCDataManager shareManager] getTokenAndLoginRCIM];
+    [[RCIM sharedRCIM] setDisableMessageAlertSound:NO];
+    [[RCIM sharedRCIM] setDisableMessageNotificaiton:NO];
+    [[RCIM sharedRCIM] setUserInfoDataSource:[XNRCDataManager shareManager]];
+    
+    [[XNRCDataManager shareManager] getTokenAndLoginRCIM:^(BOOL isSuccess) {
+        if (isSuccess) {
+            XNLog(@"链接成功");
+        }
+        [[XNRCDataManager shareManager] refreshBadgeValue];
+    }];
     
     
 #ifdef __IPHONE_8_0

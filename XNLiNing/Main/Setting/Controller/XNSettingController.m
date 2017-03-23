@@ -95,6 +95,9 @@ static NSString *cellId = @"XNSettingCell";
                 ud.userPassword = @"";
                 [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:RCIM_TOKEN];
                 [[NSUserDefaults standardUserDefaults] synchronize];
+                [[RCIM sharedRCIM] disconnect:YES];
+                [[RCIM sharedRCIM] logout];
+                
                 [XNAlertView showWithTitle:@"退出登录成功" done:^{
                     UIWindow *window = [[UIApplication sharedApplication].delegate window];
                     XNLoginController *loginVC = [[XNLoginController alloc] init];

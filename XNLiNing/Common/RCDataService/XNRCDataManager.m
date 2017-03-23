@@ -36,24 +36,31 @@
     return manager;
 }
 
-- (void)getTokenAndLoginRCIM {
-        
+- (void)getTokenAndLoginRCIM:(ConnectBlock)connectBlock {
+    _connectBlock = connectBlock;
+    
     NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:RCIM_TOKEN];
-    RCUserInfo *myselfInfo = [[RCUserInfo alloc]initWithUserId:[XNUserDefaults new].userName
-                                                          name:[XNUserDefaults new].userName
-                                                      portrait:@"https://www.baidu.com/img/baidu_jgylogo3.gif"
-                                                            QQ:@"1246334518"
-                                                           sex:@"男"];
     if (token.length) {
         // 2.登录融云
-        [self loginRongCloudWithUserInfo:myselfInfo withToken:token];
+        RCUserInfo *myselfInfo = [[RCUserInfo alloc]initWithUserId:[XNUserDefaults new].userName
+                                                              name:[XNUserDefaults new].userName
+                                                          portrait:@"https://www.baidu.com/img/baidu_jgylogo3.gif"
+                                                                QQ:@"1246334518"
+                                                               sex:@"男"];
+        [[XNRCDataManager shareManager] loginRongCloudWithUserInfo:myselfInfo withToken:token];
     } else {
         // 1.获取token
         [self getUserRCTokenWithBlock:^(BOOL getTokenResult) {
             if (getTokenResult) {
+                RCUserInfo *newMySelfInfo = [[RCUserInfo alloc]initWithUserId:[XNUserDefaults new].userName
+                                                                      name:[XNUserDefaults new].userName
+                                                                  portrait:@"https://www.baidu.com/img/baidu_jgylogo3.gif"
+                                                                        QQ:@"1246334518"
+                                                                       sex:@"男"];
+
                 NSString *newToken = [[NSUserDefaults standardUserDefaults] objectForKey:RCIM_TOKEN];
                 // 2.登录融云
-                [self loginRongCloudWithUserInfo:myselfInfo withToken:newToken];
+                [[XNRCDataManager shareManager] loginRongCloudWithUserInfo:newMySelfInfo withToken:newToken];
             } else {
                 XNLog(@"获取token失败");
             }
@@ -85,8 +92,8 @@
 
 - (void)getUserRCTokenWithBlock:(void (^)(BOOL getTokenResult))completion {
     
-    NSDictionary *params = @{@"userId"      : [XNUserDefaults new].userName,
-                             @"name"        : [XNUserDefaults new].userName,
+    NSDictionary *params = @{@"userId"      : [XNUserDefaults new].userName.length ? [XNUserDefaults new].userName : @"",
+                             @"name"        : [XNUserDefaults new].userName.length ? [XNUserDefaults new].userName : @"",
                              @"portraitUri" : @"https://www.baidu.com/img/baidu_jgylogo3.gif"
                             };
     [XNRCIMBaseReq requestGetWithUrl:RCIM_GET_TOKEN params:params
@@ -109,22 +116,40 @@
 }
 
 -(void)loginRongCloudWithUserInfo:(RCUserInfo *)userInfo withToken:(NSString *)token{
+    
     [[RCIM sharedRCIM] connectWithToken:token success:^(NSString *userId) {
         [RCIM sharedRCIM].globalNavigationBarTintColor = [UIColor redColor];
         XNLog(@"登陆成功。当前登录的用户ID %@",userId);
-
-        [RCIMClient sharedRCIMClient].currentUserInfo = userInfo;
-        [self refreshBadgeValue];
+        
+        [[RCIMClient sharedRCIMClient] setCurrentUserInfo:userInfo];
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (_connectBlock) {
+                [[RCIM sharedRCIM] setUserInfoDataSource:self];
+                _connectBlock(YES);
+            }
+        });
     } error:^(RCConnectErrorCode status) {
         XNLog(@"登陆的错误码为:%zd", status);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (_connectBlock) _connectBlock(NO);
+            
+        });
     } tokenIncorrect:^{
         XNLog(@"token错误");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if (_connectBlock) _connectBlock(NO);
+        });
     }];
 }
 
 - (void)refreshBadgeValue {
     
-    dispatch_async(dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         long long unreadMsgCount = (NSInteger)[[RCIMClient sharedRCIMClient] getUnreadCount:@[@(ConversationType_PRIVATE)]];
         UIWindow *window = [[UIApplication sharedApplication].delegate window];
         if ([window.rootViewController isKindOfClass:[XNTabbarController class]]) {
@@ -142,6 +167,7 @@
             }
         }
     });
+ 
 }
 
 

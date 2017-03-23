@@ -108,7 +108,12 @@
                 
                 [window saveVersionToNSUserDefault];
                 
-                [[XNRCDataManager shareManager] getTokenAndLoginRCIM];
+                [[XNRCDataManager shareManager] getTokenAndLoginRCIM:^(BOOL isSuccess) {
+                    if (isSuccess) {
+                        XNLog(@"链接成功");
+                    }
+                    [[XNRCDataManager shareManager] refreshBadgeValue];
+                }];
             }];
         } else {
             
@@ -128,7 +133,12 @@
                 
                 [window saveVersionToNSUserDefault];
                 
-                [[XNRCDataManager shareManager] getTokenAndLoginRCIM];
+                [[XNRCDataManager shareManager] getTokenAndLoginRCIM:^(BOOL isSuccess) {
+                    if (isSuccess) {
+                        XNLog(@"链接成功");
+                    }
+                    [[XNRCDataManager shareManager] refreshBadgeValue];
+                }];
             }];;
         }
                      

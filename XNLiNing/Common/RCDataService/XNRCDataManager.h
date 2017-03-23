@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <RongIMKit/RongIMKit.h>
 
+
+typedef void(^ConnectBlock)(BOOL isSuccess);
+
 /**
  * 大神提供的管理融云逻辑的类
  */
@@ -16,12 +19,14 @@
 @interface XNRCDataManager : NSObject<RCIMUserInfoDataSource>
 
 
+@property (nonatomic, copy) ConnectBlock connectBlock;
+
 + (XNRCDataManager *)shareManager;
 
 /**
  * 获取token并登录
  */
-- (void)getTokenAndLoginRCIM;
+- (void)getTokenAndLoginRCIM:(ConnectBlock)connectBlock;
 
 /**
  * 获取用户信息
