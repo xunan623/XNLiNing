@@ -29,11 +29,6 @@
 - (void)getUserRCTokenWithBlock:(void (^)(BOOL getTokenResult))completion;
 
 /**
- * 从服务器同步好友列表
- */
-- (void)syncFriendList:(void(^)(NSMutableArray * friends,BOOL isSuccess))completion;
-
-/**
  *  登录融云服务器（connect，用token去连接）
  *
  *  @param userInfo 用户信息

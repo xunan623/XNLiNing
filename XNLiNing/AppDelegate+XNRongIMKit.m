@@ -8,6 +8,8 @@
 
 #import "AppDelegate+XNRongIMKit.h"
 #import <RongIMKit/RongIMKit.h>
+#import "RCUserInfo+XNAddition.h"
+
 
 @implementation AppDelegate (XNRongIMKit)
 
@@ -15,17 +17,19 @@
     
     [[RCIM sharedRCIM] initWithAppKey:AppRongCloudAppKey];
     
+    // 1.获取token
     [[XNRCDataManager shareManager] getUserRCTokenWithBlock:^(BOOL getTokenResult) {
         if (getTokenResult) {
             NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:RCIM_TOKEN];
-            [[RCIM sharedRCIM] connectWithToken:token success:^(NSString *userId) {
-                XNLog(@"登陆成功。当前登录的用户ID：%@", userId);
-                
-            } error:^(RCConnectErrorCode status) {
-                XNLog(@"登陆的错误码为:%zd", status);
-            } tokenIncorrect:^{
-                XNLog(@"token错误");
-            }];
+            
+            RCUserInfo *myselfInfo = [[RCUserInfo alloc]initWithUserId:[XNUserDefaults new].userName
+                                                                  name:[XNUserDefaults new].userName
+                                                              portrait:@"https://www.baidu.com/img/baidu_jgylogo3.gif"
+                                                                    QQ:@"1246334518"
+                                                                   sex:@"男"];
+            // 2.登录融云
+            [[XNRCDataManager shareManager] loginRongCloudWithUserInfo:myselfInfo withToken:token];
+            
         } else {
             XNLog(@"获取token失败");
         }

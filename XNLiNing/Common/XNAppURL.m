@@ -47,6 +47,7 @@ NSString *const AppRequestURL_reportApp = @"reportApp.action";
 
 
 NSString *const RCIM_TOKEN = @"RCIM_TOKEN";
+NSString *const RCIM_IS_LOGIN = @"RCIM_IS_LOGIN";
 NSString *const RCIM_GET_TOKEN = @"https://api.cn.rong.io/user/getToken.json";
 
 @end

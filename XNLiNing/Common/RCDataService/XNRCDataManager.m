@@ -36,12 +36,9 @@
 
 #pragma mark - RCIMUserInfoDataSource
 - (void)getUserInfoWithUserId:(NSString *)userId completion:(void (^)(RCUserInfo *))completion {
-    XNLog(@"getUserInfoWithUserId : %@", userId);
+    XNLog(@"获取用户模型 : %@", userId);
     
-    if (!userId || userId.length == 0) {
-        [self syncFriendList:^(NSMutableArray *friends, BOOL isSuccess) {
-            
-        }];
+    if (!userId.length) {
         completion(nil);
         return;
     }
@@ -53,16 +50,8 @@
                                                                 QQ:[RCIM sharedRCIM].currentUserInfo.QQ
                                                                sex:[RCIM sharedRCIM].currentUserInfo.sex];
         completion(myselfInfo);
-        
     }
-    
-    for (NSInteger i = 0; i<[AppDelegate shareAppDelegate].friendsArray.count; i++) {
-        RCUserInfo *aUser = [AppDelegate shareAppDelegate].friendsArray[i];
-        if ([userId isEqualToString:aUser.userId]) {
-            completion(aUser);
-            break;
-        }
-    }
+    completion(nil);
 }
 
 
@@ -92,40 +81,23 @@
     }];
 }
 
-
-- (void)syncFriendList:(void(^)(NSMutableArray * friends,BOOL isSuccess))completion {
-    dataSource = [NSMutableArray array];
-    for (NSInteger i = 1; i<7; i++) {
-        if(i==1){
-            RCUserInfo *aUserInfo =[[RCUserInfo alloc]initWithUserId:[NSString stringWithFormat:@"%ld",i] name:@"文明" portrait:@"http://weixin.ihk.cn/ihkwx_upload/fodder/20151210/1449727866527.jpg" QQ:@"740747055" sex:@"男"];
-            [dataSource addObject:aUserInfo];
-        }else if (i==2) {
-            RCUserInfo *aUserInfo =[[RCUserInfo alloc]initWithUserId:[NSString stringWithFormat:@"%ld",i] name:@"张全蛋" portrait:@"http://weixin.ihk.cn/ihkwx_upload/fodder/20151210/1449727755947.jpg" QQ:@"张全蛋的QQ信息" sex:@"男"];
-            [dataSource addObject:aUserInfo];
-        }
-    }
-    
-    [AppDelegate shareAppDelegate].friendsArray = dataSource;
-    completion(dataSource,YES);
-}
-
-
 -(void)loginRongCloudWithUserInfo:(RCUserInfo *)userInfo withToken:(NSString *)token{
     [[RCIM sharedRCIM] connectWithToken:token success:^(NSString *userId) {
         [RCIM sharedRCIM].globalNavigationBarTintColor = [UIColor redColor];
-        NSLog(@"login success with userId %@",userId);
-        //同步好友列表
-        [self syncFriendList:^(NSMutableArray *friends, BOOL isSuccess) {
-            XNLog(@"%@",friends);
-            if (isSuccess) {
-            }
-        }];
+        XNLog(@"登陆成功。当前登录的用户ID %@",userId);
+
         [RCIMClient sharedRCIMClient].currentUserInfo = userInfo;
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:RCIM_IS_LOGIN];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         
     } error:^(RCConnectErrorCode status) {
-        XNLog(@"status = %ld",(long)status);
+        XNLog(@"登陆的错误码为:%zd", status);
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:NO] forKey:RCIM_IS_LOGIN];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     } tokenIncorrect:^{
-        NSLog(@"token 错误");
+        XNLog(@"token错误");
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:NO] forKey:RCIM_IS_LOGIN];
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }];
 }
 
