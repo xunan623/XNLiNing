@@ -10,8 +10,8 @@
 
 @implementation XNAppURL
 #ifdef DEBUG
-//NSString *const AppRequestURL = @"http://124.207.27.112/vi/app/";
-NSString *const AppRequestURL = @"http://lnrts.li-ning.com.cn/vi/app/";
+NSString *const AppRequestURL = @"http://124.207.27.112/vi/app/";
+//NSString *const AppRequestURL = @"http://lnrts.li-ning.com.cn/vi/app/";
 
 NSString *const AppRongCloudAppKey = @"qd46yzrfq02of";
 NSString *const AppRongCloudAppSecret = @"4ax8XsLDA1ch";
@@ -47,7 +47,6 @@ NSString *const AppRequestURL_reportApp = @"reportApp.action";
 
 
 NSString *const RCIM_TOKEN = @"RCIM_TOKEN";
-NSString *const RCIM_IS_LOGIN = @"RCIM_IS_LOGIN";
 NSString *const RCIM_GET_TOKEN = @"https://api.cn.rong.io/user/getToken.json";
 
 @end

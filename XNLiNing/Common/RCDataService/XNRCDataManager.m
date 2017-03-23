@@ -11,7 +11,9 @@
 #import "RCUserInfo+XNAddition.h"
 #import <CommonCrypto/CommonDigest.h>
 #import <AFNetworking.h>
+#import "XNTabbarController.h"
 #import "XNRCIMBaseReq.h"
+#import "XNMessageListController.h"
 
 @implementation XNRCDataManager {
     NSMutableArray *dataSource;
@@ -32,6 +34,31 @@
         manager = [[[self class] alloc] init];
     });
     return manager;
+}
+
+- (void)getTokenAndLoginRCIM {
+        
+    NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:RCIM_TOKEN];
+    RCUserInfo *myselfInfo = [[RCUserInfo alloc]initWithUserId:[XNUserDefaults new].userName
+                                                          name:[XNUserDefaults new].userName
+                                                      portrait:@"https://www.baidu.com/img/baidu_jgylogo3.gif"
+                                                            QQ:@"1246334518"
+                                                           sex:@"男"];
+    if (token.length) {
+        // 2.登录融云
+        [self loginRongCloudWithUserInfo:myselfInfo withToken:token];
+    } else {
+        // 1.获取token
+        [self getUserRCTokenWithBlock:^(BOOL getTokenResult) {
+            if (getTokenResult) {
+                NSString *newToken = [[NSUserDefaults standardUserDefaults] objectForKey:RCIM_TOKEN];
+                // 2.登录融云
+                [self loginRongCloudWithUserInfo:myselfInfo withToken:newToken];
+            } else {
+                XNLog(@"获取token失败");
+            }
+        }];
+    }
 }
 
 #pragma mark - RCIMUserInfoDataSource
@@ -87,20 +114,35 @@
         XNLog(@"登陆成功。当前登录的用户ID %@",userId);
 
         [RCIMClient sharedRCIMClient].currentUserInfo = userInfo;
-        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:RCIM_IS_LOGIN];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
+        [self refreshBadgeValue];
     } error:^(RCConnectErrorCode status) {
         XNLog(@"登陆的错误码为:%zd", status);
-        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:NO] forKey:RCIM_IS_LOGIN];
-        [[NSUserDefaults standardUserDefaults] synchronize];
     } tokenIncorrect:^{
         XNLog(@"token错误");
-        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:NO] forKey:RCIM_IS_LOGIN];
-        [[NSUserDefaults standardUserDefaults] synchronize];
     }];
 }
 
+- (void)refreshBadgeValue {
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        long long unreadMsgCount = (NSInteger)[[RCIMClient sharedRCIMClient] getUnreadCount:@[@(ConversationType_PRIVATE)]];
+        UIWindow *window = [[UIApplication sharedApplication].delegate window];
+        if ([window.rootViewController isKindOfClass:[XNTabbarController class]]) {
+            XNTabbarController *tabBar = (XNTabbarController *)window.rootViewController;
+            XNMessageListController *chatListVC = tabBar.viewControllers[1];
+            if (unreadMsgCount > 0) {
+                if (unreadMsgCount > 99) {
+                    chatListVC.tabBarItem.badgeValue = @"99+";
+                } else {
+                    [chatListVC.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%li",(long)unreadMsgCount]];
+                }
+            } else {
+                [chatListVC.tabBarItem setBadgeValue:nil];
+                
+            }
+        }
+    });
+}
 
 
 

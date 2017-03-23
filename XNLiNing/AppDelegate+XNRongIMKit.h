@@ -12,6 +12,4 @@
 
 + (BOOL)rong_application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
 
-- (void)setupRCData;
-
 @end

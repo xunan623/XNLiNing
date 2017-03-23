@@ -14,5 +14,6 @@
 #import "XNConstDefine.h"
 #import "XNBaseReq.h"
 #import "XNUserDefaults.h"
+#import "RCUserInfo+XNAddition.h"
 
 #endif /* info_pch */

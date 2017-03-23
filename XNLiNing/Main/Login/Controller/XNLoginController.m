@@ -107,10 +107,28 @@
                 window.rootViewController = tabbarVC;
                 
                 [window saveVersionToNSUserDefault];
+                
+                [[XNRCDataManager shareManager] getTokenAndLoginRCIM];
             }];
         } else {
+            
+   
             [XNAlertView showWithTitle:model.failMessage done:^{
                 sender.userInteractionEnabled = YES;
+                
+                // 新增代码
+                XNUserDefaults *ud = [XNUserDefaults new];
+                ud.userName = self.userNameField.text;
+                ud.userPassword = self.passwordFiled.text;
+
+                XNTabbarController *tabbarVC = [[XNTabbarController alloc] init];
+                tabbarVC.transitioningDelegate = self;
+                UIWindow *window = [UIApplication sharedApplication].keyWindow;
+                window.rootViewController = tabbarVC;
+                
+                [window saveVersionToNSUserDefault];
+                
+                [[XNRCDataManager shareManager] getTokenAndLoginRCIM];
             }];;
         }
                      

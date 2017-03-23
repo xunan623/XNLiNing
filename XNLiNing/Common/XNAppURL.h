@@ -37,7 +37,6 @@ FOUNDATION_EXTERN NSString *const AppRongCloudAppKey;                   // 融�
 FOUNDATION_EXTERN NSString *const AppRongCloudAppSecret;                // 融云Secret
 
 FOUNDATION_EXTERN NSString *const RCIM_TOKEN;                           // 用户token
-FOUNDATION_EXTERN NSString *const RCIM_IS_LOGIN;                        // 是否登录过融云
 FOUNDATION_EXTERN NSString *const RCIM_GET_TOKEN;                       // 获取融云token
 
 @end

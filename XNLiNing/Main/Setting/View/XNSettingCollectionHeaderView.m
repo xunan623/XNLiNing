@@ -47,10 +47,6 @@
 }
 #pragma mark - 点击头像登录
 - (IBAction)tapHeaderImage:(UITapGestureRecognizer *)sender {
-    if (![XNUserDefaults new].userPassword.length) return;
     
-    UIWindow *window = [[UIApplication sharedApplication].delegate window];
-    XNLoginController *loginVC = [[XNLoginController alloc] init];
-    window.rootViewController = loginVC;
 }
 @end

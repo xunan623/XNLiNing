@@ -19,6 +19,11 @@
 + (XNRCDataManager *)shareManager;
 
 /**
+ * 获取token并登录
+ */
+- (void)getTokenAndLoginRCIM;
+
+/**
  * 获取用户信息
  */
 - (void)getUserInfoWithUserId:(NSString *)userId completion:(void (^)(RCUserInfo *))completion;
@@ -36,6 +41,9 @@
  */
 -(void)loginRongCloudWithUserInfo:(RCUserInfo *)userInfo withToken:(NSString *)token;
 
-
+/**
+ * 刷新tabbar角标
+ */
+- (void)refreshBadgeValue;
 
 @end

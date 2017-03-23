@@ -29,9 +29,7 @@
     [[RWUserDefaults shareInstance] registerClass:[XNUserDefaults class]];
     
     [AppDelegate rong_application:application didFinishLaunchingWithOptions:launchOptions];
-    
-    [self setupRCData];
-    
+        
     [AppDelegate touch_application:application didFinishLaunchingWithOptions:launchOptions];
     
     [self reachabilityInternet];
