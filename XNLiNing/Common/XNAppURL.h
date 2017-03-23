@@ -36,7 +36,6 @@ FOUNDATION_EXTERN NSString *const AppRequestURL_reportApp;              // 查�
 FOUNDATION_EXTERN NSString *const AppRongCloudAppKey;                   // 融云Key
 FOUNDATION_EXTERN NSString *const AppRongCloudAppSecret;                // 融云Secret
 
-FOUNDATION_EXTERN NSString *const AA55_Token;                           // AA55_Token
 FOUNDATION_EXTERN NSString *const RCIM_TOKEN;                           // 用户token
 FOUNDATION_EXTERN NSString *const RCIM_GET_TOKEN;                       // 获取融云token
 

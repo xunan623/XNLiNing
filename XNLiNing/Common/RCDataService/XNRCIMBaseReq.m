@@ -48,16 +48,31 @@
         case XNReqeustTypeGet: {
             [manager GET:RCIM_TOKEN parameters:params progress:nil
                  success:^(NSURLSessionDataTask * task, id responseObject) {
-                if (succeedBlock) succeedBlock(responseObject);
+                    
+                NSError *error;
+                NSDictionary *dic =  [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:&error];
+                 if (error) {
+                     XNLog(@"%@", error);
+                 } else {
+                     if (succeedBlock) succeedBlock(dic);
+                 }
             } failure:^(NSURLSessionDataTask * task, NSError * error) {
-                
+                if (fieldBlock) fieldBlock([error localizedDescription]);
+
             }];
         }
             break;
         case XNReqeustTypePost: {
             [manager POST:RCIM_GET_TOKEN parameters:params progress:nil
                   success:^(NSURLSessionDataTask * _Nonnull task, id responseObject) {
-                if (succeedBlock) succeedBlock(responseObject);
+                      
+                  NSError *error;
+                  NSDictionary *dic =  [NSJSONSerialization JSONObjectWithData:responseObject options:0 error:&error];
+                  if (error) {
+                      XNLog(@"%@", error);
+                  } else {
+                      if (succeedBlock) succeedBlock(dic);
+                  }
             } failure:^(NSURLSessionDataTask * _Nullable task, NSError *error) {
                 if (fieldBlock) fieldBlock([error localizedDescription]);
             }];

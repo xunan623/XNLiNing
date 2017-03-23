@@ -47,7 +47,11 @@
     }
     
     if ([userId isEqualToString:[RCIM sharedRCIM].currentUserInfo.userId]) {
-        RCUserInfo *myselfInfo = [[RCUserInfo alloc]initWithUserId:[RCIM sharedRCIM].currentUserInfo.userId name:[RCIM sharedRCIM].currentUserInfo.name portrait:[RCIM sharedRCIM].currentUserInfo.portraitUri QQ:[RCIM sharedRCIM].currentUserInfo.QQ sex:[RCIM sharedRCIM].currentUserInfo.sex];
+        RCUserInfo *myselfInfo = [[RCUserInfo alloc]initWithUserId:[RCIM sharedRCIM].currentUserInfo.userId
+                                                              name:[RCIM sharedRCIM].currentUserInfo.name
+                                                          portrait:[RCIM sharedRCIM].currentUserInfo.portraitUri
+                                                                QQ:[RCIM sharedRCIM].currentUserInfo.QQ
+                                                               sex:[RCIM sharedRCIM].currentUserInfo.sex];
         completion(myselfInfo);
         
     }
@@ -72,10 +76,19 @@
     [XNRCIMBaseReq requestGetWithUrl:RCIM_GET_TOKEN params:params
                                 type:XNReqeustTypePost
                      responseSucceed:^(NSDictionary *res) {
-                     
-        XNLog(@"%@--", res);
+         XNLog(@"%@--", res);
+         NSString *token = res[@"token"];
+         if (token.length) {
+             [[NSUserDefaults standardUserDefaults]  setObject:token forKey:RCIM_TOKEN];
+             [[NSUserDefaults standardUserDefaults] synchronize];
+         }
+         completion(token.length);
+
     } responseFailed:^(NSString *error) {
         XNLog(@"%@--", error);
+        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:RCIM_TOKEN];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        completion(NO);
     }];
 }
 

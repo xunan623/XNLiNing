@@ -16,17 +16,22 @@
     [[RCIM sharedRCIM] initWithAppKey:AppRongCloudAppKey];
     
     [[XNRCDataManager shareManager] getUserRCTokenWithBlock:^(BOOL getTokenResult) {
-        XNLog(@"请求成功");
+        if (getTokenResult) {
+            NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:RCIM_TOKEN];
+            [[RCIM sharedRCIM] connectWithToken:token success:^(NSString *userId) {
+                XNLog(@"登陆成功。当前登录的用户ID：%@", userId);
+                
+            } error:^(RCConnectErrorCode status) {
+                XNLog(@"登陆的错误码为:%zd", status);
+            } tokenIncorrect:^{
+                XNLog(@"token错误");
+            }];
+        } else {
+            XNLog(@"获取token失败");
+        }
     }];
     
-    [[RCIM sharedRCIM] connectWithToken:AA55_Token success:^(NSString *userId) {
-        XNLog(@"登陆成功。当前登录的用户ID：%@", userId);
-        
-    } error:^(RCConnectErrorCode status) {
-        XNLog(@"登陆的错误码为:%zd", status);
-    } tokenIncorrect:^{
-        XNLog(@"token错误");
-    }];
+
     
     
 #ifdef __IPHONE_8_0
