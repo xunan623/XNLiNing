@@ -101,11 +101,7 @@
             
             [XNAlertView  showWithTitle:model.failMessage done:^{
                 
-                XNTabbarController *tabbarVC = [[XNTabbarController alloc] init];
-                tabbarVC.transitioningDelegate = self;
                 UIWindow *window = [UIApplication sharedApplication].keyWindow;
-                window.rootViewController = tabbarVC;
-                
                 [window saveVersionToNSUserDefault];
                 
                 [[XNRCDataManager shareManager] getTokenAndLoginRCIM:^(BOOL isSuccess) {
@@ -113,6 +109,10 @@
                         XNLog(@"链接成功");
                     }
                     [[XNRCDataManager shareManager] refreshBadgeValue];
+                    
+                    XNTabbarController *tabbarVC = [[XNTabbarController alloc] init];
+                    tabbarVC.transitioningDelegate = self;
+                    window.rootViewController = tabbarVC;
                 }];
             }];
         } else {
@@ -126,11 +126,8 @@
                 ud.userName = self.userNameField.text;
                 ud.userPassword = self.passwordFiled.text;
 
-                XNTabbarController *tabbarVC = [[XNTabbarController alloc] init];
-                tabbarVC.transitioningDelegate = self;
+          
                 UIWindow *window = [UIApplication sharedApplication].keyWindow;
-                window.rootViewController = tabbarVC;
-                
                 [window saveVersionToNSUserDefault];
                 
                 [[XNRCDataManager shareManager] getTokenAndLoginRCIM:^(BOOL isSuccess) {
@@ -138,6 +135,10 @@
                         XNLog(@"链接成功");
                     }
                     [[XNRCDataManager shareManager] refreshBadgeValue];
+                    
+                    XNTabbarController *tabbarVC = [[XNTabbarController alloc] init];
+                    tabbarVC.transitioningDelegate = self;
+                    window.rootViewController = tabbarVC;
                 }];
             }];;
         }

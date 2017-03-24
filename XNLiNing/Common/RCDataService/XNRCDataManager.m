@@ -149,7 +149,7 @@
 
 - (void)refreshBadgeValue {
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         long long unreadMsgCount = (NSInteger)[[RCIMClient sharedRCIMClient] getUnreadCount:@[@(ConversationType_PRIVATE)]];
         UIWindow *window = [[UIApplication sharedApplication].delegate window];
         if ([window.rootViewController isKindOfClass:[XNTabbarController class]]) {
