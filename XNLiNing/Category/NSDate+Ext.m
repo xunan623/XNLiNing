@@ -322,4 +322,111 @@ static dispatch_once_t onceToken;
     
     return [[self currentCalendar] dateByAddingComponents:com toDate:now options:NSCalendarMatchFirst];
 }
+
++ (NSString *)calculateMessageTimeWithSendInterval:(NSTimeInterval)sendInterval
+                               andReceiveInterval:(NSTimeInterval)receiveInterval {
+    long currentMessageInterval;
+    
+    //通过发送时间和接收时间来比较哪个是最新的消息时间
+    
+    if (sendInterval > receiveInterval) {
+        
+        //发送的时间是最新的
+        currentMessageInterval = sendInterval/1000;
+    }else{
+        
+        //接受的时间是最新的
+        currentMessageInterval = receiveInterval/1000;
+    }
+    //    NSDate *formatDate = [NSDate dateWithTimeIntervalSince1970:receiveInterval];
+    //    NSLog(@"%@",formatDate);
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+    [dateFormatter setLocale:[NSLocale currentLocale]];
+    
+    //最新的消息时间
+    NSDate *messageDate = [NSDate dateWithTimeIntervalSince1970:currentMessageInterval];
+    
+    //解决当前系统时间和北京时间相差8小时的问题
+    NSTimeZone *timeZone = [NSTimeZone systemTimeZone];
+    
+    //接收或发送的消息时间(转换为当前时区)
+    NSInteger messageInterval = [timeZone secondsFromGMTForDate: messageDate];
+    NSDate *localMessageDate = [messageDate dateByAddingTimeInterval:messageInterval];
+    
+    //当前时间去掉时差问题
+    NSDate *nowDate = [NSDate date];
+    NSInteger nowInterval = [timeZone secondsFromGMTForDate:nowDate];
+    NSDate *localNowDate = [nowDate dateByAddingTimeInterval:nowInterval];
+    
+    //明天零点时间
+    NSTimeInterval secondsPerDay = 24 * 60 * 60;
+    NSDate *tomorrowDate = [localNowDate dateByAddingTimeInterval:secondsPerDay];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd 00:00:00"];
+    NSString *zeroDateStr = [dateFormatter stringFromDate:tomorrowDate];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    NSDate *zeroDate = [dateFormatter dateFromString:zeroDateStr];
+    
+    
+    //消息时间和明天零点时间比较,计算时间或天数
+    NSTimeInterval interval = [zeroDate timeIntervalSinceDate:localMessageDate];
+    double resultDay = interval / 60.0 / 60.0 / 24.0;
+    
+    //计算当前年份和消息的年份
+    [dateFormatter setDateFormat:@"yyyy"];
+    
+    NSString *msgYearStr = [dateFormatter stringFromDate:localMessageDate];
+    NSString *nowYearStr = [dateFormatter stringFromDate:localNowDate];
+    
+    
+    NSString *resultMessageDateStr;
+    
+    /*
+     *  时间计算规则：
+     *   当前日期，显示格式“09:05”
+     *   当前日期-1，显示格式“昨天 09:05”
+     *   当前日期-2，显示格式“前天 09:05”
+     *   其他日期，显示格式“05-01 09:05”
+     *   小于当前年份，显示格式“2013-05-01 09:05”
+     *
+     *
+     */
+    if (resultDay > 0 && resultDay < 1) {
+        
+        //当日直接显示时间
+        [dateFormatter setDateFormat:@"HH:mm"];
+        resultMessageDateStr = [dateFormatter stringFromDate:localMessageDate];
+    }else if (resultDay >= 1 && resultDay < 2){
+        
+        //前一天显示：昨天
+        [dateFormatter setDateFormat:@"HH:mm"];
+        resultMessageDateStr = [NSString stringWithFormat:@"昨天 %@",
+                                [dateFormatter stringFromDate:localMessageDate]];
+        
+    }else if (resultDay >= 2 && resultDay < 3){
+        
+        //前两天显示：前天
+        [dateFormatter setDateFormat:@"HH:mm"];
+        resultMessageDateStr = [NSString stringWithFormat:@"前天 %@",
+                                [dateFormatter stringFromDate:localMessageDate]];
+        
+        
+    }else if (![nowYearStr isEqualToString:msgYearStr]){
+        
+        //和当前年份不相同
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+        resultMessageDateStr = [dateFormatter stringFromDate:localMessageDate];
+        
+    }else{
+        
+        //其他时间
+        [dateFormatter setDateFormat:@"MM-dd HH:mm"];
+        resultMessageDateStr = [dateFormatter stringFromDate:localMessageDate];
+    }
+    
+    return resultMessageDateStr;
+    
+}
 @end

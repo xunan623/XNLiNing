@@ -9,13 +9,18 @@
 #import <UIKit/UIKit.h>
 #import <RongIMKit/RongIMKit.h>
 
+
+
 @interface XNMessageListCell : RCConversationBaseCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *headImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *detailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *unReadBadge;
 
 + (instancetype)msGetInstance;
+
+@property (strong, nonatomic) RCConversationModel *model;
 
 @end

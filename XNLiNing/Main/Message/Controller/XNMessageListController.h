@@ -9,9 +9,13 @@
 //#import <UIKit/UIKit.h>
 
 
-#import <RongIMKit/RongIMKit.h>
+#import "XNBaseViewController.h"
 
-@interface XNMessageListController : RCConversationListViewController
+
+@interface XNMessageListController : XNBaseViewController
+
+
+@property (strong, nonatomic) RCIM *rcimMessage;
 
 
 @end

@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XNMessageListController">
             <connections>
-                <outlet property="tableView" destination="26p-Jj-Ezb" id="YJ6-8x-LHV"/>
+                <outlet property="tableView" destination="26p-Jj-Ezb" id="v5W-hz-iVq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -60,7 +60,7 @@
                 <constraint firstItem="hkm-Ct-pnL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="w9R-0P-nZ0"/>
                 <constraint firstItem="26p-Jj-Ezb" firstAttribute="top" secondItem="hkm-Ct-pnL" secondAttribute="bottom" id="xkY-xw-fHb"/>
             </constraints>
-            <point key="canvasLocation" x="-87" y="-141"/>
+            <point key="canvasLocation" x="-33" y="-221"/>
         </view>
     </objects>
 </document>

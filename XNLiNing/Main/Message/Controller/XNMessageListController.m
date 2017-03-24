@@ -12,13 +12,12 @@
 #import "XNChatController.h"
 #import "XNMessageListCell.h"
 
-@interface XNMessageListController ()<UITableViewDelegate, UITableViewDataSource, RCIMReceiveMessageDelegate, RCIMConnectionStatusDelegate>
+@interface XNMessageListController ()<UITableViewDelegate, UITableViewDataSource, RCIMReceiveMessageDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (strong, nonatomic) NSMutableArray *listArray;
+@property (strong, nonatomic) NSMutableArray *chatListArray;
 
-@property (strong, nonatomic) RCIM *rcimMessage;
 @property (strong, nonatomic) RCIMClient *rcimClientMessage;
 
 
@@ -26,17 +25,26 @@
 
 @implementation XNMessageListController
 
-- (NSMutableArray *)listArray {
-    if (!_listArray) {
-        _listArray = [NSMutableArray array];
+-(instancetype)init {
+    if (self = [super init]) {
+        [self.rcimMessage setReceiveMessageDelegate:self];
+
     }
-    return _listArray;
+    return self;
+}
+
+- (NSMutableArray *)chatListArray {
+    if (!_chatListArray) {
+        _chatListArray = [NSMutableArray array];
+    }
+    return _chatListArray;
 }
 
 - (RCIM *)rcimMessage {
     if (!_rcimMessage) {
         _rcimMessage = [RCIM sharedRCIM];
         [_rcimMessage setReceiveMessageDelegate:self];
+
     }
     return _rcimMessage;
 }
@@ -44,7 +52,6 @@
 - (RCIMClient *)rcimClientMessage {
     if (!_rcimClientMessage) {
         _rcimClientMessage = [RCIMClient sharedRCIMClient];
-        [_rcimClientMessage setRCConnectionStatusChangeDelegate:self];
     }
     return _rcimClientMessage;
 }
@@ -54,20 +61,14 @@
     
     [self setupUI];
     
-    [self getRCIMChatList];
-    
-    //设置需要显示哪些类型的会话
-    [self setDisplayConversationTypes:@[@(ConversationType_PRIVATE),
-                                        @(ConversationType_APPSERVICE),
-                                        @(ConversationType_SYSTEM)]];
-    //设置需要将哪些类型的会话在会话列表中聚合显示
-    [self setCollectionConversationType:@[@(ConversationType_DISCUSSION),
-                                          @(ConversationType_GROUP)]];
+
     
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    [self getRCIMChatList];
     
     [[XNRCDataManager shareManager] refreshBadgeValue];
 }
@@ -76,51 +77,72 @@
     XNBaseNavigationBar * navBar = [[XNBaseNavigationBar alloc] init];
     navBar.titleLabel.text = @"消息列表";
     [self.view addSubview:navBar];
-    self.conversationListTableView.frame = CGRectMake(0, 44, XNScreen_Width, XNScreen_Height - 44);
 
+    self.tableView.rowHeight = 68;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([XNMessageListCell class]) bundle:nil]
          forCellReuseIdentifier:NSStringFromClass([XNMessageListCell class])];
     
 }
 
 - (void)getRCIMChatList {
-    [self.listArray removeAllObjects];
+    [self.chatListArray removeAllObjects];
+    
+    NSMutableArray *allChatConversion = [[NSMutableArray alloc]initWithArray:[self.rcimClientMessage getConversationList:@[@(ConversationType_PRIVATE)]]];
+    [self.chatListArray addObjectsFromArray:allChatConversion];
+    [self.tableView reloadData];
     
 }
 
+#pragma mark - RCIMReceiveMessageDelegate
 
-//重写RCConversationListViewController的onSelectedTableRow事件
-- (void)onSelectedTableRow:(RCConversationModelType)conversationModelType
-         conversationModel:(RCConversationModel *)model
-               atIndexPath:(NSIndexPath *)indexPath {
+-(void)onRCIMReceiveMessage:(RCMessage *)message left:(int)left {
+    
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [weakSelf getRCIMChatList];
+        [[XNRCDataManager shareManager] refreshBadgeValue];
+        
+    });
+}
+
+#pragma mark - TabeleViewDelegate
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    [tableView tableViewDisplayWithMsg:@"暂无数据" withRowCount:self.chatListArray.count];
+    return self.chatListArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    XNMessageListCell *cell = [XNMessageListCell msGetInstance];
+    cell.model = self.chatListArray[indexPath.row];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    RCConversationModel *deleteConversation = [self.chatListArray objectAtIndex:indexPath.row];
+    BOOL isDeleteSuccess = [[RCIMClient sharedRCIMClient] removeConversation:ConversationType_PRIVATE
+                                                                    targetId:deleteConversation.targetId];
+    BOOL isClearMsgSuccess = [[RCIMClient sharedRCIMClient] clearMessages:ConversationType_PRIVATE
+                                                                 targetId:deleteConversation.targetId];
+    if (isClearMsgSuccess && isDeleteSuccess) {
+        [self getRCIMChatList];
+        [[XNRCDataManager shareManager] refreshBadgeValue];
+    } else {
+        return;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    RCConversationModel *model = self.chatListArray[indexPath.row];
     XNChatController *conversationVC = [[XNChatController alloc]init];
     conversationVC.conversationType = model.conversationType;
     conversationVC.targetId = model.targetId;
     conversationVC.title = model.objectName;
     [self.navigationController pushViewController:conversationVC animated:YES];
 }
-
-
-
-#pragma mark - RCIMReceiveMessageDelegate
-
-/**
- *  网络状态变化(目前暂时没用到)
- */
-- (void)onRCIMConnectionStatusChanged:(RCConnectionStatus)status {
-    
-    if (status == ConnectionStatus_KICKED_OFFLINE_BY_OTHER_CLIENT) {
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:nil
-                              message:@"您的帐号已在别的设备上登录，\n您被迫下线！"
-                              delegate:self
-                              cancelButtonTitle:@"知道了"
-                              otherButtonTitles:nil, nil];
-        [alert show];
-    }
-}
-
-#pragma mark - TabeleViewDelegate
 
 
 @end

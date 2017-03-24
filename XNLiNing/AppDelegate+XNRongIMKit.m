@@ -28,6 +28,8 @@
     }];
     
     
+
+    
 #ifdef __IPHONE_8_0
     // 在 iOS 8 下注册苹果推送，申请推送权限。
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge
@@ -39,7 +41,26 @@
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
 #endif
     
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(didReceiveMessageNotification:)
+                                                name:RCKitDispatchMessageNotification
+                                              object:nil];
+    
     return YES;
+}
+
+
++ (void)didReceiveMessageNotification:(NSNotification *)notification {
+    
+    RCMessage *message = notification.object;
+    
+    if (message.messageDirection == MessageDirection_RECEIVE) {
+        static NSInteger i = 1;
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:i];
+        i++;
+    }
+    
 }
 
 @end

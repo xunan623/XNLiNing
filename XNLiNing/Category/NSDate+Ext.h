@@ -149,8 +149,11 @@
 + (NSDate *)dateFromFullWeekdayString:(NSString *)dateString;
 
 
-
-
+/**
+ * 计算聊天消息接受和发送的时间
+ */
++ (NSString *)calculateMessageTimeWithSendInterval:(NSTimeInterval)sendInterval
+                                andReceiveInterval:(NSTimeInterval)receiveInterval;
 
 
 
