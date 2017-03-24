@@ -55,6 +55,14 @@
     return _rcimClientMessage;
 }
 
+- (XNBaseNavigationBar *)navBar {
+    if (!_navBar) {
+        _navBar = [[XNBaseNavigationBar alloc] init];
+        [self.view addSubview:_navBar];
+    }
+    return _navBar;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -70,9 +78,7 @@
 }
 
 - (void)setupUI {
-    XNBaseNavigationBar * navBar = [[XNBaseNavigationBar alloc] init];
-    navBar.titleLabel.text = @"消息列表";
-    [self.view addSubview:navBar];
+    self.navBar.titleLabel.text = @"消息列表";
 
     self.tableView.rowHeight = 68;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([XNMessageListCell class]) bundle:nil]
@@ -136,7 +142,7 @@
     XNChatController *conversationVC = [[XNChatController alloc]init];
     conversationVC.conversationType = model.conversationType;
     conversationVC.targetId = model.targetId;
-    conversationVC.title = model.objectName;
+    conversationVC.title = model.targetId;
     [self.navigationController pushViewController:conversationVC animated:YES];
 }
 

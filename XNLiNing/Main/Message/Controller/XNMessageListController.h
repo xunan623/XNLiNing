@@ -10,11 +10,11 @@
 
 
 #import "XNBaseViewController.h"
-
+#import "XNBaseNavigationBar.h"
 
 @interface XNMessageListController : XNBaseViewController
 
-
+@property (strong, nonatomic) XNBaseNavigationBar *navBar;
 @property (strong, nonatomic) RCIM *rcimMessage;
 
 
