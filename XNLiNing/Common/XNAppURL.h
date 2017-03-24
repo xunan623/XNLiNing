@@ -39,4 +39,11 @@ FOUNDATION_EXTERN NSString *const AppRongCloudAppSecret;                // 融�
 FOUNDATION_EXTERN NSString *const RCIM_TOKEN;                           // 用户token
 FOUNDATION_EXTERN NSString *const RCIM_GET_TOKEN;                       // 获取融云token
 
+
+
+/******************   百度地图   ************/
+FOUNDATION_EXTERN NSString *const BAIDU_APP_KEY;                        // 百度地图key
+
+
+
 @end

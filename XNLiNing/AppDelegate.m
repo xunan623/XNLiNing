@@ -12,10 +12,10 @@
 #import "XNUserDefaults.h"
 #import "UIWindow+Extension.h"
 #import "AppDelegate+XNRongIMKit.h"
+#import "AppDelegate+XNBaiduLocation.h"
 #import <RongIMLib/RongIMLib.h>
 #import <RongIMKit/RongIMKit.h>
 #import "AppDelegate+XN3DTouch.h"
-
 
 @interface AppDelegate ()
 
@@ -31,6 +31,8 @@
     [AppDelegate rong_application:application didFinishLaunchingWithOptions:launchOptions];
         
     [AppDelegate touch_application:application didFinishLaunchingWithOptions:launchOptions];
+    
+    [self baiduLocation_applicationSetUp];
     
     [self reachabilityInternet];
     

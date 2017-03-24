@@ -28,7 +28,6 @@
 -(instancetype)init {
     if (self = [super init]) {
         [self.rcimMessage setReceiveMessageDelegate:self];
-
     }
     return self;
 }

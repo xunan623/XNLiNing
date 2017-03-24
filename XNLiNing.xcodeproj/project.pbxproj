@@ -23,6 +23,7 @@
 		7102E1381E66BE15006117B6 /* XNBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7102E1371E66BE15006117B6 /* XNBaseNavigationController.m */; };
 		7102E1421E66BF03006117B6 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7102E1411E66BF03006117B6 /* libsqlite3.0.tbd */; };
 		710972B91E6EA4D4000DEA1E /* XNSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 710972B71E6EA4D4000DEA1E /* XNSettingCell.m */; };
+		710B56541E84EF65009A372D /* AppDelegate+XNBaiduLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 710B56531E84EF65009A372D /* AppDelegate+XNBaiduLocation.m */; };
 		71144F1C1E69091A003EDBFC /* XNBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71144F1A1E69091A003EDBFC /* XNBaseViewController.m */; };
 		71144F1D1E69091A003EDBFC /* XNBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71144F1B1E69091A003EDBFC /* XNBaseViewController.xib */; };
 		711AF9681E77C3E3003A52E4 /* AppDelegate+XN3DTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 711AF9671E77C3E3003A52E4 /* AppDelegate+XN3DTouch.m */; };
@@ -118,6 +119,8 @@
 		7102E1411E66BF03006117B6 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		710972B61E6EA4D4000DEA1E /* XNSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNSettingCell.h; sourceTree = "<group>"; };
 		710972B71E6EA4D4000DEA1E /* XNSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNSettingCell.m; sourceTree = "<group>"; };
+		710B56521E84EF65009A372D /* AppDelegate+XNBaiduLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+XNBaiduLocation.h"; sourceTree = "<group>"; };
+		710B56531E84EF65009A372D /* AppDelegate+XNBaiduLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+XNBaiduLocation.m"; sourceTree = "<group>"; };
 		71144F191E69091A003EDBFC /* XNBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNBaseViewController.h; sourceTree = "<group>"; };
 		71144F1A1E69091A003EDBFC /* XNBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNBaseViewController.m; sourceTree = "<group>"; };
 		71144F1B1E69091A003EDBFC /* XNBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNBaseViewController.xib; sourceTree = "<group>"; };
@@ -615,6 +618,8 @@
 				717429851D845C5500EC2910 /* Main */,
 				717429701D845B5400EC2910 /* AppDelegate.h */,
 				717429711D845B5400EC2910 /* AppDelegate.m */,
+				710B56521E84EF65009A372D /* AppDelegate+XNBaiduLocation.h */,
+				710B56531E84EF65009A372D /* AppDelegate+XNBaiduLocation.m */,
 				71CDBAD11E72376D006AA684 /* AppDelegate+XNRongIMKit.h */,
 				71CDBAD21E72376D006AA684 /* AppDelegate+XNRongIMKit.m */,
 				711AF9661E77C3E3003A52E4 /* AppDelegate+XN3DTouch.h */,
@@ -927,6 +932,7 @@
 				7167DDD71E712E1B00F61886 /* XNContactModel.m in Sources */,
 				71B7DB071E6D5F460052E450 /* XNSaveUserDefault.m in Sources */,
 				715137BD1E78EF3200399BC0 /* XNSaveModel.m in Sources */,
+				710B56541E84EF65009A372D /* AppDelegate+XNBaiduLocation.m in Sources */,
 				7121E9021E681EBF00EF8D4B /* XNTaskController.m in Sources */,
 				7102E11B1E66AB4E006117B6 /* Foundation+Log.m in Sources */,
 				7121E8D11E68039000EF8D4B /* XNTabbarController.m in Sources */,

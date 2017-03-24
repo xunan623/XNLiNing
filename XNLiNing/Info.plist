@@ -2,27 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIApplicationShortcutItemType</key>
-	<array>
-		<dict>
-			<key>UIApplicationShortItemType</key>
-			<string>com.aist.share</string>
-			<key>UIApplicationShortItemTitle</key>
-			<string>分享</string>
-		</dict>
-	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>cameraDesciption</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>usageDescription</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string></string>
-	<key>NSAppleMusicUsageDescription</key>
-	<string></string>
-	<key>NSContactsUsageDescription</key>
-	<string>contactsDesciption</string>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>microphoneDesciption</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -54,6 +33,53 @@
 		<key>NSExceptionDomains</key>
 		<dict/>
 	</dict>
+    <key>NSAppleMusicUsageDescription</key>
+    <string>App需要您的同意,才能访问媒体资料库</string>
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>请点击“允许”以允许访问。若不允许，您将无法使用蓝牙获取信息</string>
+    <key>NSCalendarsUsageDescription</key>
+    <string>App需要您的同意,才能访问日历</string>
+    <key>NSCameraUsageDescription</key>
+    <string>允许使用相机以进行扫描二维码及拍摄上传头像。</string>
+    <key>NSHealthShareUsageDescription</key>
+    <string>App需要您的同意,才能访问健康分享</string>
+    <key>NSHealthUpdateUsageDescription</key>
+    <string>App需要您的同意,才能访问健康更新 </string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>请点击“允许”以允许访问。若不允许，您将无法使用位置</string>
+    <key>NSLocationUsageDescription</key>
+    <string>请点击“允许”以允许访问。若不允许，您将无法使用位置。</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>请点击“允许”以允许访问。若不允许，您将无法使用位置。</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>App需要您的同意,才能访问麦克风</string>
+    <key>NSMotionUsageDescription</key>
+    <string>App需要您的同意,才能访问运动与健身</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>允许通过相册上传图片。</string>
+    <key>NSRemindersUsageDescription</key>
+    <string>App需要您的同意,才能访问提醒事项</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string></string>
+	<key>NSCameraUsageDescription</key>
+	<string>cameraDesciption</string>
+	<key>NSContactsUsageDescription</key>
+	<string>contactsDesciption</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string></string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>microphoneDesciption</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>usageDescription</string>
+	<key>UIApplicationShortcutItemType</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortItemTitle</key>
+			<string>分享</string>
+			<key>UIApplicationShortItemType</key>
+			<string>com.aist.share</string>
+		</dict>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -63,8 +89,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
