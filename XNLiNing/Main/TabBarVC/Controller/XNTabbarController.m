@@ -11,7 +11,6 @@
 #import "XNSettingController.h"
 #import "XNContactListController.h"
 #import "XNTaskController.h"
-#import "XNChatListController.h"
 #import "XNDatabaseService.h"
 #import "XNMessageListController.h"
 

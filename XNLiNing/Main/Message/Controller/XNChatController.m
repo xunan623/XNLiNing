@@ -24,7 +24,7 @@
 
 - (void)setupUI {
     XNBaseNavigationBar * navBar = [[XNBaseNavigationBar alloc] init];
-    navBar.titleLabel.text = @"消息列表";
+    navBar.titleLabel.text = self.targetId;
     navBar.backButton.hidden = NO;
     [self.view addSubview:navBar];
     

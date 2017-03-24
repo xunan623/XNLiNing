@@ -23,10 +23,13 @@
 		7102E1381E66BE15006117B6 /* XNBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7102E1371E66BE15006117B6 /* XNBaseNavigationController.m */; };
 		7102E1421E66BF03006117B6 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7102E1411E66BF03006117B6 /* libsqlite3.0.tbd */; };
 		710972B91E6EA4D4000DEA1E /* XNSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 710972B71E6EA4D4000DEA1E /* XNSettingCell.m */; };
-		710B56541E84EF65009A372D /* AppDelegate+XNBaiduLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 710B56531E84EF65009A372D /* AppDelegate+XNBaiduLocation.m */; };
+		710B565A1E84FA29009A372D /* XNChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 710B56581E84FA29009A372D /* XNChatViewController.m */; };
+		710B565B1E84FA29009A372D /* XNChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 710B56591E84FA29009A372D /* XNChatViewController.xib */; };
+		710B56631E84FB91009A372D /* AppDelegate+XN3DTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 710B565E1E84FB91009A372D /* AppDelegate+XN3DTouch.m */; };
+		710B56641E84FB91009A372D /* AppDelegate+XNBaiduLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 710B56601E84FB91009A372D /* AppDelegate+XNBaiduLocation.m */; };
+		710B56651E84FB91009A372D /* AppDelegate+XNRongIMKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 710B56621E84FB91009A372D /* AppDelegate+XNRongIMKit.m */; };
 		71144F1C1E69091A003EDBFC /* XNBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71144F1A1E69091A003EDBFC /* XNBaseViewController.m */; };
 		71144F1D1E69091A003EDBFC /* XNBaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71144F1B1E69091A003EDBFC /* XNBaseViewController.xib */; };
-		711AF9681E77C3E3003A52E4 /* AppDelegate+XN3DTouch.m in Sources */ = {isa = PBXBuildFile; fileRef = 711AF9671E77C3E3003A52E4 /* AppDelegate+XN3DTouch.m */; };
 		711F79721E8279F5004D0892 /* XNRCIMBaseReq.m in Sources */ = {isa = PBXBuildFile; fileRef = 711F79711E8279F5004D0892 /* XNRCIMBaseReq.m */; };
 		7121E8C21E67E7F500EF8D4B /* XNLoginTranslation.m in Sources */ = {isa = PBXBuildFile; fileRef = 7121E8C11E67E7F500EF8D4B /* XNLoginTranslation.m */; };
 		7121E8C81E67F37800EF8D4B /* UIView+EasyShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 7121E8C71E67F37800EF8D4B /* UIView+EasyShow.m */; };
@@ -37,8 +40,6 @@
 		7121E8DF1E6813D300EF8D4B /* AppDelegate+Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 7121E8DE1E6813D300EF8D4B /* AppDelegate+Reachability.m */; };
 		7121E8F81E681E8800EF8D4B /* XNContactListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7121E8F61E681E8800EF8D4B /* XNContactListController.m */; };
 		7121E8F91E681E8800EF8D4B /* XNContactListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7121E8F71E681E8800EF8D4B /* XNContactListController.xib */; };
-		7121E8FD1E681EA800EF8D4B /* XNChatListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7121E8FB1E681EA800EF8D4B /* XNChatListController.m */; };
-		7121E8FE1E681EA800EF8D4B /* XNChatListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7121E8FC1E681EA800EF8D4B /* XNChatListController.xib */; };
 		7121E9021E681EBF00EF8D4B /* XNTaskController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7121E9001E681EBF00EF8D4B /* XNTaskController.m */; };
 		7121E9031E681EBF00EF8D4B /* XNTaskController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7121E9011E681EBF00EF8D4B /* XNTaskController.xib */; };
 		7121E90B1E681F1B00EF8D4B /* XNSettingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7121E9091E681F1B00EF8D4B /* XNSettingController.m */; };
@@ -78,7 +79,6 @@
 		71B7DB031E6D5EC70052E450 /* RWUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B7DB021E6D5EC70052E450 /* RWUserDefaults.m */; };
 		71B7DB071E6D5F460052E450 /* XNSaveUserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B7DB061E6D5F460052E450 /* XNSaveUserDefault.m */; };
 		71B7DB0A1E6D5FE30052E450 /* XNUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B7DB091E6D5FE30052E450 /* XNUserDefaults.m */; };
-		71CDBAD31E72376D006AA684 /* AppDelegate+XNRongIMKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CDBAD21E72376D006AA684 /* AppDelegate+XNRongIMKit.m */; };
 		71DDAA791E7689A400A37F09 /* XNChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DDAA781E7689A400A37F09 /* XNChatController.m */; };
 		71DDAA7C1E768D3900A37F09 /* UIView+XNGetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DDAA7B1E768D3900A37F09 /* UIView+XNGetController.m */; };
 		71F618321E6972A600E5F223 /* XNLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F618311E6972A600E5F223 /* XNLoginModel.m */; };
@@ -119,13 +119,18 @@
 		7102E1411E66BF03006117B6 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		710972B61E6EA4D4000DEA1E /* XNSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNSettingCell.h; sourceTree = "<group>"; };
 		710972B71E6EA4D4000DEA1E /* XNSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNSettingCell.m; sourceTree = "<group>"; };
-		710B56521E84EF65009A372D /* AppDelegate+XNBaiduLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+XNBaiduLocation.h"; sourceTree = "<group>"; };
-		710B56531E84EF65009A372D /* AppDelegate+XNBaiduLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+XNBaiduLocation.m"; sourceTree = "<group>"; };
+		710B56571E84FA29009A372D /* XNChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNChatViewController.h; sourceTree = "<group>"; };
+		710B56581E84FA29009A372D /* XNChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNChatViewController.m; sourceTree = "<group>"; };
+		710B56591E84FA29009A372D /* XNChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNChatViewController.xib; sourceTree = "<group>"; };
+		710B565D1E84FB91009A372D /* AppDelegate+XN3DTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+XN3DTouch.h"; sourceTree = "<group>"; };
+		710B565E1E84FB91009A372D /* AppDelegate+XN3DTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+XN3DTouch.m"; sourceTree = "<group>"; };
+		710B565F1E84FB91009A372D /* AppDelegate+XNBaiduLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+XNBaiduLocation.h"; sourceTree = "<group>"; };
+		710B56601E84FB91009A372D /* AppDelegate+XNBaiduLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+XNBaiduLocation.m"; sourceTree = "<group>"; };
+		710B56611E84FB91009A372D /* AppDelegate+XNRongIMKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+XNRongIMKit.h"; sourceTree = "<group>"; };
+		710B56621E84FB91009A372D /* AppDelegate+XNRongIMKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+XNRongIMKit.m"; sourceTree = "<group>"; };
 		71144F191E69091A003EDBFC /* XNBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNBaseViewController.h; sourceTree = "<group>"; };
 		71144F1A1E69091A003EDBFC /* XNBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNBaseViewController.m; sourceTree = "<group>"; };
 		71144F1B1E69091A003EDBFC /* XNBaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNBaseViewController.xib; sourceTree = "<group>"; };
-		711AF9661E77C3E3003A52E4 /* AppDelegate+XN3DTouch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+XN3DTouch.h"; sourceTree = "<group>"; };
-		711AF9671E77C3E3003A52E4 /* AppDelegate+XN3DTouch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+XN3DTouch.m"; sourceTree = "<group>"; };
 		711F79701E8279F5004D0892 /* XNRCIMBaseReq.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNRCIMBaseReq.h; sourceTree = "<group>"; };
 		711F79711E8279F5004D0892 /* XNRCIMBaseReq.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNRCIMBaseReq.m; sourceTree = "<group>"; };
 		7121E8C01E67E7F500EF8D4B /* XNLoginTranslation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNLoginTranslation.h; sourceTree = "<group>"; };
@@ -144,9 +149,6 @@
 		7121E8F51E681E8800EF8D4B /* XNContactListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNContactListController.h; sourceTree = "<group>"; };
 		7121E8F61E681E8800EF8D4B /* XNContactListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNContactListController.m; sourceTree = "<group>"; };
 		7121E8F71E681E8800EF8D4B /* XNContactListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNContactListController.xib; sourceTree = "<group>"; };
-		7121E8FA1E681EA800EF8D4B /* XNChatListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNChatListController.h; sourceTree = "<group>"; };
-		7121E8FB1E681EA800EF8D4B /* XNChatListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNChatListController.m; sourceTree = "<group>"; };
-		7121E8FC1E681EA800EF8D4B /* XNChatListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNChatListController.xib; sourceTree = "<group>"; };
 		7121E8FF1E681EBF00EF8D4B /* XNTaskController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNTaskController.h; sourceTree = "<group>"; };
 		7121E9001E681EBF00EF8D4B /* XNTaskController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNTaskController.m; sourceTree = "<group>"; };
 		7121E9011E681EBF00EF8D4B /* XNTaskController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNTaskController.xib; sourceTree = "<group>"; };
@@ -216,8 +218,6 @@
 		71B7DB061E6D5F460052E450 /* XNSaveUserDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNSaveUserDefault.m; sourceTree = "<group>"; };
 		71B7DB081E6D5FE30052E450 /* XNUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNUserDefaults.h; sourceTree = "<group>"; };
 		71B7DB091E6D5FE30052E450 /* XNUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNUserDefaults.m; sourceTree = "<group>"; };
-		71CDBAD11E72376D006AA684 /* AppDelegate+XNRongIMKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+XNRongIMKit.h"; sourceTree = "<group>"; };
-		71CDBAD21E72376D006AA684 /* AppDelegate+XNRongIMKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+XNRongIMKit.m"; sourceTree = "<group>"; };
 		71DDAA771E7689A400A37F09 /* XNChatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNChatController.h; sourceTree = "<group>"; };
 		71DDAA781E7689A400A37F09 /* XNChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNChatController.m; sourceTree = "<group>"; };
 		71DDAA7A1E768D3900A37F09 /* UIView+XNGetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XNGetController.h"; sourceTree = "<group>"; };
@@ -388,6 +388,19 @@
 			path = BaseModel;
 			sourceTree = "<group>";
 		};
+		710B565C1E84FB5F009A372D /* AppDelegate+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				710B565D1E84FB91009A372D /* AppDelegate+XN3DTouch.h */,
+				710B565E1E84FB91009A372D /* AppDelegate+XN3DTouch.m */,
+				710B565F1E84FB91009A372D /* AppDelegate+XNBaiduLocation.h */,
+				710B56601E84FB91009A372D /* AppDelegate+XNBaiduLocation.m */,
+				710B56611E84FB91009A372D /* AppDelegate+XNRongIMKit.h */,
+				710B56621E84FB91009A372D /* AppDelegate+XNRongIMKit.m */,
+			);
+			path = "AppDelegate+Extension";
+			sourceTree = "<group>";
+		};
 		7121E8BF1E67E7E200EF8D4B /* BaseTool */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,14 +456,14 @@
 		7121E8EE1E681D5A00EF8D4B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7121E8FA1E681EA800EF8D4B /* XNChatListController.h */,
-				7121E8FB1E681EA800EF8D4B /* XNChatListController.m */,
-				7121E8FC1E681EA800EF8D4B /* XNChatListController.xib */,
 				7134C7A91E7284AA005BC6F0 /* XNMessageListController.h */,
 				7134C7AA1E7284AA005BC6F0 /* XNMessageListController.m */,
 				7134C7AB1E7284AA005BC6F0 /* XNMessageListController.xib */,
 				71DDAA771E7689A400A37F09 /* XNChatController.h */,
 				71DDAA781E7689A400A37F09 /* XNChatController.m */,
+				710B56571E84FA29009A372D /* XNChatViewController.h */,
+				710B56581E84FA29009A372D /* XNChatViewController.m */,
+				710B56591E84FA29009A372D /* XNChatViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -618,12 +631,6 @@
 				717429851D845C5500EC2910 /* Main */,
 				717429701D845B5400EC2910 /* AppDelegate.h */,
 				717429711D845B5400EC2910 /* AppDelegate.m */,
-				710B56521E84EF65009A372D /* AppDelegate+XNBaiduLocation.h */,
-				710B56531E84EF65009A372D /* AppDelegate+XNBaiduLocation.m */,
-				71CDBAD11E72376D006AA684 /* AppDelegate+XNRongIMKit.h */,
-				71CDBAD21E72376D006AA684 /* AppDelegate+XNRongIMKit.m */,
-				711AF9661E77C3E3003A52E4 /* AppDelegate+XN3DTouch.h */,
-				711AF9671E77C3E3003A52E4 /* AppDelegate+XN3DTouch.m */,
 				717429791D845B5400EC2910 /* Assets.xcassets */,
 				7174297B1D845B5400EC2910 /* LaunchScreen.storyboard */,
 				7174297E1D845B5400EC2910 /* Info.plist */,
@@ -718,6 +725,7 @@
 		7194D0AC1E666AF200C463A3 /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				710B565C1E84FB5F009A372D /* AppDelegate+Extension */,
 				7102E1001E66A997006117B6 /* Controller */,
 				7102E1011E66A997006117B6 /* Model */,
 				7102E1021E66A997006117B6 /* View */,
@@ -818,9 +826,9 @@
 				7174297A1D845B5400EC2910 /* Assets.xcassets in Resources */,
 				7121E8F91E681E8800EF8D4B /* XNContactListController.xib in Resources */,
 				715364081E710ACB00102FB6 /* XNSettingCollectionFooterView.xib in Resources */,
-				7121E8FE1E681EA800EF8D4B /* XNChatListController.xib in Resources */,
 				71144F1D1E69091A003EDBFC /* XNBaseViewController.xib in Resources */,
 				7121E8D61E68063000EF8D4B /* XNLoginController.xib in Resources */,
+				710B565B1E84FA29009A372D /* XNChatViewController.xib in Resources */,
 				7134C7B21E728512005BC6F0 /* XNMessageListCell.xib in Resources */,
 				7121E90C1E681F1B00EF8D4B /* XNSettingController.xib in Resources */,
 				717A14471E7A41170039C250 /* XNSearchController.xib in Resources */,
@@ -886,8 +894,8 @@
 				7102E11C1E66AB4E006117B6 /* NSDate+Ext.m in Sources */,
 				715137B91E78E4AE00399BC0 /* XNTaskModel.m in Sources */,
 				71B7DB001E6D58690052E450 /* XNAlertView.m in Sources */,
-				71CDBAD31E72376D006AA684 /* AppDelegate+XNRongIMKit.m in Sources */,
 				7102E1201E66AB4E006117B6 /* UIImage+Reflection.m in Sources */,
+				710B565A1E84FA29009A372D /* XNChatViewController.m in Sources */,
 				711F79721E8279F5004D0892 /* XNRCIMBaseReq.m in Sources */,
 				7102E11F1E66AB4E006117B6 /* SSKeychain.m in Sources */,
 				71DDAA791E7689A400A37F09 /* XNChatController.m in Sources */,
@@ -900,7 +908,7 @@
 				7134C7B61E72A904005BC6F0 /* XNRCDataManager.m in Sources */,
 				7102E12E1E66AB59006117B6 /* RWDatabaseManager.m in Sources */,
 				71B7DB031E6D5EC70052E450 /* RWUserDefaults.m in Sources */,
-				7121E8FD1E681EA800EF8D4B /* XNChatListController.m in Sources */,
+				710B56651E84FB91009A372D /* AppDelegate+XNRongIMKit.m in Sources */,
 				7121E8DC1E68109D00EF8D4B /* UITableView+EmptyData.m in Sources */,
 				717429721D845B5400EC2910 /* AppDelegate.m in Sources */,
 				7122B2B41E6E55BE00068216 /* UIWindow+Extension.m in Sources */,
@@ -913,7 +921,6 @@
 				7121E8F81E681E8800EF8D4B /* XNContactListController.m in Sources */,
 				71144F1C1E69091A003EDBFC /* XNBaseViewController.m in Sources */,
 				710972B91E6EA4D4000DEA1E /* XNSettingCell.m in Sources */,
-				711AF9681E77C3E3003A52E4 /* AppDelegate+XN3DTouch.m in Sources */,
 				7121E8DF1E6813D300EF8D4B /* AppDelegate+Reachability.m in Sources */,
 				71B7DB0A1E6D5FE30052E450 /* XNUserDefaults.m in Sources */,
 				715364071E710ACB00102FB6 /* XNSettingCollectionFooterView.m in Sources */,
@@ -921,6 +928,7 @@
 				7102E1381E66BE15006117B6 /* XNBaseNavigationController.m in Sources */,
 				7102E1231E66AB4E006117B6 /* XNSimpleTool.m in Sources */,
 				7134C7AC1E7284AA005BC6F0 /* XNMessageListController.m in Sources */,
+				710B56641E84FB91009A372D /* AppDelegate+XNBaiduLocation.m in Sources */,
 				71F618321E6972A600E5F223 /* XNLoginModel.m in Sources */,
 				717A14461E7A41170039C250 /* XNSearchController.m in Sources */,
 				7102E1211E66AB4E006117B6 /* UITextField+Ext.m in Sources */,
@@ -932,7 +940,7 @@
 				7167DDD71E712E1B00F61886 /* XNContactModel.m in Sources */,
 				71B7DB071E6D5F460052E450 /* XNSaveUserDefault.m in Sources */,
 				715137BD1E78EF3200399BC0 /* XNSaveModel.m in Sources */,
-				710B56541E84EF65009A372D /* AppDelegate+XNBaiduLocation.m in Sources */,
+				710B56631E84FB91009A372D /* AppDelegate+XN3DTouch.m in Sources */,
 				7121E9021E681EBF00EF8D4B /* XNTaskController.m in Sources */,
 				7102E11B1E66AB4E006117B6 /* Foundation+Log.m in Sources */,
 				7121E8D11E68039000EF8D4B /* XNTabbarController.m in Sources */,
