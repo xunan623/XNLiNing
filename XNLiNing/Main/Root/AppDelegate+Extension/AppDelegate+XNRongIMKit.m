@@ -8,6 +8,7 @@
 
 #import "AppDelegate+XNRongIMKit.h"
 #import <RongIMKit/RongIMKit.h>
+#import "XNChatSystemMessage.h"
 
 
 @implementation AppDelegate (XNRongIMKit)
@@ -19,6 +20,7 @@
     [[RCIM sharedRCIM] setDisableMessageAlertSound:NO];
     [[RCIM sharedRCIM] setDisableMessageNotificaiton:NO];
     [[RCIM sharedRCIM] setUserInfoDataSource:[XNRCDataManager shareManager]];
+    [[RCIM sharedRCIM] registerMessageType:[XNChatSystemMessage class]];
     
     [[XNRCDataManager shareManager] getTokenAndLoginRCIM:^(BOOL isSuccess) {
         if (isSuccess) {

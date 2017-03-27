@@ -17,6 +17,7 @@
 #import <RongIMKit/RongIMKit.h>
 #import "XNSearchBar.h"
 #import "XNSearchController.h"
+#import "XNChatController.h"
 
 
 
@@ -196,14 +197,13 @@
     
     XNContactModel *model = [[self.dataSource objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     
-    RCConversationViewController *chat = [[RCConversationViewController alloc]
-                                          initWithConversationType:ConversationType_PRIVATE
-                                                          targetId:model.id];
-    //设置聊天会话界面要显示的标题
-    chat.title = model.name;
-    self.navigationController.navigationBar.hidden = NO;
-    //显示聊天会话界面
-    [self.navigationController pushViewController:chat animated:YES];
+    XNChatController *conversationVC = [[XNChatController alloc]init];
+    conversationVC.conversationType = ConversationType_PRIVATE;
+    conversationVC.targetId = model.id;
+    conversationVC.title = model.id;
+    conversationVC.title = model.name;
+    [self.navigationController pushViewController:conversationVC animated:YES];
+    
 }
 
 
