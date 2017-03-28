@@ -11,7 +11,7 @@
 #import "XNChatSystemMessage.h"
 #import "XNSimpleMessageCell.h"
 
-@interface XNChatController ()
+@interface XNChatController ()<RCPluginBoardViewDelegate>
 
 @property (strong, nonatomic) XNBaseNavigationBar *navBar;
 
@@ -55,21 +55,57 @@
     
     // 键盘类型
     [self.chatSessionInputBarControl setInputBarType:RCChatSessionInputBarControlDefaultType
-                                               style:RC_CHAT_INPUT_BAR_STYLE_CONTAINER];
+                                               style:RC_CHAT_INPUT_BAR_STYLE_SWITCH_CONTAINER_EXTENTION];
     [self.conversationMessageCollectionView registerClass:XNSimpleMessageCell.class
                                forCellWithReuseIdentifier:NSStringFromClass([XNSimpleMessageCell class])];
     
+    // 拓展功能
+    [self.chatSessionInputBarControl.pluginBoardView insertItemWithImage:[UIImage imageNamed:@"icon-back"]
+                                                                   title:@"发红包"
+                                                                     tag:PLUGIN_BOARD_ITEM_NEED_TAG];    
 }
 
 - (void)setupData {
     NSInteger count = [[RCIMClient sharedRCIMClient] getMessageCount:ConversationType_PRIVATE
                                                             targetId:self.targetId];
-    if (count == 0) {
+    if (count == 0) { // 没有聊天就默认发送系统消息
         [self sendSystemDefaultMsg];
     } else {
-        
+        [self sendMsgwithContent:self.messageContent];
     }
 }
+
+#pragma mark - 点击事件回调
+
+- (void)didTapCellPortrait:(NSString *)userId {
+    [super didTapCellPortrait:userId];
+    XNLog(@"%@", userId);
+    
+}
+
+
+#pragma mark - 上个界面带来需要默认发送的信息
+
+- (void)sendMsgwithContent:(NSString *)content {
+    if (content.length) {
+        RCTextMessage * TextMessage = [RCTextMessage messageWithContent:self.messageContent];
+        [self sendMessage:TextMessage pushContent:nil];
+    }
+}
+
+#pragma mark - 拓展功能回调
+-(void)pluginBoardView:(RCPluginBoardView*)pluginBoardView clickedItemWithTag:(NSInteger)tag {
+    [super pluginBoardView:pluginBoardView clickedItemWithTag:tag];
+    switch (tag) {
+        case PLUGIN_BOARD_ITEM_NEED_TAG: {  // 发红包
+            
+        }
+            break;
+        default:
+            break;
+    }
+}
+
 
 #pragma mark - 发送默认系统消息
 

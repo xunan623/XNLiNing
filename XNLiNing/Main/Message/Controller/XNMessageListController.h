@@ -15,7 +15,12 @@
 @interface XNMessageListController : XNBaseViewController
 
 @property (strong, nonatomic) XNBaseNavigationBar *navBar;
-@property (strong, nonatomic) RCIM *rcimMessage;
+
+- (void)initData;
+
+// 设置本地通知
++ (void)registerLocalNotification:(NSInteger)alertTime Message:(NSString *)message;
+
 
 
 @end

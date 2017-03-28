@@ -45,7 +45,9 @@
     [XNDatabaseService openDB];
     
     [self setupChildVC:[[XNContactListController alloc] init] title:@"首页" image:@"tabbar_home" selectedImage:@"tabbar_homeSelected"];
-    [self setupChildVC:[[XNMessageListController alloc] init] title:@"消息" image:@"tabbar_message" selectedImage:@"tabbar_messageSelected"];
+    XNMessageListController *messageVC = [[XNMessageListController alloc] init];
+    [messageVC initData];
+    [self setupChildVC:messageVC title:@"消息" image:@"tabbar_message" selectedImage:@"tabbar_messageSelected"];
     [self setupChildVC:[[XNTaskController alloc] init] title:@"任务" image:@"tabbar_task" selectedImage:@"tabbar_taskSelected"];
     [self setupChildVC:[[XNSettingController alloc] init] title:@"我的" image:@"tabbar_setting" selectedImage:@"tabbar_settingSelected"];
     

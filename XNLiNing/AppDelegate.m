@@ -15,6 +15,7 @@
 #import "AppDelegate+XNBaiduLocation.h"
 #import <RongIMLib/RongIMLib.h>
 #import <RongIMKit/RongIMKit.h>
+#import <UserNotifications/UserNotifications.h>
 #import "AppDelegate+XN3DTouch.h"
 
 @interface AppDelegate ()
@@ -36,7 +37,6 @@
     
     [self reachabilityInternet];
     
-    
     self.window = [[UIWindow alloc] init];
     self.window.frame = [UIScreen mainScreen].bounds;
     self.window.backgroundColor = [UIColor whiteColor];
@@ -49,12 +49,49 @@
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    
+
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    NSInteger ToatalunreadMsgCount = (NSInteger)[[RCIMClient sharedRCIMClient] getUnreadCount:@[@(ConversationType_PRIVATE),@(ConversationType_DISCUSSION),@(ConversationType_GROUP),@(ConversationType_CHATROOM)]];
+    
+    NSInteger ToatalunreadMsgCount = (NSInteger)[[RCIMClient sharedRCIMClient] getUnreadCount:@[@(ConversationType_PRIVATE)]];
     [UIApplication sharedApplication].applicationIconBadgeNumber = ToatalunreadMsgCount;
+    
+    __block UIBackgroundTaskIdentifier task = [application beginBackgroundTaskWithExpirationHandler:^{
+        [application endBackgroundTask:task];
+    }];
+}
+
+//注册用户通知设置
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings {
+    [application registerForRemoteNotifications];
+}
+
+/**
+ * 远程推送的token
+ */
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    NSString *token =
+    [[[[deviceToken description] stringByReplacingOccurrencesOfString:@"<"
+                                                           withString:@""]
+      stringByReplacingOccurrencesOfString:@">"
+      withString:@""]
+     stringByReplacingOccurrencesOfString:@" "
+     withString:@""];
+    
+    [[RCIMClient sharedRCIMClient] setDeviceToken:token];
+}
+/**
+ * 远程推送的内容
+ */
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler {
+    XNLog(@"%@远程推送内容", userInfo);
+}
+/**
+ * 本地推送的内容
+ */
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
+    [AppDelegate rong_application:application didReceiveLocalNotification:notification];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -62,9 +99,11 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
+    
 }
 
 

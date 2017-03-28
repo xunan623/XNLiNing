@@ -197,11 +197,11 @@
     
     XNContactModel *model = [[self.dataSource objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     
-    XNChatController *conversationVC = [[XNChatController alloc]init];
+    XNChatController *conversationVC = [[XNChatController alloc] initWithConversationType:ConversationType_PRIVATE
+                                                                                 targetId:model.id];
     conversationVC.conversationType = ConversationType_PRIVATE;
     conversationVC.targetId = model.id;
     conversationVC.title = model.id;
-    conversationVC.title = model.name;
     [self.navigationController pushViewController:conversationVC animated:YES];
     
 }

@@ -55,6 +55,10 @@
 #define XNSandBox_Temporary NSTemporaryDirectory()
 #define XnSandBox_Root      NSHomeDirectory()
 
+// 系统版本
+#define MODEL_VERSION [[[UIDevice currentDevice] systemVersion] floatValue] // 版本
+
+
 
 
 // 打印

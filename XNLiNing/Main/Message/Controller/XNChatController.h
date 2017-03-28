@@ -10,4 +10,7 @@
 
 @interface XNChatController : RCConversationViewController
 
+/** 是否需要自己发送信息 */
+@property (nonatomic, copy) NSString *messageContent;
+
 @end

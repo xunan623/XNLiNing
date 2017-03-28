@@ -11,48 +11,25 @@
 #import "XNBaseNavigationBar.h"
 #import "XNChatController.h"
 #import "XNMessageListCell.h"
+#import <UserNotifications/UserNotifications.h>
+#import <AudioToolbox/AudioToolbox.h>
 
-@interface XNMessageListController ()<UITableViewDelegate, UITableViewDataSource, RCIMReceiveMessageDelegate>
+
+@interface XNMessageListController ()<UITableViewDelegate, UITableViewDataSource, RCIMReceiveMessageDelegate, RCIMConnectionStatusDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) NSMutableArray *chatListArray;
 
-@property (strong, nonatomic) RCIMClient *rcimClientMessage;
-
-
 @end
 
 @implementation XNMessageListController
-
--(instancetype)init {
-    if (self = [super init]) {
-        [self.rcimMessage setReceiveMessageDelegate:self];
-    }
-    return self;
-}
 
 - (NSMutableArray *)chatListArray {
     if (!_chatListArray) {
         _chatListArray = [NSMutableArray array];
     }
     return _chatListArray;
-}
-
-- (RCIM *)rcimMessage {
-    if (!_rcimMessage) {
-        _rcimMessage = [RCIM sharedRCIM];
-        [_rcimMessage setReceiveMessageDelegate:self];
-
-    }
-    return _rcimMessage;
-}
-
-- (RCIMClient *)rcimClientMessage {
-    if (!_rcimClientMessage) {
-        _rcimClientMessage = [RCIMClient sharedRCIMClient];
-    }
-    return _rcimClientMessage;
 }
 
 - (XNBaseNavigationBar *)navBar {
@@ -86,27 +63,21 @@
     
 }
 
+- (void)initData {
+    [[RCIM sharedRCIM] setReceiveMessageDelegate:self];
+    [[RCIM sharedRCIM] setConnectionStatusDelegate:self];
+}
+
 - (void)getRCIMChatList {
     [self.chatListArray removeAllObjects];
     
-    NSMutableArray *allChatConversion = [[NSMutableArray alloc]initWithArray:[self.rcimClientMessage getConversationList:@[@(ConversationType_PRIVATE)]]];
+    NSMutableArray *allChatConversion = [[NSMutableArray alloc]initWithArray:[[RCIMClient sharedRCIMClient] getConversationList:@[@(ConversationType_PRIVATE)]]];
     [self.chatListArray addObjectsFromArray:allChatConversion];
     [self.tableView reloadData];
     
 }
 
-#pragma mark - RCIMReceiveMessageDelegate
 
--(void)onRCIMReceiveMessage:(RCMessage *)message left:(int)left {
-    
-    __weak typeof(self) weakSelf = self;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        
-        [weakSelf getRCIMChatList];
-        [[XNRCDataManager shareManager] refreshBadgeValue];
-        
-    });
-}
 
 #pragma mark - TabeleViewDelegate
 
@@ -146,5 +117,147 @@
     [self.navigationController pushViewController:conversationVC animated:YES];
 }
 
+#pragma mark - RCIMReceiveMessageDelegate
+
+/**
+ *  网络状态变化(目前暂时没用到)
+ */
+- (void)onRCIMConnectionStatusChanged:(RCConnectionStatus)status {
+    
+    if (status == ConnectionStatus_KICKED_OFFLINE_BY_OTHER_CLIENT) {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:nil
+                              message:@"您的帐号已在别的设备上登录，\n您被迫下线！"
+                              delegate:self
+                              cancelButtonTitle:@"知道了"
+                              otherButtonTitles:nil, nil];
+        [alert show];
+    }
+}
+
+-(void)onRCIMReceiveMessage:(RCMessage *)message left:(int)left {
+    
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        [weakSelf getRCIMChatList];
+        [[XNRCDataManager shareManager] refreshBadgeValue];
+        
+    });
+}
+
+- (BOOL)onRCIMCustomAlertSound:(RCMessage *)message {
+    return YES;
+}
+
+/**
+ * APP处于后台
+ */
+- (BOOL)onRCIMCustomLocalNotification:(RCMessage *)message withSenderName:(NSString *)senderName {
+    
+    if ([message.content isMemberOfClass:[RCTextMessage class]]) {
+        RCTextMessage *textMessage = (RCTextMessage *)message.content;
+        NSString * userMessage = [NSString stringWithFormat:@"%@:%@",senderName,textMessage.content];
+    
+        [XNMessageListController registerLocalNotification:0.01 Message:userMessage sendUserId:message.targetId];
+    } else if ([message.content isMemberOfClass:[RCImageMessage class]]) {
+        RCImageMessage *textMessage = (RCImageMessage *)message.content;
+        NSString * imgMessage = [NSString stringWithFormat:@"%@:%@",senderName,textMessage.imageUrl];
+        [XNMessageListController registerLocalNotification:0.01 Message:imgMessage sendUserId:message.targetId];
+    } else {
+        
+    }
+    return YES;
+}
+// 设置本地通知
++ (void)registerLocalNotification:(NSInteger)alertTime Message:(NSString *)message sendUserId:(NSString *)sendUserId{
+    
+    static NSInteger index = 1;
+    UILocalNotification *localNotifi = [[UILocalNotification alloc] init];
+    // 设置触发通知的时间
+    NSDate *fireDate = [NSDate dateWithTimeIntervalSinceNow:alertTime];
+    
+    localNotifi.fireDate = fireDate;
+    // 时区
+    localNotifi.timeZone = [NSTimeZone defaultTimeZone];
+    // 设置重复的间隔
+    localNotifi.repeatInterval = kCFCalendarUnitEra;
+    localNotifi.repeatInterval = 0;
+    
+    // 通知内容
+    localNotifi.alertBody =  message;
+    localNotifi.applicationIconBadgeNumber = index;
+    index ++;
+    // 通知参数
+    NSDictionary *userDict = [NSDictionary dictionaryWithObject:sendUserId forKey:@"rc_id"];
+    NSDictionary *sumUserDict = [NSDictionary dictionaryWithObject:userDict forKey:@"rc_content"];
+    localNotifi.userInfo = sumUserDict;
+    
+    if (MODEL_VERSION >= 10.0) {
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+            if (!error) {
+                [[UIApplication sharedApplication] registerForRemoteNotifications];
+            }
+        }];
+    } else if (MODEL_VERSION >= 8.0) {
+        
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge
+                                                                                             |UIUserNotificationTypeSound
+                                                                                             |UIUserNotificationTypeAlert) categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    }
+    
+    AudioServicesPlaySystemSound(1007);
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+
+    // 执行通知注册
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotifi];
+}
+
++ (void)registerLocalNotification:(NSInteger)alertTime Message:(NSString *)message {
+    
+    static NSInteger index = 1;
+    UILocalNotification *localNotifi = [[UILocalNotification alloc] init];
+    // 设置触发通知的时间
+    NSDate *fireDate = [NSDate dateWithTimeIntervalSinceNow:alertTime];
+    
+    localNotifi.fireDate = fireDate;
+    // 时区
+    localNotifi.timeZone = [NSTimeZone defaultTimeZone];
+    // 设置重复的间隔
+    localNotifi.repeatInterval = kCFCalendarUnitEra;
+    localNotifi.repeatInterval = 0;
+    
+    // 通知内容
+    localNotifi.alertBody =  message;
+    localNotifi.applicationIconBadgeNumber = index;
+    index ++;
+    // 通知参数
+    NSDictionary *userDict = [NSDictionary dictionaryWithObject:[XNUserDefaults new].userName forKey:@"rc_id"];
+    NSDictionary *sumUserDict = [NSDictionary dictionaryWithObject:userDict forKey:@"rc_content"];
+    localNotifi.userInfo = sumUserDict;
+    
+    if (MODEL_VERSION >= 10.0) {
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+            if (!error) {
+                [[UIApplication sharedApplication] registerForRemoteNotifications];
+            }
+        }];
+    } else if (MODEL_VERSION >= 8.0) {
+        
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge
+                                                                                             |UIUserNotificationTypeSound
+                                                                                             |UIUserNotificationTypeAlert) categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    }
+    
+    AudioServicesPlaySystemSound(1007);
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    
+    // 执行通知注册
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotifi];
+}
 
 @end
