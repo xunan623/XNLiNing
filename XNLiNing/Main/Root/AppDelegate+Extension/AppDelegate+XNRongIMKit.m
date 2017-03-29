@@ -94,7 +94,7 @@
 }
 
 + (void)rong_application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
-    NSString *notMess = [[notification.userInfo objectForKey:@"rc_content"] objectForKey:@"rc_id"];
+    NSString *notMess = [[notification.userInfo objectForKey:RCIM_LOCATIONPUSH_CONTENT] objectForKey:RCIM_LOCATIONPUSH_ID];
     
     if (notMess.length > 0) {
         //判断应用程序当前的运行状态，如果是激活状态，则进行提醒，否则不提醒
@@ -141,32 +141,21 @@
     localNotifi.repeatInterval = kCFCalendarUnitEra;
     localNotifi.repeatInterval = 0;
     
+    localNotifi.soundName = UILocalNotificationDefaultSoundName;
+    
     // 通知内容
     localNotifi.alertBody =  message;
     localNotifi.applicationIconBadgeNumber = index;
     index ++;
     // 通知参数
-    NSDictionary *userDict = [NSDictionary dictionaryWithObject:sendUserId forKey:@"rc_id"];
-    NSDictionary *sumUserDict = [NSDictionary dictionaryWithObject:userDict forKey:@"rc_content"];
+    NSDictionary *userDict = @{RCIM_LOCATIONPUSH_ID : sendUserId};
+    NSDictionary *sumUserDict = @{RCIM_LOCATIONPUSH_CONTENT : userDict};
     localNotifi.userInfo = sumUserDict;
     
-    if (MODEL_VERSION >= 10.0) {
-        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-        [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert) completionHandler:^(BOOL granted, NSError * _Nullable error) {
-            if (!error) {
-                [[UIApplication sharedApplication] registerForRemoteNotifications];
-            }
-        }];
-    } else if (MODEL_VERSION >= 8.0) {
-        
-        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge
-                                                                                             |UIUserNotificationTypeSound
-                                                                                             |UIUserNotificationTypeAlert) categories:nil];
-        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-    }
-    
-    AudioServicesPlaySystemSound(1007);
-    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge
+                                                                                         |UIUserNotificationTypeSound
+                                                                                         |UIUserNotificationTypeAlert) categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
     
     // 执行通知注册
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotifi];

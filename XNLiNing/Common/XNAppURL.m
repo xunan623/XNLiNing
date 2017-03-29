@@ -47,6 +47,9 @@ NSString *const AppRequestURL_reportApp = @"reportApp.action";
 
 NSString *const RCIM_TOKEN = @"RCIM_TOKEN";
 NSString *const RCIM_GET_TOKEN = @"https://api.cn.rong.io/user/getToken.json";
+NSString *const RCIM_LOCATIONPUSH_ID = @"RCIM_LOCATIONPUSH_ID";                                     // 本地推送key
+NSString *const RCIM_LOCATIONPUSH_CONTENT = @"RCIM_LOCATIONPUSH_CONTENT";                           // 融云本地推送content
+
 
 
 
