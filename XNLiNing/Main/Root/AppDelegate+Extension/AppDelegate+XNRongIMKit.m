@@ -12,6 +12,10 @@
 #import "XNTabbarController.h"
 #import "XNChatController.h"
 #import "XNBaseNavigationController.h"
+#import <UserNotifications/UserNotifications.h>
+#import <AudioToolbox/AudioToolbox.h>
+#import <RongIMLib/RongIMLib.h>
+
 
 
 @implementation AppDelegate (XNRongIMKit)
@@ -57,7 +61,6 @@
         [self changeLocalNotifi:localNotifi];
     }
     XNLog(@"%@--远程推送内容", remoteNotificationUserInfo);
-    
     
 
     return YES;
@@ -105,8 +108,8 @@
                 conversationVC.title = notMess;
          
                 XNTabbarController *tabbar = (XNTabbarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
-                tabbar.selectedIndex = 3;
-                XNBaseNavigationController *nav = tabbar.viewControllers[2];
+                tabbar.selectedIndex = 1;
+                XNBaseNavigationController *nav = tabbar.viewControllers[1];
                 [nav pushViewController:conversationVC animated:NO];
                 
                 // 更新显示的徽章个数
@@ -121,6 +124,52 @@
         }
     }
 
+}
+
+
+// 设置本地通知
++ (void)registerLocalNotification:(NSInteger)alertTime Message:(NSString *)message sendUserId:(NSString *)sendUserId unReadCount:(NSInteger)index{
+    
+    UILocalNotification *localNotifi = [[UILocalNotification alloc] init];
+    // 设置触发通知的时间
+    NSDate *fireDate = [NSDate dateWithTimeIntervalSinceNow:alertTime];
+    
+    localNotifi.fireDate = fireDate;
+    // 时区
+    localNotifi.timeZone = [NSTimeZone defaultTimeZone];
+    // 设置重复的间隔
+    localNotifi.repeatInterval = kCFCalendarUnitEra;
+    localNotifi.repeatInterval = 0;
+    
+    // 通知内容
+    localNotifi.alertBody =  message;
+    localNotifi.applicationIconBadgeNumber = index;
+    index ++;
+    // 通知参数
+    NSDictionary *userDict = [NSDictionary dictionaryWithObject:sendUserId forKey:@"rc_id"];
+    NSDictionary *sumUserDict = [NSDictionary dictionaryWithObject:userDict forKey:@"rc_content"];
+    localNotifi.userInfo = sumUserDict;
+    
+    if (MODEL_VERSION >= 10.0) {
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert) completionHandler:^(BOOL granted, NSError * _Nullable error) {
+            if (!error) {
+                [[UIApplication sharedApplication] registerForRemoteNotifications];
+            }
+        }];
+    } else if (MODEL_VERSION >= 8.0) {
+        
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge
+                                                                                             |UIUserNotificationTypeSound
+                                                                                             |UIUserNotificationTypeAlert) categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    }
+    
+    AudioServicesPlaySystemSound(1007);
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    
+    // 执行通知注册
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotifi];
 }
 
 @end

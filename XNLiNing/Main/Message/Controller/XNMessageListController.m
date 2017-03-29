@@ -11,8 +11,9 @@
 #import "XNBaseNavigationBar.h"
 #import "XNChatController.h"
 #import "XNMessageListCell.h"
-#import <UserNotifications/UserNotifications.h>
-#import <AudioToolbox/AudioToolbox.h>
+#import <RongIMLib/RongIMLib.h>
+#import "AppDelegate+XNRongIMKit.h"
+
 
 
 @interface XNMessageListController ()<UITableViewDelegate, UITableViewDataSource, RCIMReceiveMessageDelegate, RCIMConnectionStatusDelegate>
@@ -44,6 +45,7 @@
     [super viewDidLoad];
     
     [self setupUI];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -140,124 +142,45 @@
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         
+        // 刷新数据 刷新未读消息数
         [weakSelf getRCIMChatList];
         [[XNRCDataManager shareManager] refreshBadgeValue];
         
+        int allunread = [[RCIMClient sharedRCIMClient] getTotalUnreadCount];//获取消息数量
+        // 发送本地推送
+        if ([message.content isMemberOfClass:[RCTextMessage class]]) {  // 文字
+            RCTextMessage *textMessage = (RCTextMessage *)message.content;
+            NSString * userMessage = [NSString stringWithFormat:@"%@:%@", message.senderUserId,textMessage.content];
+            
+            [AppDelegate registerLocalNotification:0.1 Message:userMessage
+                                        sendUserId:message.targetId
+                                       unReadCount:allunread];
+        } else if ([message.content isMemberOfClass:[RCImageMessage class]]) {  // 图片
+            RCImageMessage *textMessage = (RCImageMessage *)message.content;
+            NSString * imgMessage = [NSString stringWithFormat:@"%@:%@",message.senderUserId,textMessage.imageUrl];
+            [AppDelegate registerLocalNotification:0.1 Message:imgMessage
+                                        sendUserId:message.targetId
+                                       unReadCount:allunread];
+        } else if ([message.content isMemberOfClass:[RCLocationMessage class]]) {
+            NSString * imgMessage = [NSString stringWithFormat:@"%@:%@",message.senderUserId,@"位置"];
+            [AppDelegate registerLocalNotification:0.1 Message:imgMessage
+                                        sendUserId:message.targetId
+                                       unReadCount:allunread];
+        }
+        
     });
+    
+
 }
 
-- (BOOL)onRCIMCustomAlertSound:(RCMessage *)message {
-    return YES;
-}
 
 /**
- * APP处于后台
+ * APP处于后台 不知道为什么老是不走
  */
 - (BOOL)onRCIMCustomLocalNotification:(RCMessage *)message withSenderName:(NSString *)senderName {
     
-    if ([message.content isMemberOfClass:[RCTextMessage class]]) {
-        RCTextMessage *textMessage = (RCTextMessage *)message.content;
-        NSString * userMessage = [NSString stringWithFormat:@"%@:%@",senderName,textMessage.content];
-    
-        [XNMessageListController registerLocalNotification:0.01 Message:userMessage sendUserId:message.targetId];
-    } else if ([message.content isMemberOfClass:[RCImageMessage class]]) {
-        RCImageMessage *textMessage = (RCImageMessage *)message.content;
-        NSString * imgMessage = [NSString stringWithFormat:@"%@:%@",senderName,textMessage.imageUrl];
-        [XNMessageListController registerLocalNotification:0.01 Message:imgMessage sendUserId:message.targetId];
-    } else {
-        
-    }
     return YES;
 }
-// 设置本地通知
-+ (void)registerLocalNotification:(NSInteger)alertTime Message:(NSString *)message sendUserId:(NSString *)sendUserId{
-    
-    static NSInteger index = 1;
-    UILocalNotification *localNotifi = [[UILocalNotification alloc] init];
-    // 设置触发通知的时间
-    NSDate *fireDate = [NSDate dateWithTimeIntervalSinceNow:alertTime];
-    
-    localNotifi.fireDate = fireDate;
-    // 时区
-    localNotifi.timeZone = [NSTimeZone defaultTimeZone];
-    // 设置重复的间隔
-    localNotifi.repeatInterval = kCFCalendarUnitEra;
-    localNotifi.repeatInterval = 0;
-    
-    // 通知内容
-    localNotifi.alertBody =  message;
-    localNotifi.applicationIconBadgeNumber = index;
-    index ++;
-    // 通知参数
-    NSDictionary *userDict = [NSDictionary dictionaryWithObject:sendUserId forKey:@"rc_id"];
-    NSDictionary *sumUserDict = [NSDictionary dictionaryWithObject:userDict forKey:@"rc_content"];
-    localNotifi.userInfo = sumUserDict;
-    
-    if (MODEL_VERSION >= 10.0) {
-        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-        [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert) completionHandler:^(BOOL granted, NSError * _Nullable error) {
-            if (!error) {
-                [[UIApplication sharedApplication] registerForRemoteNotifications];
-            }
-        }];
-    } else if (MODEL_VERSION >= 8.0) {
-        
-        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge
-                                                                                             |UIUserNotificationTypeSound
-                                                                                             |UIUserNotificationTypeAlert) categories:nil];
-        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-    }
-    
-    AudioServicesPlaySystemSound(1007);
-    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
 
-    // 执行通知注册
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotifi];
-}
-
-+ (void)registerLocalNotification:(NSInteger)alertTime Message:(NSString *)message {
-    
-    static NSInteger index = 1;
-    UILocalNotification *localNotifi = [[UILocalNotification alloc] init];
-    // 设置触发通知的时间
-    NSDate *fireDate = [NSDate dateWithTimeIntervalSinceNow:alertTime];
-    
-    localNotifi.fireDate = fireDate;
-    // 时区
-    localNotifi.timeZone = [NSTimeZone defaultTimeZone];
-    // 设置重复的间隔
-    localNotifi.repeatInterval = kCFCalendarUnitEra;
-    localNotifi.repeatInterval = 0;
-    
-    // 通知内容
-    localNotifi.alertBody =  message;
-    localNotifi.applicationIconBadgeNumber = index;
-    index ++;
-    // 通知参数
-    NSDictionary *userDict = [NSDictionary dictionaryWithObject:[XNUserDefaults new].userName forKey:@"rc_id"];
-    NSDictionary *sumUserDict = [NSDictionary dictionaryWithObject:userDict forKey:@"rc_content"];
-    localNotifi.userInfo = sumUserDict;
-    
-    if (MODEL_VERSION >= 10.0) {
-        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
-        [center requestAuthorizationWithOptions:(UNAuthorizationOptionBadge | UNAuthorizationOptionSound | UNAuthorizationOptionAlert) completionHandler:^(BOOL granted, NSError * _Nullable error) {
-            if (!error) {
-                [[UIApplication sharedApplication] registerForRemoteNotifications];
-            }
-        }];
-    } else if (MODEL_VERSION >= 8.0) {
-        
-        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge
-                                                                                             |UIUserNotificationTypeSound
-                                                                                             |UIUserNotificationTypeAlert) categories:nil];
-        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
-    }
-    
-    AudioServicesPlaySystemSound(1007);
-    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
-    
-    // 执行通知注册
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotifi];
-}
 
 @end
