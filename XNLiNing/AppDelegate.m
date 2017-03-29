@@ -85,7 +85,10 @@
  * 远程推送的内容
  */
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler {
-    XNLog(@"%@远程推送内容", userInfo);
+    
+    [AppDelegate rong_application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+    
+    completionHandler(UIBackgroundFetchResultNewData);
 }
 /**
  * 本地推送的内容

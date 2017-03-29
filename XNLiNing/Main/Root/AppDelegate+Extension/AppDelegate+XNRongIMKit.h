@@ -17,6 +17,12 @@
 /** 本地通知 */
 + (void)rong_application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification;
 
+/** 远程推送回调 */
++ (void)rong_application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler;
+
+
 /** 注册本地通知 */
 + (void)registerLocalNotification:(NSInteger)alertTime Message:(NSString *)message sendUserId:(NSString *)sendUserId unReadCount:(NSInteger)index;
+
+
 @end

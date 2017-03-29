@@ -54,14 +54,11 @@
                                               object:nil];
     
     
-    NSDictionary *remoteNotificationUserInfo = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
     // 处理退出后通知的点击，程序启动后获取通知对象，如果是首次启动还没有发送通知，那第一次通知对象为空，没必要去处理通知（如跳转到指定页面）
-    if (launchOptions[UIApplicationLaunchOptionsLocalNotificationKey]) {
+    if (launchOptions[UIApplicationLaunchOptionsLocalNotificationKey]) { // 本地推送
         UILocalNotification *localNotifi = launchOptions[UIApplicationLaunchOptionsLocalNotificationKey];
         [self changeLocalNotifi:localNotifi];
     }
-    XNLog(@"%@--远程推送内容", remoteNotificationUserInfo);
-    
 
     return YES;
 }
@@ -102,6 +99,8 @@
             
             if ([[UIApplication sharedApplication].keyWindow.rootViewController isKindOfClass:[XNTabbarController class]]) {
                 
+                [UIApplication sharedApplication].keyWindow.rootViewController = [[XNTabbarController alloc] init];
+                
                 XNChatController *conversationVC = [[XNChatController alloc] init];
                 conversationVC.conversationType = ConversationType_PRIVATE;
                 conversationVC.targetId = notMess;
@@ -123,6 +122,29 @@
             }
         }
     }
+
+}
+
++ (void)rong_application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    
+    if (userInfo) {
+        NSDictionary *rcDict = userInfo[@"rc"];
+        if (rcDict) {
+            [UIApplication sharedApplication].keyWindow.rootViewController = [[XNTabbarController alloc] init];
+            
+            XNChatController *conversationVC = [[XNChatController alloc] init];
+            conversationVC.conversationType = ConversationType_PRIVATE;
+            conversationVC.targetId =  rcDict[@"tId"];
+            conversationVC.title = rcDict[@"tId"];
+            
+            XNTabbarController *tabbar = (XNTabbarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+            tabbar.selectedIndex = 1;
+            XNBaseNavigationController *nav = tabbar.viewControllers[1];
+            [nav pushViewController:conversationVC animated:NO];
+        }
+    }
+    
+    completionHandler(UIBackgroundFetchResultNewData);
 
 }
 
