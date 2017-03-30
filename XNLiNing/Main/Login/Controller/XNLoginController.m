@@ -79,6 +79,13 @@
         self.submmitBtn.userInteractionEnabled = NO;
     }
 }
+- (IBAction)QQbtnClick:(UIButton *)sender {
+    
+}
+- (IBAction)sinaClick {
+}
+- (IBAction)weiChatClick {
+}
 
 #pragma mark - 请求接口
 - (IBAction)submitClick:(UIButton *)sender {

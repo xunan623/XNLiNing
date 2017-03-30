@@ -17,6 +17,8 @@
 #import <RongIMKit/RongIMKit.h>
 #import <UserNotifications/UserNotifications.h>
 #import "AppDelegate+XN3DTouch.h"
+#import <UIImageView+WebCache.h>
+#import "AppDelegate+XNThirdPlatform.h"
 
 @interface AppDelegate ()
 
@@ -27,20 +29,29 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    // 本地存储
     [[RWUserDefaults shareInstance] registerClass:[XNUserDefaults class]];
     
+    // 融云相关
     [AppDelegate rong_application:application didFinishLaunchingWithOptions:launchOptions];
-        
+    
+    // 3dTouch
     [AppDelegate touch_application:application didFinishLaunchingWithOptions:launchOptions];
     
+    // 第三方登录
+    [self registThirdPlatform];
+    
+    // 百度地图初始化
     [self baiduLocation_applicationSetUp];
     
+    // 检查网络
     [self reachabilityInternet];
     
     self.window = [[UIWindow alloc] init];
     self.window.frame = [UIScreen mainScreen].bounds;
     self.window.backgroundColor = [UIColor whiteColor];
     
+    // 切换控制器
     [self.window switchRootViewController];
     
     [self.window makeKeyAndVisible];
@@ -106,6 +117,15 @@
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
+    
+}
+
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+    SDWebImageManager *mgr = [SDWebImageManager sharedManager];
+    // 1.取消下载
+    [mgr cancelAll];
+    // 2.清除内存中的所有图片
+    [mgr.imageCache clearMemory];
     
 }
 

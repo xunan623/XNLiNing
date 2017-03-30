@@ -47,6 +47,7 @@
 		7122B2B41E6E55BE00068216 /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7122B2B31E6E55BE00068216 /* UIWindow+Extension.m */; };
 		7122B2B71E6E5DB500068216 /* XNBaseRes.m in Sources */ = {isa = PBXBuildFile; fileRef = 7122B2B61E6E5DB500068216 /* XNBaseRes.m */; };
 		7122CE941E764CAC00C4F882 /* XNBaseNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7122CE931E764CAC00C4F882 /* XNBaseNavigationBar.m */; };
+		712BD15A1E8C9DD200661C96 /* AppDelegate+XNThirdPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 712BD1591E8C9DD200661C96 /* AppDelegate+XNThirdPlatform.m */; };
 		712FD5491E88E99A00BCBE12 /* XNChatSystemMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 712FD5481E88E99A00BCBE12 /* XNChatSystemMessage.m */; };
 		712FD54C1E88E9B200BCBE12 /* XNSimpleMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 712FD54B1E88E9B200BCBE12 /* XNSimpleMessageCell.m */; };
 		7134C7AC1E7284AA005BC6F0 /* XNMessageListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7134C7AA1E7284AA005BC6F0 /* XNMessageListController.m */; };
@@ -164,6 +165,8 @@
 		7122CE921E764CAC00C4F882 /* XNBaseNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNBaseNavigationBar.h; sourceTree = "<group>"; };
 		7122CE931E764CAC00C4F882 /* XNBaseNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNBaseNavigationBar.m; sourceTree = "<group>"; };
 		71237EC41E891E5B00E19B23 /* XNLiNing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XNLiNing.entitlements; sourceTree = "<group>"; };
+		712BD1581E8C9DD200661C96 /* AppDelegate+XNThirdPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+XNThirdPlatform.h"; sourceTree = "<group>"; };
+		712BD1591E8C9DD200661C96 /* AppDelegate+XNThirdPlatform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+XNThirdPlatform.m"; sourceTree = "<group>"; };
 		712FD5471E88E99A00BCBE12 /* XNChatSystemMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNChatSystemMessage.h; sourceTree = "<group>"; };
 		712FD5481E88E99A00BCBE12 /* XNChatSystemMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNChatSystemMessage.m; sourceTree = "<group>"; };
 		712FD54A1E88E9B200BCBE12 /* XNSimpleMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNSimpleMessageCell.h; sourceTree = "<group>"; };
@@ -405,6 +408,8 @@
 				710B56601E84FB91009A372D /* AppDelegate+XNBaiduLocation.m */,
 				710B56611E84FB91009A372D /* AppDelegate+XNRongIMKit.h */,
 				710B56621E84FB91009A372D /* AppDelegate+XNRongIMKit.m */,
+				712BD1581E8C9DD200661C96 /* AppDelegate+XNThirdPlatform.h */,
+				712BD1591E8C9DD200661C96 /* AppDelegate+XNThirdPlatform.m */,
 			);
 			path = "AppDelegate+Extension";
 			sourceTree = "<group>";
@@ -963,6 +968,7 @@
 				7134C7B11E728512005BC6F0 /* XNMessageListCell.m in Sources */,
 				7167DDD71E712E1B00F61886 /* XNContactModel.m in Sources */,
 				71B7DB071E6D5F460052E450 /* XNSaveUserDefault.m in Sources */,
+				712BD15A1E8C9DD200661C96 /* AppDelegate+XNThirdPlatform.m in Sources */,
 				715137BD1E78EF3200399BC0 /* XNSaveModel.m in Sources */,
 				710B56631E84FB91009A372D /* AppDelegate+XN3DTouch.m in Sources */,
 				7121E9021E681EBF00EF8D4B /* XNTaskController.m in Sources */,

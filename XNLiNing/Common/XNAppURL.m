@@ -15,9 +15,16 @@ NSString *const AppRequestURL = @"http://124.207.27.112/vi/app/";
 
 NSString *const AppRongCloudAppKey = @"qd46yzrfq02of";
 NSString *const AppRongCloudAppSecret = @"4ax8XsLDA1ch";
-
+NSString *const AppWeChatAppID = @"wxb7c1f4edb7e5eaf8";
+NSString *const AppWeChatAppSecret = @"eb21a4c55ef3dcc19eb519443bef4fd2";
+NSString *const AppQQAppID = @"1105582312";
+NSString *const AppQQAppKey = @"jCEn8lFrgw7u3eva";
+NSString *const AppWeiboAppKey = @"1931998880";
+NSString *const AppWeiboAppSecret = @"de11143c7f6b6d39c24ccd3f5ef54426";
+NSString *const AppWeiboRedirectUrl = @"https://api.weibo.com/oauth2/default.html";
 
 #else
+
 NSString *const AppRequestURL = @"http://lnrts.li-ning.com.cn/vi/app/";
 NSString *const AppRongCloudAppKey = @"qd46yzrfq02of";
 NSString *const AppRongCloudAppSecret = @"4ax8XsLDA1ch";
