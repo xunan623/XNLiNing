@@ -48,5 +48,23 @@ FOUNDATION_EXTERN NSString *const RCIM_LOCATIONPUSH_CONTENT;            // 融�
 FOUNDATION_EXTERN NSString *const BAIDU_APP_KEY;                        // 百度地图key
 
 
+/******************   第三方登录   ************/
+FOUNDATION_EXTERN NSString *const AppWeChatAppID;                       // 微信id
+FOUNDATION_EXTERN NSString *const AppWeChatAppSecret;                   // 微信secret
+FOUNDATION_EXTERN NSString *const AppQQAppID;                           // QQid
+FOUNDATION_EXTERN NSString *const AppQQAppKey;                          // QQkey
+FOUNDATION_EXTERN NSString *const AppWeiboAppKey;                       // 微博key
+FOUNDATION_EXTERN NSString *const AppWeiboAppSecret;                    // 微博secret
+FOUNDATION_EXTERN NSString *const AppWeiboRedirectUrl;                  // 微博重定向页面
+
+FOUNDATION_EXTERN NSString *const AppRequestURL_WeiXin_Token;           // 微信获取token
+FOUNDATION_EXTERN NSString *const AppRequestURL_WeiXin_UserInfo;        // 微信获取用户信息
+FOUNDATION_EXTERN NSString *const AppRequestURL_Weibo_UserInfo;         // 微博用户信息
+
+
+
+
+
+
 
 @end

@@ -52,6 +52,13 @@
         }
     }
     
+    if([shortcutItem.type isEqualToString:@"com.aist.XNLiNing"]){
+        NSArray *arr = @[@"hello 3D Touch"];
+        UIActivityViewController *vc = [[UIActivityViewController alloc]initWithActivityItems:arr applicationActivities:nil];
+        [[[UIApplication sharedApplication].delegate window].rootViewController presentViewController:vc animated:YES completion:^{
+        }];
+    }
+    
     
     if (completionHandler) {
         completionHandler(YES);

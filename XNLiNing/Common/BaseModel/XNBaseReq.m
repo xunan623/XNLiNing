@@ -28,13 +28,17 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    NSString *url = [NSString stringWithFormat:@"%@%@", AppRequestURL, urlString];
+    
+        
+    NSString *url = [urlString containsString:@"http"] ? urlString : [NSString stringWithFormat:@"%@%@", AppRequestURL, urlString];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:
                                                          @"application/json",
                                                          @"text/json",
                                                          @"text/javascript",
+                                                         @"text/plain",
                                                          @"text/html",nil];
     [manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask *task, NSDictionary *responseObject) {
+  
         XNLog(@"%@ \n \n %@", responseObject, responseObject.mj_JSONString);
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         if (succeedBlock) succeedBlock(responseObject);

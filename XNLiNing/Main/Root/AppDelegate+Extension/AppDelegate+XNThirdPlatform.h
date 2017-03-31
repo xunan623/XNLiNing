@@ -7,10 +7,15 @@
 //
 
 #import "AppDelegate.h"
+#import <TencentOpenAPI/TencentOAuth.h>
 
 @interface AppDelegate (XNThirdPlatform)
 
 /** 第三方登录注册 */
 -(void)registThirdPlatform;
+
+/** 授权QQ */
+-(void)OAuthQQMethod;
+
 
 @end

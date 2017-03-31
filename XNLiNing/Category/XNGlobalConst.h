@@ -58,7 +58,7 @@
 // 系统版本
 #define MODEL_VERSION [[[UIDevice currentDevice] systemVersion] floatValue] // 版本
 
-
+#define WeakSelf(weakSelf)  __weak __typeof(self)weakSelf = self;
 
 
 // 打印

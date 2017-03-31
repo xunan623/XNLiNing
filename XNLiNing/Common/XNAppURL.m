@@ -11,7 +11,6 @@
 @implementation XNAppURL
 #ifdef DEBUG
 NSString *const AppRequestURL = @"http://124.207.27.112/vi/app/";
-//NSString *const AppRequestURL = @"http://lnrts.li-ning.com.cn/vi/app/";
 
 NSString *const AppRongCloudAppKey = @"qd46yzrfq02of";
 NSString *const AppRongCloudAppSecret = @"4ax8XsLDA1ch";
@@ -19,9 +18,9 @@ NSString *const AppWeChatAppID = @"wxb7c1f4edb7e5eaf8";
 NSString *const AppWeChatAppSecret = @"eb21a4c55ef3dcc19eb519443bef4fd2";
 NSString *const AppQQAppID = @"1105582312";
 NSString *const AppQQAppKey = @"jCEn8lFrgw7u3eva";
-NSString *const AppWeiboAppKey = @"1931998880";
-NSString *const AppWeiboAppSecret = @"de11143c7f6b6d39c24ccd3f5ef54426";
-NSString *const AppWeiboRedirectUrl = @"https://api.weibo.com/oauth2/default.html";
+NSString *const AppWeiboAppKey = @"413249770";
+NSString *const AppWeiboAppSecret = @"3b66c661bdd194e6790633e6adc46174";
+NSString *const AppWeiboRedirectUrl = @"http://www.sina.com";
 
 #else
 
@@ -49,7 +48,9 @@ NSString *const AppRequestURL_findUserInfoApp = @"findUserInfoApp.action";
 NSString *const AppRequestURL_getItemImgsApp = @"getItemImgsApp.action";
 NSString *const AppRequestURL_reportApp = @"reportApp.action";
 
-
+NSString *const AppRequestURL_WeiXin_Token = @"https://api.weixin.qq.com/sns/oauth2/access_token";
+NSString *const AppRequestURL_WeiXin_UserInfo = @"https://api.weixin.qq.com/sns/userinfo";
+NSString *const AppRequestURL_Weibo_UserInfo = @"https://api.weibo.com/2/users/show.json";
 
 
 NSString *const RCIM_TOKEN = @"RCIM_TOKEN";

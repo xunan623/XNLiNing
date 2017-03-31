@@ -15,6 +15,12 @@
 #import "UIWindow+Extension.h"
 #import <WHC_ModelSqlite.h>
 #import "XNSaveModel.h"
+#import "AppDelegate+XNThirdPlatform.h"
+#import <WeiboSDK.h>
+#import <WXApi.h>
+#import <TencentOpenAPI/TencentOAuth.h>
+
+
 
 @interface XNLoginController ()<UITextFieldDelegate, UIViewControllerTransitioningDelegate>
 
@@ -80,11 +86,21 @@
     }
 }
 - (IBAction)QQbtnClick:(UIButton *)sender {
-    
+    [[AppDelegate shareAppDelegate] OAuthQQMethod];
 }
 - (IBAction)sinaClick {
+    WBAuthorizeRequest *request = [WBAuthorizeRequest request];
+    request.redirectURI = AppWeiboRedirectUrl;
+    request.scope = @"all";
+    request.userInfo = @{AppWeiboAppKey:AppWeiboAppSecret};
+    [WeiboSDK sendRequest:request];
 }
 - (IBAction)weiChatClick {
+    SendAuthReq *requestItem = [[SendAuthReq alloc]init];
+    requestItem.scope = @"snsapi_userinfo";
+    requestItem.state = AppWeChatAppID;
+    [WXApi sendReq:requestItem];
+
 }
 
 #pragma mark - 请求接口
