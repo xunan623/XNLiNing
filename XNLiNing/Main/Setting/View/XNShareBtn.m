@@ -16,15 +16,26 @@
         [self setTitleColor:XNColor_RGB(50, 50, 50) forState:UIControlStateNormal];
         self.titleLabel.font = [UIFont systemFontOfSize:12.f];
         [self setImage:[UIImage imageNamed:imageNamed] forState:UIControlStateNormal];
-        self.titleLabel.textAlignment = NSTextAlignmentCenter;        
-        [self setImageEdgeInsets:UIEdgeInsetsMake(-(self.rw_height - self.imageView.frame.size.height),
-                                                  0.0, 0.0,
-                                                  -self.titleLabel.frame.size.width)];
-        // 设置按钮标题偏移
-        [self setTitleEdgeInsets:UIEdgeInsetsMake(0.0, -self.imageView.frame.size.width,
-                                                  -(self.rw_height - self.titleLabel.frame.size.height),0.0)];
+        self.titleLabel.textAlignment = NSTextAlignmentCenter;
+   
+        self.imageView.contentMode = UIViewContentModeCenter;
     }
     return self;
+}
+
+
+-(CGRect)titleRectForContentRect:(CGRect)contentRect{
+    CGFloat titleX = 0;
+    CGFloat titleY = contentRect.size.height *0.7;
+    CGFloat titleW = contentRect.size.width;
+    CGFloat titleH = contentRect.size.height - titleY;
+    return CGRectMake(titleX, titleY, titleW, titleH);
+}
+
+-(CGRect)imageRectForContentRect:(CGRect)contentRect{
+    CGFloat imageW = CGRectGetWidth(contentRect);
+    CGFloat imageH = contentRect.size.height * 0.7;
+    return CGRectMake(0, 0, imageW, imageH);
 }
 
 @end

@@ -44,19 +44,28 @@ static NSString *cellId = @"XNSettingCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setupUI];
+    
     [self setupData];
     
+
+}
+
+- (void)setupUI {
     self.collectionView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
     self.collectionView.backgroundColor = XNAPPNormalBGColor;
     [self.collectionView registerClass:[XNSettingCell class] forCellWithReuseIdentifier:cellId];
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([XNSettingCollectionHeaderView class])
                                                     bundle:[NSBundle mainBundle]]
-                                forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
-                                       withReuseIdentifier:headerId];
+          forSupplementaryViewOfKind:UICollectionElementKindSectionHeader
+                 withReuseIdentifier:headerId];
     [self.collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([XNSettingCollectionFooterView class])
                                                     bundle:[NSBundle mainBundle]]
           forSupplementaryViewOfKind:UICollectionElementKindSectionFooter
                  withReuseIdentifier:footerId];
+    
+    self.navBar.hidden = NO;
+    self.navBar.alpha = 0.0f;
 }
 
 - (void)setupData {
@@ -171,6 +180,9 @@ static NSString *cellId = @"XNSettingCell";
 
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    CGFloat yOffset = self.collectionView.contentOffset.y;
+    //向上偏移量变正  向下偏移量变负
+    self.navBar.alpha = yOffset/ 128.0;
     
 }
 

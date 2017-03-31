@@ -33,13 +33,14 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    NSArray *titleArray = @[@"QQ", @"微信朋友圈", @"微信好友", @"微博"];
+    NSArray *titleArray = @[@"QQ", @"朋友圈", @"微信好友", @"微博"];
+    NSArray *imageArray = @[@"Share_QQ", @"Share_WeFriend", @"Share_WeChat", @"Share_Sina"];
     for (NSInteger i = 0 ; i< titleArray.count; i++) {
         XNShareBtn *btn = [[XNShareBtn alloc] initWithFrame:CGRectMake(i * XNScreen_Width/titleArray.count,
-                                                                       80, XNScreen_Width/titleArray.count,
-                                                                       50)
+                                                                       50, XNScreen_Width/titleArray.count,
+                                                                       80)
                                                       tilte:titleArray[i]
-                                                      image:@"Setting_setting"];
+                                                      image:imageArray[i]];
         btn.tag = (i+ 1) * 10;
         [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.centerView addSubview:btn];
@@ -129,9 +130,10 @@
 
 - (UILabel *)titleText {
     if (!_titleText) {
-        _titleText = [[UILabel alloc] initWithFrame:CGRectMake(10, 20, XNScreen_Width, 20)];
+        _titleText = [[UILabel alloc] initWithFrame:CGRectMake(10, 20, XNScreen_Width - 20, 20)];
         _titleText.textColor = XNColor_RGB(50, 50, 50);
-        _titleText.font = [UIFont systemFontOfSize:14.f];
+        _titleText.font = [UIFont systemFontOfSize:16.f];
+        _titleText.textAlignment = NSTextAlignmentCenter;
         _titleText.text = @"请选择你的分享";
     }
     return _titleText;
