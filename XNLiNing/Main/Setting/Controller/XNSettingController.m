@@ -11,11 +11,19 @@
 #import "XNSettingCollectionHeaderView.h"
 #import "XNSettingCollectionFooterView.h"
 #import "XNLoginController.h"
+#import "XNSettingModel.h"
+#import "XNProfileController.h"
+#import <MJExtension.h>
+#import "XNShareView.h"
+
+
 
 @interface XNSettingController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *collectionViewConH;
+
+@property (strong, nonatomic) NSMutableArray *dataArray;
 
 @end
 
@@ -25,8 +33,18 @@ static NSString *cellId = @"XNSettingCell";
 
 @implementation XNSettingController
 
+
+- (NSMutableArray *)dataArray {
+    if (!_dataArray) {
+        _dataArray = [NSMutableArray array];
+    }
+    return _dataArray;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self setupData];
     
     self.collectionView.contentInset = UIEdgeInsetsMake(-25, 0, 0, 0);
     self.collectionView.backgroundColor = XNAPPNormalBGColor;
@@ -39,17 +57,28 @@ static NSString *cellId = @"XNSettingCell";
                                                     bundle:[NSBundle mainBundle]]
           forSupplementaryViewOfKind:UICollectionElementKindSectionFooter
                  withReuseIdentifier:footerId];
-    
+}
+
+- (void)setupData {
+    NSArray *listArray = [NSArray arrayWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"SettingData" ofType:@"plist"]];
+    for (NSInteger i = 0; i< listArray.count; i++) {
+        XNSettingModel *model = [XNSettingModel mj_objectWithKeyValues:listArray[i]];
+        [self.dataArray addObject:model];
+    }
+    [self.collectionView reloadData];
 }
 
 #pragma mark - UICollectionViewDelegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 20;
+    return self.dataArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     XNSettingCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId
                                                                         forIndexPath:indexPath];
+    XNSettingModel *model = self.dataArray[indexPath.row];
+    cell.titleImage.image = [UIImage imageNamed:model.icon];
+    cell.tittleLabels.text = model.title;
     return cell;
 }
 
@@ -120,6 +149,24 @@ static NSString *cellId = @"XNSettingCell";
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
     return CGSizeMake(XNScreen_Width, 80);
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    XNSettingModel *model = self.dataArray[indexPath.item];
+    switch (model.titleId) {
+        case 19: { // 设置
+            XNProfileController *profileVC = [[XNProfileController alloc] init];
+            [self.navigationController pushViewController:profileVC animated:YES];
+        }
+            break;
+        case 18: { // 分享
+            [[XNShareView msGetInstance] show];
+        }
+            break;
+        default:
+            break;
+    }
 }
 
 

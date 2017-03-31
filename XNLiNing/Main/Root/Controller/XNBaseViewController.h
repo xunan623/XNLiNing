@@ -18,6 +18,9 @@
 - (void)finishAnimationWithBtn:(UIButton *)presentBtn Delay:(NSTimeInterval)time;
 
 
+@property (strong, nonatomic) XNBaseNavigationBar *navBar;
+
+
 
 // 默认返回为YES,表示支持右滑返回  手势返回
 - (BOOL)gestureRecognizerShouldBegin;

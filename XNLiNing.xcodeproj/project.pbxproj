@@ -75,6 +75,12 @@
 		717429721D845B5400EC2910 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 717429711D845B5400EC2910 /* AppDelegate.m */; };
 		7174297A1D845B5400EC2910 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 717429791D845B5400EC2910 /* Assets.xcassets */; };
 		7174297D1D845B5400EC2910 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7174297B1D845B5400EC2910 /* LaunchScreen.storyboard */; };
+		717687A01E8E305B005BD9A2 /* XNSettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7176879F1E8E305B005BD9A2 /* XNSettingModel.m */; };
+		717687A41E8E3782005BD9A2 /* XNProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717687A21E8E3782005BD9A2 /* XNProfileController.m */; };
+		717687A51E8E3782005BD9A2 /* XNProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 717687A31E8E3782005BD9A2 /* XNProfileController.xib */; };
+		717687A71E8E3C6C005BD9A2 /* SettingData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 717687A61E8E3C6C005BD9A2 /* SettingData.plist */; };
+		717687AA1E8E4F11005BD9A2 /* XNShareView.m in Sources */ = {isa = PBXBuildFile; fileRef = 717687A91E8E4F11005BD9A2 /* XNShareView.m */; };
+		717687AD1E8E5604005BD9A2 /* XNShareBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 717687AC1E8E5604005BD9A2 /* XNShareBtn.m */; };
 		717A14461E7A41170039C250 /* XNSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717A14441E7A41170039C250 /* XNSearchController.m */; };
 		717A14471E7A41170039C250 /* XNSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 717A14451E7A41170039C250 /* XNSearchController.xib */; };
 		718C44051E666D3E00A4C599 /* XNAppURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 718C44041E666D3E00A4C599 /* XNAppURL.m */; };
@@ -216,6 +222,16 @@
 		7174297C1D845B5400EC2910 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7174297E1D845B5400EC2910 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		717429871D845FC400EC2910 /* info.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = info.pch; sourceTree = "<group>"; };
+		7176879E1E8E305B005BD9A2 /* XNSettingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNSettingModel.h; sourceTree = "<group>"; };
+		7176879F1E8E305B005BD9A2 /* XNSettingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNSettingModel.m; sourceTree = "<group>"; };
+		717687A11E8E3782005BD9A2 /* XNProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNProfileController.h; sourceTree = "<group>"; };
+		717687A21E8E3782005BD9A2 /* XNProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNProfileController.m; sourceTree = "<group>"; };
+		717687A31E8E3782005BD9A2 /* XNProfileController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNProfileController.xib; sourceTree = "<group>"; };
+		717687A61E8E3C6C005BD9A2 /* SettingData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SettingData.plist; sourceTree = "<group>"; };
+		717687A81E8E4F11005BD9A2 /* XNShareView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNShareView.h; sourceTree = "<group>"; };
+		717687A91E8E4F11005BD9A2 /* XNShareView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNShareView.m; sourceTree = "<group>"; };
+		717687AB1E8E5604005BD9A2 /* XNShareBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNShareBtn.h; sourceTree = "<group>"; };
+		717687AC1E8E5604005BD9A2 /* XNShareBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNShareBtn.m; sourceTree = "<group>"; };
 		717A14431E7A41170039C250 /* XNSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNSearchController.h; sourceTree = "<group>"; };
 		717A14441E7A41170039C250 /* XNSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNSearchController.m; sourceTree = "<group>"; };
 		717A14451E7A41170039C250 /* XNSearchController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNSearchController.xib; sourceTree = "<group>"; };
@@ -554,6 +570,9 @@
 				7121E9081E681F1B00EF8D4B /* XNSettingController.h */,
 				7121E9091E681F1B00EF8D4B /* XNSettingController.m */,
 				7121E90A1E681F1B00EF8D4B /* XNSettingController.xib */,
+				717687A11E8E3782005BD9A2 /* XNProfileController.h */,
+				717687A21E8E3782005BD9A2 /* XNProfileController.m */,
+				717687A31E8E3782005BD9A2 /* XNProfileController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -561,6 +580,9 @@
 		7121E9061E681EE200EF8D4B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7176879E1E8E305B005BD9A2 /* XNSettingModel.h */,
+				7176879F1E8E305B005BD9A2 /* XNSettingModel.m */,
+				717687A61E8E3C6C005BD9A2 /* SettingData.plist */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -576,6 +598,10 @@
 				715364041E710ACB00102FB6 /* XNSettingCollectionFooterView.h */,
 				715364051E710ACB00102FB6 /* XNSettingCollectionFooterView.m */,
 				715364061E710ACB00102FB6 /* XNSettingCollectionFooterView.xib */,
+				717687A81E8E4F11005BD9A2 /* XNShareView.h */,
+				717687A91E8E4F11005BD9A2 /* XNShareView.m */,
+				717687AB1E8E5604005BD9A2 /* XNShareBtn.h */,
+				717687AC1E8E5604005BD9A2 /* XNShareBtn.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -847,12 +873,14 @@
 				7121E9031E681EBF00EF8D4B /* XNTaskController.xib in Resources */,
 				7167DDE01E714DFA00F61886 /* XNContactCell.xib in Resources */,
 				715364031E7106F600102FB6 /* XNSettingCollectionHeaderView.xib in Resources */,
+				717687A51E8E3782005BD9A2 /* XNProfileController.xib in Resources */,
 				7134C7AD1E7284AA005BC6F0 /* XNMessageListController.xib in Resources */,
 				7174297D1D845B5400EC2910 /* LaunchScreen.storyboard in Resources */,
 				7167DDCF1E712AB400F61886 /* store_data.db in Resources */,
 				7174297A1D845B5400EC2910 /* Assets.xcassets in Resources */,
 				7121E8F91E681E8800EF8D4B /* XNContactListController.xib in Resources */,
 				715364081E710ACB00102FB6 /* XNSettingCollectionFooterView.xib in Resources */,
+				717687A71E8E3C6C005BD9A2 /* SettingData.plist in Resources */,
 				71144F1D1E69091A003EDBFC /* XNBaseViewController.xib in Resources */,
 				7121E8D61E68063000EF8D4B /* XNLoginController.xib in Resources */,
 				710B565B1E84FA29009A372D /* XNChatViewController.xib in Resources */,
@@ -928,6 +956,7 @@
 				7102E11F1E66AB4E006117B6 /* SSKeychain.m in Sources */,
 				71DDAA791E7689A400A37F09 /* XNChatController.m in Sources */,
 				7167DDDB1E7139F500F61886 /* ChineseToPinyin.m in Sources */,
+				717687A41E8E3782005BD9A2 /* XNProfileController.m in Sources */,
 				718C44051E666D3E00A4C599 /* XNAppURL.m in Sources */,
 				7121E8C81E67F37800EF8D4B /* UIView+EasyShow.m in Sources */,
 				7102E11E1E66AB4E006117B6 /* NSString+Ext.m in Sources */,
@@ -942,6 +971,7 @@
 				7122B2B41E6E55BE00068216 /* UIWindow+Extension.m in Sources */,
 				7167DDDF1E714DFA00F61886 /* XNContactCell.m in Sources */,
 				7122B2B71E6E5DB500068216 /* XNBaseRes.m in Sources */,
+				717687AD1E8E5604005BD9A2 /* XNShareBtn.m in Sources */,
 				7121E8C21E67E7F500EF8D4B /* XNLoginTranslation.m in Sources */,
 				7122CE941E764CAC00C4F882 /* XNBaseNavigationBar.m in Sources */,
 				716DDD081E794512004CCBE4 /* XNSearchBar.m in Sources */,
@@ -963,6 +993,7 @@
 				7102E1211E66AB4E006117B6 /* UITextField+Ext.m in Sources */,
 				71DDAA7C1E768D3900A37F09 /* UIView+XNGetController.m in Sources */,
 				7134C7B91E72AC1E005BC6F0 /* RCUserInfo+XNAddition.m in Sources */,
+				717687AA1E8E4F11005BD9A2 /* XNShareView.m in Sources */,
 				7102E1221E66AB4E006117B6 /* XNGCDHelper.m in Sources */,
 				7102E11D1E66AB4E006117B6 /* NSObject+Notification.m in Sources */,
 				7134C7B11E728512005BC6F0 /* XNMessageListCell.m in Sources */,
@@ -975,6 +1006,7 @@
 				7102E11B1E66AB4E006117B6 /* Foundation+Log.m in Sources */,
 				7121E8D11E68039000EF8D4B /* XNTabbarController.m in Sources */,
 				7102E12C1E66AB59006117B6 /* CocoaCracker.m in Sources */,
+				717687A01E8E305B005BD9A2 /* XNSettingModel.m in Sources */,
 				7167DDD41E712B5600F61886 /* XNDatabaseService.m in Sources */,
 				7102E1321E66ADDA006117B6 /* XNBaseReq.m in Sources */,
 				7121E8D51E68063000EF8D4B /* XNLoginController.m in Sources */,

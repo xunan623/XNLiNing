@@ -11,6 +11,6 @@
 @interface XNSettingCell : UICollectionViewCell
 
 @property (strong, nonatomic) UIImageView *titleImage;
-@property (strong, nonatomic) UILabel *tittleLabel;
+@property (strong, nonatomic) UILabel *tittleLabels;
 
 @end

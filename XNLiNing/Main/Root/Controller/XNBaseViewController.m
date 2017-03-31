@@ -22,6 +22,14 @@
     return _login;
 }
 
+- (XNBaseNavigationBar *)navBar {
+    if (!_navBar) {
+        _navBar = [[XNBaseNavigationBar alloc] init];
+        [self.view addSubview:_navBar];
+    }
+    return _navBar;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
