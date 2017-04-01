@@ -8,6 +8,7 @@
 
 #import "XNShareView.h"
 #import "XNShareBtn.h"
+#import "XNShareTool.h"
 
 @interface XNShareView()
 
@@ -60,7 +61,7 @@
 - (void)show {
     UIWindow *window = [[UIApplication sharedApplication].delegate window];
     [window addSubview:self];
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:0.35 animations:^{
         [self.centerView setFrame:CGRectMake(0, XNScreen_Height - 150, XNScreen_Width, 150)];
     }completion:^(BOOL finished) {
         [self layoutSubviews];
@@ -68,7 +69,7 @@
 }
 
 - (void)hide {
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:0.35 animations:^{
         self.centerView.frame = CGRectMake(0, XNScreen_Height, XNScreen_Width, 0.1);
     }completion:^(BOOL finished) {
         [self removeFromSuperview];
@@ -85,19 +86,31 @@
     XNShareType type = btn.tag;
     switch (type) {
         case XNShareTypeQQ: {
-            
+            [XNShareTool shareWithTilte:@"这是分享测试"
+                                linkUrl:@"http://www.baidu.com"
+                               imageUrl:@"http://www.baidu.com"
+                                   type:XNShareTypeGroupQQ];
         }
             break;
         case XNShareTypeWeChatFriend: {
-            
+            [XNShareTool shareWithTilte:@"这是分享测试"
+                                linkUrl:@"http://www.baidu.com"
+                               imageUrl:@"http://www.baidu.com"
+                                   type:XNShareTypeGroupWeChat];
         }
             break;
         case XNShareTypeWeChatFriends: {
-            
+            [XNShareTool shareWithTilte:@"这是分享测试"
+                                linkUrl:@"http://www.baidu.com"
+                               imageUrl:@"http://www.baidu.com"
+                                   type:XNShareTypeGroupWeChatFriend];
         }
             break;
         case XNShareTypeWeiBo: {
-            
+            [XNShareTool shareWithTilte:@"这是分享测试"
+                                linkUrl:@"http://www.baidu.com"
+                               imageUrl:@"http://www.baidu.com"
+                                   type:XNShareTypeGroupWeibo];
         }
             break;
         default:

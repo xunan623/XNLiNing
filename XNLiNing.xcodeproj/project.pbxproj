@@ -83,6 +83,7 @@
 		717687AD1E8E5604005BD9A2 /* XNShareBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 717687AC1E8E5604005BD9A2 /* XNShareBtn.m */; };
 		717A14461E7A41170039C250 /* XNSearchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 717A14441E7A41170039C250 /* XNSearchController.m */; };
 		717A14471E7A41170039C250 /* XNSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 717A14451E7A41170039C250 /* XNSearchController.xib */; };
+		718354EF1E8F34E900694D38 /* XNShareTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 718354EE1E8F34E900694D38 /* XNShareTool.m */; };
 		718C44051E666D3E00A4C599 /* XNAppURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 718C44041E666D3E00A4C599 /* XNAppURL.m */; };
 		71B7DB001E6D58690052E450 /* XNAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B7DAFF1E6D58690052E450 /* XNAlertView.m */; };
 		71B7DB031E6D5EC70052E450 /* RWUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B7DB021E6D5EC70052E450 /* RWUserDefaults.m */; };
@@ -235,6 +236,8 @@
 		717A14431E7A41170039C250 /* XNSearchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNSearchController.h; sourceTree = "<group>"; };
 		717A14441E7A41170039C250 /* XNSearchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNSearchController.m; sourceTree = "<group>"; };
 		717A14451E7A41170039C250 /* XNSearchController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNSearchController.xib; sourceTree = "<group>"; };
+		718354ED1E8F34E900694D38 /* XNShareTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNShareTool.h; sourceTree = "<group>"; };
+		718354EE1E8F34E900694D38 /* XNShareTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNShareTool.m; sourceTree = "<group>"; };
 		718C44031E666D3E00A4C599 /* XNAppURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNAppURL.h; sourceTree = "<group>"; };
 		718C44041E666D3E00A4C599 /* XNAppURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNAppURL.m; sourceTree = "<group>"; };
 		71B7DAFE1E6D58690052E450 /* XNAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNAlertView.h; sourceTree = "<group>"; };
@@ -433,6 +436,7 @@
 		7121E8BF1E67E7E200EF8D4B /* BaseTool */ = {
 			isa = PBXGroup;
 			children = (
+				718354EC1E8F34D900694D38 /* XNShare */,
 				7121E8C01E67E7F500EF8D4B /* XNLoginTranslation.h */,
 				7121E8C11E67E7F500EF8D4B /* XNLoginTranslation.m */,
 			);
@@ -722,6 +726,15 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		718354EC1E8F34D900694D38 /* XNShare */ = {
+			isa = PBXGroup;
+			children = (
+				718354ED1E8F34E900694D38 /* XNShareTool.h */,
+				718354EE1E8F34E900694D38 /* XNShareTool.m */,
+			);
+			path = XNShare;
+			sourceTree = "<group>";
+		};
 		7194D0A81E666AF200C463A3 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -968,6 +981,7 @@
 				710B56651E84FB91009A372D /* AppDelegate+XNRongIMKit.m in Sources */,
 				7121E8DC1E68109D00EF8D4B /* UITableView+EmptyData.m in Sources */,
 				717429721D845B5400EC2910 /* AppDelegate.m in Sources */,
+				718354EF1E8F34E900694D38 /* XNShareTool.m in Sources */,
 				7122B2B41E6E55BE00068216 /* UIWindow+Extension.m in Sources */,
 				7167DDDF1E714DFA00F61886 /* XNContactCell.m in Sources */,
 				7122B2B71E6E5DB500068216 /* XNBaseRes.m in Sources */,

@@ -182,7 +182,7 @@ static NSString *cellId = @"XNSettingCell";
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     CGFloat yOffset = self.collectionView.contentOffset.y;
     //向上偏移量变正  向下偏移量变负
-    self.navBar.alpha = yOffset/ 128.0;
+    self.navBar.alpha = (yOffset-20)/ 128.0;
     
 }
 
