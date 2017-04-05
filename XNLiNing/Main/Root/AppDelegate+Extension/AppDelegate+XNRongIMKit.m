@@ -71,10 +71,13 @@
     // 获取通知信息
     NSString *selectIndex = localNotifi.userInfo[@"selectIndex"];
     
-    // 获取根控制器TabBarController
-    XNTabbarController *rootController = (XNTabbarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
-    // 跳转到指定控制器
-    rootController.selectedIndex = [selectIndex intValue];
+    if (selectIndex.length) {
+        // 获取根控制器TabBarController
+        XNTabbarController *rootController = (XNTabbarController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+        // 跳转到指定控制器
+        rootController.selectedIndex = [selectIndex intValue];
+    }
+
 }
 
 

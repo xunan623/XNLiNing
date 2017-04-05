@@ -161,13 +161,13 @@
     
     NSString *absoluteUrlStr = [url absoluteString];
     
-    if ([absoluteUrlStr rangeOfString:AppWeChatAppID].location != NSNotFound) { //从“微信”打开“中原找房”
+    if ([absoluteUrlStr rangeOfString:AppWeChatAppID].location != NSNotFound) { //从“微信”打开
         
         return [WXApi handleOpenURL:url delegate:self];
-    }else if ([absoluteUrlStr rangeOfString:AppWeiboAppKey].location != NSNotFound){ //从“微博”打开“中原找房”
+    }else if ([absoluteUrlStr rangeOfString:AppWeiboAppKey].location != NSNotFound){ //从“微博”打开“
         
         return [WeiboSDK handleOpenURL:url delegate:self];
-    }else if ([absoluteUrlStr rangeOfString:AppQQAppID].location != NSNotFound){ //从“QQ”打开“中原找房”
+    }else if ([absoluteUrlStr rangeOfString:AppQQAppID].location != NSNotFound){ //从“QQ”
         
         [QQApiInterface handleOpenURL:url delegate:self];
         
