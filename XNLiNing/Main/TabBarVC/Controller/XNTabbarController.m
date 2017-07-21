@@ -48,7 +48,7 @@
     XNMessageListController *messageVC = [[XNMessageListController alloc] init];
     [messageVC initData];
     [self setupChildVC:messageVC title:@"消息" image:@"tabbar_message" selectedImage:@"tabbar_messageSelected"];
-    [self setupChildVC:[[XNTaskController alloc] init] title:@"任务" image:@"tabbar_task" selectedImage:@"tabbar_taskSelected"];
+    [self setupChildVC:[[XNTaskController alloc] init] title:@"分类" image:@"tabbar_task" selectedImage:@"tabbar_taskSelected"];
     [self setupChildVC:[[XNSettingController alloc] init] title:@"我的" image:@"tabbar_setting" selectedImage:@"tabbar_settingSelected"];
     
 }
