@@ -14,7 +14,7 @@
 #import "XNDatabaseService.h"
 #import "XNMessageListController.h"
 
-@interface XNTabbarController ()
+@interface XNTabbarController ()<UITabBarControllerDelegate>
 
 @end
 
@@ -42,6 +42,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.delegate = self;
+    
     [XNDatabaseService openDB];
     
     [self setupChildVC:[[XNContactListController alloc] init] title:@"首页" image:@"tabbar_home" selectedImage:@"tabbar_homeSelected"];
@@ -60,6 +62,7 @@
 {
     vc.navigationItem.title = title;
     vc.tabBarItem.title = title;
+    
     vc.tabBarItem.image = [[UIImage imageNamed:image] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     vc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     // 包装一个导航控制器,添加导航控制器为tabbarContoller的自控制器
@@ -68,5 +71,40 @@
     [self addChildViewController:nav];
 }
 
+#pragma mark - UITabBarControllerDelegate
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    [self tabBarButtonClick:[self getTabBarButton]];
+}
+
+
+- (UIControl *)getTabBarButton{
+    NSMutableArray *tabBarButtons = [[NSMutableArray alloc]initWithCapacity:0];
+    
+    for (UIView *tabBarButton in self.tabBar.subviews) {
+        if ([tabBarButton isKindOfClass:NSClassFromString(@"UITabBarButton")]){
+            [tabBarButtons addObject:tabBarButton];
+        }
+    }
+    UIControl *tabBarButton = [tabBarButtons objectAtIndex:self.selectedIndex];
+    
+    return tabBarButton;
+}
+#pragma mark - 点击动画
+- (void)tabBarButtonClick:(UIControl *)tabBarButton
+{
+    for (UIView *imageView in tabBarButton.subviews) {
+        if ([imageView isKindOfClass:NSClassFromString(@"UITabBarSwappableImageView")]) {
+            //需要实现的帧动画,这里根据自己需求改动
+            CAKeyframeAnimation *animation = [CAKeyframeAnimation animation];
+            animation.keyPath = @"transform.scale";
+            animation.values = @[@1.0,@1.2,@0.8,@1.0];
+            animation.duration = 0.3;
+            animation.calculationMode = kCAAnimationCubic;
+            //添加动画
+            [imageView.layer addAnimation:animation forKey:nil];
+        }
+    }
+}
 
 @end
