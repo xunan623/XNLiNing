@@ -9,10 +9,10 @@
 #import "XNTabbarController.h"
 #import "XNBaseNavigationController.h"
 #import "XNSettingController.h"
-#import "XNContactListController.h"
 #import "XNTaskController.h"
 #import "XNDatabaseService.h"
 #import "XNMessageListController.h"
+#import "XNHomeGoodsController.h"
 
 @interface XNTabbarController ()<UITabBarControllerDelegate>
 
@@ -46,7 +46,7 @@
     
     [XNDatabaseService openDB];
     
-    [self setupChildVC:[[XNContactListController alloc] init] title:@"首页" image:@"tabbar_home" selectedImage:@"tabbar_homeSelected"];
+    [self setupChildVC:[[XNHomeGoodsController alloc] init] title:@"首页" image:@"tabbar_home" selectedImage:@"tabbar_homeSelected"];
     XNMessageListController *messageVC = [[XNMessageListController alloc] init];
     [messageVC initData];
     [self setupChildVC:messageVC title:@"消息" image:@"tabbar_message" selectedImage:@"tabbar_messageSelected"];

@@ -18,6 +18,14 @@
 - (instancetype)init {
     if (self = [super init]) {
         self.frame = CGRectMake(0, 0, XNScreen_Width, 64);
+        [self setupUI];
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        [self setupUI];
     }
     return self;
 }
@@ -60,6 +68,11 @@
 - (void)backClick:(UIButton *)backBtn {
     UIViewController *vc = [self viewController];
     [vc.navigationController popViewControllerAnimated:YES];
+}
+
+
+- (void)setBackButtonHidden:(BOOL)hidden {
+    self.backButton.hidden = hidden;
 }
 
 @end

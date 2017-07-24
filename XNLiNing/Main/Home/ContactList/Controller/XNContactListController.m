@@ -53,11 +53,6 @@
     return _searchBar;
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    self.navigationController.navigationBar.hidden = YES;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -68,7 +63,7 @@
 }
 
 - (void)setupNav {
-    self.navigationItem.title = @"联系人";
+    self.navBar.titleLabel.text = @"联系人";
 }
 
 - (void)setupTableView {

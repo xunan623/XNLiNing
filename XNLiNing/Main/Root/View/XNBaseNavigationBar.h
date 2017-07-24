@@ -13,4 +13,6 @@
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UIButton *backButton;
 
+- (void)setBackButtonHidden:(BOOL)hidden;
+
 @end

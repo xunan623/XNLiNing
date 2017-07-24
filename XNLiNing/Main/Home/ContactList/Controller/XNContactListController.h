@@ -10,4 +10,5 @@
 
 @interface XNContactListController : XNBaseViewController
 
+
 @end

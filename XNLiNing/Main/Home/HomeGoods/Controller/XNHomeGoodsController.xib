@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XNHomeGoodsController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAP-TG-WFU">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="首页" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1j-yE-HD7">
+                            <rect key="frame" x="138" y="20" width="100" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="bYe-uL-4UV"/>
+                                <constraint firstAttribute="height" constant="44" id="reJ-Kp-7Pg"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3W0-vv-4mb">
+                            <rect key="frame" x="315" y="20" width="60" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="60" id="NzL-3P-jjb"/>
+                                <constraint firstAttribute="height" constant="44" id="l7r-y2-VON"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <inset key="titleEdgeInsets" minX="0.0" minY="20" maxX="18" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="18" minY="0.0" maxX="0.0" maxY="12"/>
+                            <state key="normal" title="消息" image="home_message"/>
+                            <connections>
+                                <action selector="contactListClick:" destination="-1" eventType="touchUpInside" id="DbS-KI-sBK"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.92941176469999998" green="0.1960784314" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="x1j-yE-HD7" firstAttribute="centerX" secondItem="VAP-TG-WFU" secondAttribute="centerX" id="EmE-Kh-NNr"/>
+                        <constraint firstAttribute="trailing" secondItem="3W0-vv-4mb" secondAttribute="trailing" id="I4A-0R-xuP"/>
+                        <constraint firstAttribute="height" constant="64" id="UCe-eI-3zC"/>
+                        <constraint firstItem="x1j-yE-HD7" firstAttribute="top" secondItem="VAP-TG-WFU" secondAttribute="top" constant="20" id="c7N-pc-gTV"/>
+                        <constraint firstAttribute="bottom" secondItem="3W0-vv-4mb" secondAttribute="bottom" id="nBH-lk-3Jb"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="VAP-TG-WFU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iob-aX-JOW"/>
+                <constraint firstItem="VAP-TG-WFU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="tYJ-Io-b0f"/>
+                <constraint firstAttribute="trailing" secondItem="VAP-TG-WFU" secondAttribute="trailing" id="yDu-Wv-2Dd"/>
+            </constraints>
+            <point key="canvasLocation" x="-150" y="41"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="home_message" width="16" height="16"/>
+    </resources>
+</document>

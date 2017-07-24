@@ -17,10 +17,12 @@
 @property (strong, nonatomic) XNLoginTranslation* login;
 - (void)finishAnimationWithBtn:(UIButton *)presentBtn Delay:(NSTimeInterval)time;
 
+/** 加载基础数据 */
+- (void)setupBase;
 
 @property (strong, nonatomic) XNBaseNavigationBar *navBar;
 
-
+- (void)setNavBarHidden:(BOOL)hidden;
 
 // 默认返回为YES,表示支持右滑返回  手势返回
 - (BOOL)gestureRecognizerShouldBegin;

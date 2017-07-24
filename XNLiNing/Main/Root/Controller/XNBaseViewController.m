@@ -25,6 +25,7 @@
 - (XNBaseNavigationBar *)navBar {
     if (!_navBar) {
         _navBar = [[XNBaseNavigationBar alloc] init];
+        [_navBar setBackButtonHidden:![self.navigationController.viewControllers indexOfObject:self]];
         [self.view addSubview:_navBar];
     }
     return _navBar;
@@ -35,6 +36,14 @@
     
     self.view.backgroundColor = XNAPPNormalBGColor;
     
+}
+
+- (void)setupBase {
+    
+}
+
+- (void)setNavBarHidden:(BOOL)hidden {
+    self.navBar.hidden = hidden;
 }
 
 #pragma mark - 手势返回相关
