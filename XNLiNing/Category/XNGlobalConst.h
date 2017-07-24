@@ -29,7 +29,7 @@
 #define XNHeight_TabBar           49.0f
 #define XNHeight_NavigationBar    44.0f
 #define XNHeight_StatusBar        20.0f
-#define XNHeight_TopBar   XNHeight_NavigationBar + XNHeight_StatusBar
+#define XNHeight_TopBar           64.0f
 
 // 字体
 #define XNFont_System(size) [UIFont systemFontOfSize:size]

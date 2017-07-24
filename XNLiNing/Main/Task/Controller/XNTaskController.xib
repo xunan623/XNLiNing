@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XNTaskController">
             <connections>
-                <outlet property="tableView" destination="UwV-IQ-t0T" id="f4Y-CI-GJc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -41,26 +40,12 @@
                         <constraint firstAttribute="height" constant="64" id="neS-5G-mCY"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UwV-IQ-t0T">
-                    <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="554" id="HfH-CY-dRu"/>
-                    </constraints>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="QVP-kx-wkS"/>
-                        <outlet property="delegate" destination="-1" id="3Zz-mO-3T4"/>
-                    </connections>
-                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="UwV-IQ-t0T" firstAttribute="leading" secondItem="swI-YY-l25" secondAttribute="leading" id="Lh3-UC-Hik"/>
-                <constraint firstItem="UwV-IQ-t0T" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="NRA-6V-QQR"/>
-                <constraint firstAttribute="trailing" secondItem="UwV-IQ-t0T" secondAttribute="trailing" id="Xbo-7j-Jp0"/>
-                <constraint firstItem="UwV-IQ-t0T" firstAttribute="trailing" secondItem="swI-YY-l25" secondAttribute="trailing" id="ngL-qJ-rP2"/>
-                <constraint firstAttribute="bottom" secondItem="UwV-IQ-t0T" secondAttribute="bottom" constant="49" id="xWO-Bf-W3G"/>
-                <constraint firstItem="UwV-IQ-t0T" firstAttribute="top" secondItem="swI-YY-l25" secondAttribute="bottom" id="zBX-Rz-IXW"/>
+                <constraint firstAttribute="trailing" secondItem="swI-YY-l25" secondAttribute="trailing" id="4nH-lX-bJJ"/>
+                <constraint firstItem="swI-YY-l25" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FKC-GX-ev1"/>
+                <constraint firstItem="swI-YY-l25" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bGU-0o-sa5"/>
             </constraints>
             <point key="canvasLocation" x="-56" y="63"/>
         </view>
