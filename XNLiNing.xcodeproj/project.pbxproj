@@ -85,6 +85,26 @@
 		717A14471E7A41170039C250 /* XNSearchController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 717A14451E7A41170039C250 /* XNSearchController.xib */; };
 		718354EF1E8F34E900694D38 /* XNShareTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 718354EE1E8F34E900694D38 /* XNShareTool.m */; };
 		718C44051E666D3E00A4C599 /* XNAppURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 718C44041E666D3E00A4C599 /* XNAppURL.m */; };
+		71B166771F21D9D300EB0153 /* ClasiftyGoods.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B166601F21D9D300EB0153 /* ClasiftyGoods.plist */; };
+		71B166781F21D9D300EB0153 /* ClassiftyGoods01.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B166611F21D9D300EB0153 /* ClassiftyGoods01.plist */; };
+		71B166791F21D9D300EB0153 /* ClassiftyGoods02.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B166621F21D9D300EB0153 /* ClassiftyGoods02.plist */; };
+		71B1667A1F21D9D300EB0153 /* ClassiftyGoods03.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B166631F21D9D300EB0153 /* ClassiftyGoods03.plist */; };
+		71B1667B1F21D9D300EB0153 /* ClassifyTitles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B166641F21D9D300EB0153 /* ClassifyTitles.plist */; };
+		71B1667C1F21D9D300EB0153 /* DetailRecommend.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B166651F21D9D300EB0153 /* DetailRecommend.plist */; };
+		71B1667D1F21D9D300EB0153 /* FiltrateItem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B166661F21D9D300EB0153 /* FiltrateItem.plist */; };
+		71B1667E1F21D9D300EB0153 /* FootprintGoods.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B166671F21D9D300EB0153 /* FootprintGoods.plist */; };
+		71B1667F1F21D9D300EB0153 /* shareTerrace.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B166681F21D9D300EB0153 /* shareTerrace.plist */; };
+		71B166801F21D9D300EB0153 /* ShopItem.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B166691F21D9D300EB0153 /* ShopItem.plist */; };
+		71B166811F21D9D300EB0153 /* CommentPic.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B1666B1F21D9D300EB0153 /* CommentPic.plist */; };
+		71B166821F21D9D300EB0153 /* DeliveryAdress.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B1666C1F21D9D300EB0153 /* DeliveryAdress.plist */; };
+		71B166831F21D9D300EB0153 /* MessageNote.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B1666D1F21D9D300EB0153 /* MessageNote.plist */; };
+		71B166841F21D9D300EB0153 /* MyBuyFlow.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B1666E1F21D9D300EB0153 /* MyBuyFlow.plist */; };
+		71B166851F21D9D300EB0153 /* MyRecreationFlow.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B1666F1F21D9D300EB0153 /* MyRecreationFlow.plist */; };
+		71B166861F21D9D300EB0153 /* YouLikeGoods.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B166701F21D9D300EB0153 /* YouLikeGoods.plist */; };
+		71B166871F21D9D300EB0153 /* RecommendShop.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B166721F21D9D300EB0153 /* RecommendShop.plist */; };
+		71B166881F21D9D300EB0153 /* CountDownShop.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B166741F21D9D300EB0153 /* CountDownShop.plist */; };
+		71B166891F21D9D300EB0153 /* GoodsGrid.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B166751F21D9D300EB0153 /* GoodsGrid.plist */; };
+		71B1668A1F21D9D300EB0153 /* HomeHighGoods.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71B166761F21D9D300EB0153 /* HomeHighGoods.plist */; };
 		71B7DB001E6D58690052E450 /* XNAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B7DAFF1E6D58690052E450 /* XNAlertView.m */; };
 		71B7DB031E6D5EC70052E450 /* RWUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B7DB021E6D5EC70052E450 /* RWUserDefaults.m */; };
 		71B7DB071E6D5F460052E450 /* XNSaveUserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B7DB061E6D5F460052E450 /* XNSaveUserDefault.m */; };
@@ -240,6 +260,26 @@
 		718354EE1E8F34E900694D38 /* XNShareTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNShareTool.m; sourceTree = "<group>"; };
 		718C44031E666D3E00A4C599 /* XNAppURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNAppURL.h; sourceTree = "<group>"; };
 		718C44041E666D3E00A4C599 /* XNAppURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNAppURL.m; sourceTree = "<group>"; };
+		71B166601F21D9D300EB0153 /* ClasiftyGoods.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ClasiftyGoods.plist; sourceTree = "<group>"; };
+		71B166611F21D9D300EB0153 /* ClassiftyGoods01.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ClassiftyGoods01.plist; sourceTree = "<group>"; };
+		71B166621F21D9D300EB0153 /* ClassiftyGoods02.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ClassiftyGoods02.plist; sourceTree = "<group>"; };
+		71B166631F21D9D300EB0153 /* ClassiftyGoods03.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ClassiftyGoods03.plist; sourceTree = "<group>"; };
+		71B166641F21D9D300EB0153 /* ClassifyTitles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ClassifyTitles.plist; sourceTree = "<group>"; };
+		71B166651F21D9D300EB0153 /* DetailRecommend.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DetailRecommend.plist; sourceTree = "<group>"; };
+		71B166661F21D9D300EB0153 /* FiltrateItem.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FiltrateItem.plist; sourceTree = "<group>"; };
+		71B166671F21D9D300EB0153 /* FootprintGoods.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FootprintGoods.plist; sourceTree = "<group>"; };
+		71B166681F21D9D300EB0153 /* shareTerrace.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = shareTerrace.plist; sourceTree = "<group>"; };
+		71B166691F21D9D300EB0153 /* ShopItem.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ShopItem.plist; sourceTree = "<group>"; };
+		71B1666B1F21D9D300EB0153 /* CommentPic.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CommentPic.plist; sourceTree = "<group>"; };
+		71B1666C1F21D9D300EB0153 /* DeliveryAdress.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DeliveryAdress.plist; sourceTree = "<group>"; };
+		71B1666D1F21D9D300EB0153 /* MessageNote.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MessageNote.plist; sourceTree = "<group>"; };
+		71B1666E1F21D9D300EB0153 /* MyBuyFlow.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MyBuyFlow.plist; sourceTree = "<group>"; };
+		71B1666F1F21D9D300EB0153 /* MyRecreationFlow.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MyRecreationFlow.plist; sourceTree = "<group>"; };
+		71B166701F21D9D300EB0153 /* YouLikeGoods.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = YouLikeGoods.plist; sourceTree = "<group>"; };
+		71B166721F21D9D300EB0153 /* RecommendShop.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = RecommendShop.plist; sourceTree = "<group>"; };
+		71B166741F21D9D300EB0153 /* CountDownShop.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CountDownShop.plist; sourceTree = "<group>"; };
+		71B166751F21D9D300EB0153 /* GoodsGrid.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = GoodsGrid.plist; sourceTree = "<group>"; };
+		71B166761F21D9D300EB0153 /* HomeHighGoods.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HomeHighGoods.plist; sourceTree = "<group>"; };
 		71B7DAFE1E6D58690052E450 /* XNAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNAlertView.h; sourceTree = "<group>"; };
 		71B7DAFF1E6D58690052E450 /* XNAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNAlertView.m; sourceTree = "<group>"; };
 		71B7DB011E6D5EC70052E450 /* RWUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWUserDefaults.h; sourceTree = "<group>"; };
@@ -698,6 +738,7 @@
 		717429851D845C5500EC2910 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				71B1665D1F21D9D300EB0153 /* Resource */,
 				7167DDD01E712B2800F61886 /* Service */,
 				7121E9041E681EE200EF8D4B /* Setting */,
 				7121E8CB1E68035900EF8D4B /* TabBarVC */,
@@ -789,6 +830,73 @@
 				7102E1021E66A997006117B6 /* View */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		71B1665D1F21D9D300EB0153 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				71B1665E1F21D9D300EB0153 /* Plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		71B1665E1F21D9D300EB0153 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				71B1665F1F21D9D300EB0153 /* 分类Plist */,
+				71B1666A1F21D9D300EB0153 /* 我的Plist */,
+				71B166711F21D9D300EB0153 /* 购物车Plist */,
+				71B166731F21D9D300EB0153 /* 首页Plist */,
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		71B1665F1F21D9D300EB0153 /* 分类Plist */ = {
+			isa = PBXGroup;
+			children = (
+				71B166601F21D9D300EB0153 /* ClasiftyGoods.plist */,
+				71B166611F21D9D300EB0153 /* ClassiftyGoods01.plist */,
+				71B166621F21D9D300EB0153 /* ClassiftyGoods02.plist */,
+				71B166631F21D9D300EB0153 /* ClassiftyGoods03.plist */,
+				71B166641F21D9D300EB0153 /* ClassifyTitles.plist */,
+				71B166651F21D9D300EB0153 /* DetailRecommend.plist */,
+				71B166661F21D9D300EB0153 /* FiltrateItem.plist */,
+				71B166671F21D9D300EB0153 /* FootprintGoods.plist */,
+				71B166681F21D9D300EB0153 /* shareTerrace.plist */,
+				71B166691F21D9D300EB0153 /* ShopItem.plist */,
+			);
+			path = "分类Plist";
+			sourceTree = "<group>";
+		};
+		71B1666A1F21D9D300EB0153 /* 我的Plist */ = {
+			isa = PBXGroup;
+			children = (
+				71B1666B1F21D9D300EB0153 /* CommentPic.plist */,
+				71B1666C1F21D9D300EB0153 /* DeliveryAdress.plist */,
+				71B1666D1F21D9D300EB0153 /* MessageNote.plist */,
+				71B1666E1F21D9D300EB0153 /* MyBuyFlow.plist */,
+				71B1666F1F21D9D300EB0153 /* MyRecreationFlow.plist */,
+				71B166701F21D9D300EB0153 /* YouLikeGoods.plist */,
+			);
+			path = "我的Plist";
+			sourceTree = "<group>";
+		};
+		71B166711F21D9D300EB0153 /* 购物车Plist */ = {
+			isa = PBXGroup;
+			children = (
+				71B166721F21D9D300EB0153 /* RecommendShop.plist */,
+			);
+			path = "购物车Plist";
+			sourceTree = "<group>";
+		};
+		71B166731F21D9D300EB0153 /* 首页Plist */ = {
+			isa = PBXGroup;
+			children = (
+				71B166741F21D9D300EB0153 /* CountDownShop.plist */,
+				71B166751F21D9D300EB0153 /* GoodsGrid.plist */,
+				71B166761F21D9D300EB0153 /* HomeHighGoods.plist */,
+			);
+			path = "首页Plist";
 			sourceTree = "<group>";
 		};
 		71B7DB041E6D5F120052E450 /* UserInfo */ = {
@@ -883,18 +991,38 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71B166861F21D9D300EB0153 /* YouLikeGoods.plist in Resources */,
+				71B166871F21D9D300EB0153 /* RecommendShop.plist in Resources */,
 				7121E9031E681EBF00EF8D4B /* XNTaskController.xib in Resources */,
+				71B166811F21D9D300EB0153 /* CommentPic.plist in Resources */,
+				71B166821F21D9D300EB0153 /* DeliveryAdress.plist in Resources */,
+				71B166801F21D9D300EB0153 /* ShopItem.plist in Resources */,
 				7167DDE01E714DFA00F61886 /* XNContactCell.xib in Resources */,
 				715364031E7106F600102FB6 /* XNSettingCollectionHeaderView.xib in Resources */,
+				71B166831F21D9D300EB0153 /* MessageNote.plist in Resources */,
+				71B1667B1F21D9D300EB0153 /* ClassifyTitles.plist in Resources */,
 				717687A51E8E3782005BD9A2 /* XNProfileController.xib in Resources */,
 				7134C7AD1E7284AA005BC6F0 /* XNMessageListController.xib in Resources */,
+				71B166841F21D9D300EB0153 /* MyBuyFlow.plist in Resources */,
+				71B1667E1F21D9D300EB0153 /* FootprintGoods.plist in Resources */,
 				7174297D1D845B5400EC2910 /* LaunchScreen.storyboard in Resources */,
+				71B166891F21D9D300EB0153 /* GoodsGrid.plist in Resources */,
+				71B166781F21D9D300EB0153 /* ClassiftyGoods01.plist in Resources */,
 				7167DDCF1E712AB400F61886 /* store_data.db in Resources */,
+				71B1667C1F21D9D300EB0153 /* DetailRecommend.plist in Resources */,
 				7174297A1D845B5400EC2910 /* Assets.xcassets in Resources */,
 				7121E8F91E681E8800EF8D4B /* XNContactListController.xib in Resources */,
 				715364081E710ACB00102FB6 /* XNSettingCollectionFooterView.xib in Resources */,
+				71B166771F21D9D300EB0153 /* ClasiftyGoods.plist in Resources */,
+				71B1667D1F21D9D300EB0153 /* FiltrateItem.plist in Resources */,
+				71B166791F21D9D300EB0153 /* ClassiftyGoods02.plist in Resources */,
+				71B1667A1F21D9D300EB0153 /* ClassiftyGoods03.plist in Resources */,
 				717687A71E8E3C6C005BD9A2 /* SettingData.plist in Resources */,
+				71B1667F1F21D9D300EB0153 /* shareTerrace.plist in Resources */,
+				71B1668A1F21D9D300EB0153 /* HomeHighGoods.plist in Resources */,
+				71B166881F21D9D300EB0153 /* CountDownShop.plist in Resources */,
 				71144F1D1E69091A003EDBFC /* XNBaseViewController.xib in Resources */,
+				71B166851F21D9D300EB0153 /* MyRecreationFlow.plist in Resources */,
 				7121E8D61E68063000EF8D4B /* XNLoginController.xib in Resources */,
 				710B565B1E84FA29009A372D /* XNChatViewController.xib in Resources */,
 				7134C7B21E728512005BC6F0 /* XNMessageListCell.xib in Resources */,
@@ -933,7 +1061,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		E79B8F88E6A4E4BC13892174 /* [CP] Copy Pods Resources */ = {
