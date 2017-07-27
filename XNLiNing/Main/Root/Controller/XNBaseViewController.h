@@ -20,8 +20,9 @@
 /** 加载基础数据 */
 - (void)setupBase;
 
+/** 导航栏 */
 @property (strong, nonatomic) XNBaseNavigationBar *navBar;
-
+- (void)setNavTitle:(NSString *)title;
 - (void)setNavBarHidden:(BOOL)hidden;
 
 // 默认返回为YES,表示支持右滑返回  手势返回

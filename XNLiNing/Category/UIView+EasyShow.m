@@ -160,35 +160,35 @@
 + (instancetype)rw_viewFromXib {
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass([self class]) owner:nil options:nil] lastObject];
 }
-
-- (void)setCornerRadius:(CGFloat)cornerRadius {
-    self.layer.cornerRadius = cornerRadius;
-    self.layer.masksToBounds = cornerRadius > 0;
-}
-
-- (CGFloat)cornerRadius {
-    return self.layer.cornerRadius;
-}
-
-
-
-- (void)setBorderWidth:(CGFloat)borderWidth {
-    self.layer.borderWidth = borderWidth;
-}
-
-- (CGFloat)borderWidth {
-    return self.layer.borderWidth;
-}
-
-
-
-- (void)setBorderColor:(UIColor *)borderColor {
-    self.layer.borderColor = borderColor.CGColor;
-}
-
-- (UIColor *)borderColor {
-    return [UIColor colorWithCGColor:self.layer.borderColor];
-}
+//
+//- (void)setCornerRadius:(CGFloat)cornerRadius {
+//    self.layer.cornerRadius = cornerRadius;
+//    self.layer.masksToBounds = cornerRadius > 0;
+//}
+//
+//- (CGFloat)cornerRadius {
+//    return self.layer.cornerRadius;
+//}
+//
+//
+//
+//- (void)setBorderWidth:(CGFloat)borderWidth {
+//    self.layer.borderWidth = borderWidth;
+//}
+//
+//- (CGFloat)borderWidth {
+//    return self.layer.borderWidth;
+//}
+//
+//
+//
+//- (void)setBorderColor:(UIColor *)borderColor {
+//    self.layer.borderColor = borderColor.CGColor;
+//}
+//
+//- (UIColor *)borderColor {
+//    return [UIColor colorWithCGColor:self.layer.borderColor];
+//}
 
 
 @end

@@ -46,6 +46,10 @@
     self.navBar.hidden = hidden;
 }
 
+- (void)setNavTitle:(NSString *)title {
+    self.navBar.titleLabel.text = title;
+}
+
 #pragma mark - 手势返回相关
 
 - (BOOL)gestureRecognizerShouldBegin {

@@ -231,7 +231,7 @@
 {
     [self searchHeaderViewClicked:nil];
 }
-#pragma mark - 🔌 CYLSearchHeaderViewDelegate Method
+#pragma mark - CYLSearchHeaderViewDelegate Method
 
 - (void)searchHeaderViewClicked:(id)sender {
     XNSearchController *controller = [[XNSearchController alloc] init];

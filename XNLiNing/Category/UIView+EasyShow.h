@@ -27,12 +27,11 @@
 @end
 
 //---------------------------------- XibHelper ----------------------------------
-IB_DESIGNABLE
 @interface UIView (XibHelper)
 
-@property (nonatomic, assign) IBInspectable CGFloat cornerRadius;
-@property (nonatomic, assign) IBInspectable CGFloat borderWidth;
-@property (nonatomic, assign) IBInspectable UIColor *borderColor;
+//@property (nonatomic, assign) IBInspectable CGFloat cornerRadius;
+//@property (nonatomic, assign) IBInspectable CGFloat borderWidth;
+//@property (nonatomic, assign) IBInspectable UIColor *borderColor;
 
 + (instancetype)rw_viewFromXib;    //!< 从Xib加载视图
 

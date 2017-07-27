@@ -82,6 +82,10 @@
 		715364081E710ACB00102FB6 /* XNSettingCollectionFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 715364061E710ACB00102FB6 /* XNSettingCollectionFooterView.xib */; };
 		7167DDD41E712B5600F61886 /* XNDatabaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7167DDD31E712B5600F61886 /* XNDatabaseService.m */; };
 		7167DDDB1E7139F500F61886 /* ChineseToPinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 7167DDDA1E7139F500F61886 /* ChineseToPinyin.m */; };
+		717144351F287D8100788A0F /* XNShopCartEndView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 717144341F287D8100788A0F /* XNShopCartEndView.xib */; };
+		717144381F28826A00788A0F /* XNShopHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 717144371F28826A00788A0F /* XNShopHeadView.m */; };
+		7171443A1F28827400788A0F /* XNShopHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 717144391F28827400788A0F /* XNShopHeadView.xib */; };
+		7171443D1F2890B900788A0F /* XNChangeCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7171443C1F2890B900788A0F /* XNChangeCountView.m */; };
 		7174296F1D845B5400EC2910 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7174296E1D845B5400EC2910 /* main.m */; };
 		717429721D845B5400EC2910 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 717429711D845B5400EC2910 /* AppDelegate.m */; };
 		7174297A1D845B5400EC2910 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 717429791D845B5400EC2910 /* Assets.xcassets */; };
@@ -118,6 +122,14 @@
 		71B7DB031E6D5EC70052E450 /* RWUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B7DB021E6D5EC70052E450 /* RWUserDefaults.m */; };
 		71B7DB071E6D5F460052E450 /* XNSaveUserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B7DB061E6D5F460052E450 /* XNSaveUserDefault.m */; };
 		71B7DB0A1E6D5FE30052E450 /* XNUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B7DB091E6D5FE30052E450 /* XNUserDefaults.m */; };
+		71D24DB31F26E0B5006474A9 /* XNShopCartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D24DB21F26E0B5006474A9 /* XNShopCartController.m */; };
+		71D24DB61F26E734006474A9 /* XNShopCartEndView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D24DB51F26E734006474A9 /* XNShopCartEndView.m */; };
+		71D24DB91F26E8D9006474A9 /* XNShopViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D24DB81F26E8D9006474A9 /* XNShopViewModel.m */; };
+		71D24DBC1F26ECD6006474A9 /* ShopData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 71D24DBB1F26ECD6006474A9 /* ShopData.plist */; };
+		71D24DBF1F26EEE1006474A9 /* XNShopCartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D24DBE1F26EEE1006474A9 /* XNShopCartModel.m */; };
+		71D24DC21F26EEFF006474A9 /* XNCommodityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D24DC11F26EEFF006474A9 /* XNCommodityModel.m */; };
+		71D24DC61F26F87E006474A9 /* XNShopCartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D24DC41F26F87E006474A9 /* XNShopCartCell.m */; };
+		71D24DC71F26F87E006474A9 /* XNShopCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71D24DC51F26F87E006474A9 /* XNShopCartCell.xib */; };
 		71DDAA791E7689A400A37F09 /* XNChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DDAA781E7689A400A37F09 /* XNChatController.m */; };
 		71DDAA7C1E768D3900A37F09 /* UIView+XNGetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DDAA7B1E768D3900A37F09 /* UIView+XNGetController.m */; };
 		71F618321E6972A600E5F223 /* XNLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F618311E6972A600E5F223 /* XNLoginModel.m */; };
@@ -264,6 +276,12 @@
 		7167DDD31E712B5600F61886 /* XNDatabaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNDatabaseService.m; sourceTree = "<group>"; };
 		7167DDD91E7139F500F61886 /* ChineseToPinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseToPinyin.h; sourceTree = "<group>"; };
 		7167DDDA1E7139F500F61886 /* ChineseToPinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseToPinyin.m; sourceTree = "<group>"; };
+		717144341F287D8100788A0F /* XNShopCartEndView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNShopCartEndView.xib; sourceTree = "<group>"; };
+		717144361F28826A00788A0F /* XNShopHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNShopHeadView.h; sourceTree = "<group>"; };
+		717144371F28826A00788A0F /* XNShopHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNShopHeadView.m; sourceTree = "<group>"; };
+		717144391F28827400788A0F /* XNShopHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNShopHeadView.xib; sourceTree = "<group>"; };
+		7171443B1F2890B900788A0F /* XNChangeCountView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNChangeCountView.h; sourceTree = "<group>"; };
+		7171443C1F2890B900788A0F /* XNChangeCountView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNChangeCountView.m; sourceTree = "<group>"; };
 		7174296A1D845B5400EC2910 /* XNLiNing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XNLiNing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7174296E1D845B5400EC2910 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		717429701D845B5400EC2910 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -314,6 +332,20 @@
 		71B7DB061E6D5F460052E450 /* XNSaveUserDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNSaveUserDefault.m; sourceTree = "<group>"; };
 		71B7DB081E6D5FE30052E450 /* XNUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNUserDefaults.h; sourceTree = "<group>"; };
 		71B7DB091E6D5FE30052E450 /* XNUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNUserDefaults.m; sourceTree = "<group>"; };
+		71D24DB11F26E0B5006474A9 /* XNShopCartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNShopCartController.h; sourceTree = "<group>"; };
+		71D24DB21F26E0B5006474A9 /* XNShopCartController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNShopCartController.m; sourceTree = "<group>"; };
+		71D24DB41F26E734006474A9 /* XNShopCartEndView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNShopCartEndView.h; sourceTree = "<group>"; };
+		71D24DB51F26E734006474A9 /* XNShopCartEndView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNShopCartEndView.m; sourceTree = "<group>"; };
+		71D24DB71F26E8D9006474A9 /* XNShopViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNShopViewModel.h; sourceTree = "<group>"; };
+		71D24DB81F26E8D9006474A9 /* XNShopViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNShopViewModel.m; sourceTree = "<group>"; };
+		71D24DBB1F26ECD6006474A9 /* ShopData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ShopData.plist; sourceTree = "<group>"; };
+		71D24DBD1F26EEE1006474A9 /* XNShopCartModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNShopCartModel.h; sourceTree = "<group>"; };
+		71D24DBE1F26EEE1006474A9 /* XNShopCartModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNShopCartModel.m; sourceTree = "<group>"; };
+		71D24DC01F26EEFF006474A9 /* XNCommodityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNCommodityModel.h; sourceTree = "<group>"; };
+		71D24DC11F26EEFF006474A9 /* XNCommodityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNCommodityModel.m; sourceTree = "<group>"; };
+		71D24DC31F26F87E006474A9 /* XNShopCartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNShopCartCell.h; sourceTree = "<group>"; };
+		71D24DC41F26F87E006474A9 /* XNShopCartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNShopCartCell.m; sourceTree = "<group>"; };
+		71D24DC51F26F87E006474A9 /* XNShopCartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XNShopCartCell.xib; sourceTree = "<group>"; };
 		71DDAA771E7689A400A37F09 /* XNChatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNChatController.h; sourceTree = "<group>"; };
 		71DDAA781E7689A400A37F09 /* XNChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNChatController.m; sourceTree = "<group>"; };
 		71DDAA7A1E768D3900A37F09 /* UIView+XNGetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XNGetController.h"; sourceTree = "<group>"; };
@@ -857,6 +889,7 @@
 		717429851D845C5500EC2910 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				71D24DAC1F26E06E006474A9 /* ShoppingCart */,
 				71B1665D1F21D9D300EB0153 /* Resource */,
 				7167DDD01E712B2800F61886 /* Service */,
 				7121E9041E681EE200EF8D4B /* Setting */,
@@ -995,6 +1028,73 @@
 			path = UserInfo;
 			sourceTree = "<group>";
 		};
+		71D24DAC1F26E06E006474A9 /* ShoppingCart */ = {
+			isa = PBXGroup;
+			children = (
+				71D24DBA1F26ECD6006474A9 /* Resource */,
+				71D24DAD1F26E06E006474A9 /* Controller */,
+				71D24DAE1F26E06E006474A9 /* Model */,
+				71D24DAF1F26E06E006474A9 /* View */,
+				71D24DB01F26E06E006474A9 /* ViewModel */,
+			);
+			path = ShoppingCart;
+			sourceTree = "<group>";
+		};
+		71D24DAD1F26E06E006474A9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				71D24DB11F26E0B5006474A9 /* XNShopCartController.h */,
+				71D24DB21F26E0B5006474A9 /* XNShopCartController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		71D24DAE1F26E06E006474A9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71D24DBD1F26EEE1006474A9 /* XNShopCartModel.h */,
+				71D24DBE1F26EEE1006474A9 /* XNShopCartModel.m */,
+				71D24DC01F26EEFF006474A9 /* XNCommodityModel.h */,
+				71D24DC11F26EEFF006474A9 /* XNCommodityModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		71D24DAF1F26E06E006474A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7171443B1F2890B900788A0F /* XNChangeCountView.h */,
+				7171443C1F2890B900788A0F /* XNChangeCountView.m */,
+				717144361F28826A00788A0F /* XNShopHeadView.h */,
+				717144371F28826A00788A0F /* XNShopHeadView.m */,
+				717144391F28827400788A0F /* XNShopHeadView.xib */,
+				71D24DB41F26E734006474A9 /* XNShopCartEndView.h */,
+				71D24DB51F26E734006474A9 /* XNShopCartEndView.m */,
+				717144341F287D8100788A0F /* XNShopCartEndView.xib */,
+				71D24DC31F26F87E006474A9 /* XNShopCartCell.h */,
+				71D24DC41F26F87E006474A9 /* XNShopCartCell.m */,
+				71D24DC51F26F87E006474A9 /* XNShopCartCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		71D24DB01F26E06E006474A9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				71D24DB71F26E8D9006474A9 /* XNShopViewModel.h */,
+				71D24DB81F26E8D9006474A9 /* XNShopViewModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		71D24DBA1F26ECD6006474A9 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				71D24DBB1F26ECD6006474A9 /* ShopData.plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		A31858F380BB8AF41550B8CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1088,6 +1188,7 @@
 				717687A51E8E3782005BD9A2 /* XNProfileController.xib in Resources */,
 				7134C7AD1E7284AA005BC6F0 /* XNMessageListController.xib in Resources */,
 				71B166841F21D9D300EB0153 /* MyBuyFlow.plist in Resources */,
+				71D24DC71F26F87E006474A9 /* XNShopCartCell.xib in Resources */,
 				71B1667E1F21D9D300EB0153 /* FootprintGoods.plist in Resources */,
 				7174297D1D845B5400EC2910 /* LaunchScreen.storyboard in Resources */,
 				71B166891F21D9D300EB0153 /* GoodsGrid.plist in Resources */,
@@ -1104,15 +1205,18 @@
 				71B1667F1F21D9D300EB0153 /* shareTerrace.plist in Resources */,
 				712CF6F71F25DCED00176AA8 /* store_data.db in Resources */,
 				71B1668A1F21D9D300EB0153 /* HomeHighGoods.plist in Resources */,
+				7171443A1F28827400788A0F /* XNShopHeadView.xib in Resources */,
 				71B166881F21D9D300EB0153 /* CountDownShop.plist in Resources */,
 				71144F1D1E69091A003EDBFC /* XNBaseViewController.xib in Resources */,
 				712CF7041F25DEB000176AA8 /* XNHomeGoodsController.xib in Resources */,
 				71B166851F21D9D300EB0153 /* MyRecreationFlow.plist in Resources */,
+				717144351F287D8100788A0F /* XNShopCartEndView.xib in Resources */,
 				7121E8D61E68063000EF8D4B /* XNLoginController.xib in Resources */,
 				710B565B1E84FA29009A372D /* XNChatViewController.xib in Resources */,
 				7134C7B21E728512005BC6F0 /* XNMessageListCell.xib in Resources */,
 				712CF6FA1F25DCED00176AA8 /* XNContactCell.xib in Resources */,
 				7121E90C1E681F1B00EF8D4B /* XNSettingController.xib in Resources */,
+				71D24DBC1F26ECD6006474A9 /* ShopData.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1181,6 +1285,7 @@
 				7102E1201E66AB4E006117B6 /* UIImage+Reflection.m in Sources */,
 				710B565A1E84FA29009A372D /* XNChatViewController.m in Sources */,
 				712FD54C1E88E9B200BCBE12 /* XNSimpleMessageCell.m in Sources */,
+				71D24DB91F26E8D9006474A9 /* XNShopViewModel.m in Sources */,
 				712CF6F31F25DCED00176AA8 /* XNContactListController.m in Sources */,
 				711F79721E8279F5004D0892 /* XNRCIMBaseReq.m in Sources */,
 				7102E11F1E66AB4E006117B6 /* SSKeychain.m in Sources */,
@@ -1192,6 +1297,7 @@
 				7121E8C81E67F37800EF8D4B /* UIView+EasyShow.m in Sources */,
 				7102E11E1E66AB4E006117B6 /* NSString+Ext.m in Sources */,
 				7102E12D1E66AB59006117B6 /* RWDatabase.m in Sources */,
+				717144381F28826A00788A0F /* XNShopHeadView.m in Sources */,
 				713F4CF01E6FB79300CDC534 /* XNFrashLayer.m in Sources */,
 				7134C7B61E72A904005BC6F0 /* XNRCDataManager.m in Sources */,
 				712CF6D71F25A20C00176AA8 /* XNClassCategoryCell.m in Sources */,
@@ -1211,9 +1317,11 @@
 				7121E8C21E67E7F500EF8D4B /* XNLoginTranslation.m in Sources */,
 				7122CE941E764CAC00C4F882 /* XNBaseNavigationBar.m in Sources */,
 				7174296F1D845B5400EC2910 /* main.m in Sources */,
+				71D24DC21F26EEFF006474A9 /* XNCommodityModel.m in Sources */,
 				712FD5491E88E99A00BCBE12 /* XNChatSystemMessage.m in Sources */,
 				71144F1C1E69091A003EDBFC /* XNBaseViewController.m in Sources */,
 				710972B91E6EA4D4000DEA1E /* XNSettingCell.m in Sources */,
+				71D24DBF1F26EEE1006474A9 /* XNShopCartModel.m in Sources */,
 				7121E8DF1E6813D300EF8D4B /* AppDelegate+Reachability.m in Sources */,
 				71B7DB0A1E6D5FE30052E450 /* XNUserDefaults.m in Sources */,
 				715364071E710ACB00102FB6 /* XNSettingCollectionFooterView.m in Sources */,
@@ -1226,6 +1334,7 @@
 				71F618321E6972A600E5F223 /* XNLoginModel.m in Sources */,
 				7102E1211E66AB4E006117B6 /* UITextField+Ext.m in Sources */,
 				71DDAA7C1E768D3900A37F09 /* UIView+XNGetController.m in Sources */,
+				71D24DC61F26F87E006474A9 /* XNShopCartCell.m in Sources */,
 				7134C7B91E72AC1E005BC6F0 /* RCUserInfo+XNAddition.m in Sources */,
 				717687AA1E8E4F11005BD9A2 /* XNShareView.m in Sources */,
 				712CF6DA1F25A7C000176AA8 /* XNGoodsSortCell.m in Sources */,
@@ -1235,9 +1344,12 @@
 				71B7DB071E6D5F460052E450 /* XNSaveUserDefault.m in Sources */,
 				712BD15A1E8C9DD200661C96 /* AppDelegate+XNThirdPlatform.m in Sources */,
 				715137BD1E78EF3200399BC0 /* XNSaveModel.m in Sources */,
+				7171443D1F2890B900788A0F /* XNChangeCountView.m in Sources */,
 				710B56631E84FB91009A372D /* AppDelegate+XN3DTouch.m in Sources */,
+				71D24DB61F26E734006474A9 /* XNShopCartEndView.m in Sources */,
 				712CF6F81F25DCED00176AA8 /* XNContactModel.m in Sources */,
 				7121E9021E681EBF00EF8D4B /* XNTaskController.m in Sources */,
+				71D24DB31F26E0B5006474A9 /* XNShopCartController.m in Sources */,
 				7102E11B1E66AB4E006117B6 /* Foundation+Log.m in Sources */,
 				7121E8D11E68039000EF8D4B /* XNTabbarController.m in Sources */,
 				7102E12C1E66AB59006117B6 /* CocoaCracker.m in Sources */,

@@ -13,6 +13,7 @@
 #import "XNDatabaseService.h"
 #import "XNMessageListController.h"
 #import "XNHomeGoodsController.h"
+#import "XNShopCartController.h"
 
 @interface XNTabbarController ()<UITabBarControllerDelegate>
 
@@ -51,6 +52,7 @@
     [messageVC initData];
     [self setupChildVC:messageVC title:@"消息" image:@"tabbar_message" selectedImage:@"tabbar_messageSelected"];
     [self setupChildVC:[[XNTaskController alloc] init] title:@"分类" image:@"tabbar_task" selectedImage:@"tabbar_taskSelected"];
+    [self setupChildVC:[[XNShopCartController alloc] init] title:@"购物车" image:@"tabbar_shop" selectedImage:@"tabbar_shop_selected"];
     [self setupChildVC:[[XNSettingController alloc] init] title:@"我的" image:@"tabbar_setting" selectedImage:@"tabbar_settingSelected"];
     
 }

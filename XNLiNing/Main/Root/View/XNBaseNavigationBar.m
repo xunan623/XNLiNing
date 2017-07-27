@@ -8,7 +8,9 @@
 
 #import "XNBaseNavigationBar.h"
 
-@interface XNBaseNavigationBar()
+@interface XNBaseNavigationBar() {
+    void(^pressRightBlock)(UIButton *);
+}
 
 
 @end
@@ -42,6 +44,7 @@
     
     [self addSubview:self.titleLabel];
     [self addSubview:self.backButton];
+    [self addSubview:self.rightButton];
 }
 
 #pragma mark - Setting & Getting
@@ -65,14 +68,40 @@
     return _backButton;
 }
 
+- (UIButton *)rightButton {
+    if (!_rightButton) {
+        _rightButton = [[UIButton alloc] initWithFrame:CGRectMake(XNScreen_Width - 50, 20, 50, 44)];
+        _rightButton.hidden = YES;
+        _rightButton.titleLabel.font = [UIFont systemFontOfSize:16.0f];
+        [_rightButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [_rightButton addTarget:self action:@selector(rightButtonClick:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _rightButton;
+}
+
+- (void)setRight:(NSString *)img title:(NSString *)title block:(void(^)(UIButton *))block {
+    pressRightBlock = block;
+    self.rightButton.hidden = NO;
+    [self.rightButton setImage:[UIImage imageNamed:img] forState:UIControlStateNormal];
+    [self.rightButton setTitle:title forState:UIControlStateNormal];
+    if (block) block(self.rightButton);
+}
+
+- (void)setBackButtonHidden:(BOOL)hidden {
+    self.backButton.hidden = hidden;
+}
+
+
+#pragma mark - Action
+
 - (void)backClick:(UIButton *)backBtn {
     UIViewController *vc = [self viewController];
     [vc.navigationController popViewControllerAnimated:YES];
 }
 
-
-- (void)setBackButtonHidden:(BOOL)hidden {
-    self.backButton.hidden = hidden;
+- (void)rightButtonClick:(UIButton *)rightBtn {
+    if (pressRightBlock) pressRightBlock(rightBtn);
 }
+
 
 @end

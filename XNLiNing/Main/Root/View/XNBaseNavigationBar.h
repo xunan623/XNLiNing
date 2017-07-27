@@ -12,7 +12,9 @@
 
 @property (strong, nonatomic) UILabel *titleLabel;
 @property (strong, nonatomic) UIButton *backButton;
+@property (strong, nonatomic) UIButton *rightButton;
 
 - (void)setBackButtonHidden:(BOOL)hidden;
 
+- (void)setRight:(NSString *)img title:(NSString *)title block:(void(^)(UIButton *))block;
 @end
