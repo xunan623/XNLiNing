@@ -37,6 +37,7 @@
                                                          @"text/javascript",
                                                          @"text/plain",
                                                          @"text/html",nil];
+    manager.requestSerializer.timeoutInterval = 10;
     [manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask *task, NSDictionary *responseObject) {
   
         XNLog(@"%@ \n \n %@", responseObject, responseObject.mj_JSONString);

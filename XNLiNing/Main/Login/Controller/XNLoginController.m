@@ -108,6 +108,8 @@
     XNLog(@"提交按钮");
     [self.view endEditing:YES];
     sender.userInteractionEnabled = NO;
+    __weak typeof(self) weakSelf = self;
+
     NSDictionary *params = @{@"param.userName" : self.userNameField.text,
                              @"param.passWord" : self.passwordFiled.text,
                              @"param.from"     : @"iOS",
@@ -118,60 +120,44 @@
                  responseSucceed:^(NSDictionary *res) {
                      
         XNLoginModel *model = [[XNLoginModel alloc] initWithDictionary:res error:nil];
-        if ([model.retVal boolValue]) {
-            
-            [XNSaveUserDefault saveUserDefaultWith:model.userInfo];
-            
-            [XNAlertView  showWithTitle:model.failMessage done:^{
-                
-                UIWindow *window = [UIApplication sharedApplication].keyWindow;
-                [window saveVersionToNSUserDefault];
-                
-                [[XNRCDataManager shareManager] getTokenAndLoginRCIM:^(BOOL isSuccess) {
-                    if (isSuccess) {
-                        XNLog(@"链接成功");
-                    }
-                    [[XNRCDataManager shareManager] refreshBadgeValue];
-                    
-                    XNTabbarController *tabbarVC = [[XNTabbarController alloc] init];
-                    tabbarVC.transitioningDelegate = self;
-                    window.rootViewController = tabbarVC;
-                }];
-            }];
-        } else {
-            
-   
-            [XNAlertView showWithTitle:model.failMessage done:^{
-                sender.userInteractionEnabled = YES;
-                
-                // 新增代码
-                XNUserDefaults *ud = [XNUserDefaults new];
-                ud.userName = self.userNameField.text;
-                ud.userPassword = self.passwordFiled.text;
-
-          
-                UIWindow *window = [UIApplication sharedApplication].keyWindow;
-                [window saveVersionToNSUserDefault];
-                
-                [[XNRCDataManager shareManager] getTokenAndLoginRCIM:^(BOOL isSuccess) {
-                    if (isSuccess) {
-                        XNLog(@"链接成功");
-                    }
-                    [[XNRCDataManager shareManager] refreshBadgeValue];
-                    
-                    XNTabbarController *tabbarVC = [[XNTabbarController alloc] init];
-                    tabbarVC.transitioningDelegate = self;
-                    window.rootViewController = tabbarVC;
-                }];
-            }];;
-        }
+                     
+        if ([model.retVal boolValue]) [XNSaveUserDefault saveUserDefaultWith:model.userInfo];
+        
+        [weakSelf setRootVC:model.failMessage];
                      
     } responseFailed:^(NSString *error) {
         XNLog(@"%@", error);
-        sender.userInteractionEnabled = YES;
-        [XNAlertView showWithTitle:error];
+        [weakSelf setRootVC:error];
+
     
     }];
+}
+
+- (void)setRootVC:(NSString *)msg {
+    __weak typeof(self) weakSelf = self;
+    [XNAlertView showWithTitle:msg done:^{
+        weakSelf.submmitBtn.userInteractionEnabled = YES;
+        
+        // 新增代码
+        XNUserDefaults *ud = [XNUserDefaults new];
+        ud.userName = weakSelf.userNameField.text;
+        ud.userPassword = weakSelf.passwordFiled.text;
+        
+        
+        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+        [window saveVersionToNSUserDefault];
+        
+        [[XNRCDataManager shareManager] getTokenAndLoginRCIM:^(BOOL isSuccess) {
+            if (isSuccess) {
+                XNLog(@"链接成功");
+            }
+            [[XNRCDataManager shareManager] refreshBadgeValue];
+            
+            XNTabbarController *tabbarVC = [[XNTabbarController alloc] init];
+            tabbarVC.transitioningDelegate = self;
+            window.rootViewController = tabbarVC;
+        }];
+    }];;
 }
 
 #pragma mark - Action
