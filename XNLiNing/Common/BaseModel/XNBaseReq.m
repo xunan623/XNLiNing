@@ -79,6 +79,37 @@
     }];
 }
 
+#pragma mark - 上传多张图片
+
++ (NSURLSessionTask *)uploadImages:(NSArray<UIImage *> *)images
+                         fileNames:(NSArray<NSString *> *)imageNames
+                          progress:(XNReqeustProgress)progresses
+                           success:(XNRequestSuccess)success
+                           failure:(XNRequestFailure)failure {
+    
+    [XNReqeustManager setResponseSerializer:XNResponseSerializerHTTP];
+    return [XNReqeustManager uploadImagesWithURL:AppRequestURL_uploadImages parameters:nil name:@"uploadimg" images:images fileNames:imageNames imageScale:1.0f imageType:@"jpg" progress:^(NSProgress *progress) {
+        progresses ? progresses(progress):nil;
+    } success:^(id responseObject) {
+        
+        NSString *result = [[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSString *regex = @"http://chuantu.biz.*?(.jpg|.png)";//正则表达式
+        NSRange range = [result rangeOfString:regex options:NSRegularExpressionSearch];
+        NSString *resObject;
+        if (range.location != NSNotFound) {
+            resObject = [result substringWithRange:range];
+        } else {
+            resObject = @"请求成功,没有获取图片地址";
+        }
+        [SVProgressHUD showSuccessWithStatus:resObject];
+
+        success ? success(result) : nil;
+
+    } failure:^(NSError *error) {
+        failure ? failure(error) : nil;
+    }];
+}
+
 + (NSURLSessionTask *)requestWithURL:(NSString *)URL
                           parameters:(NSDictionary *)parameters
                              success:(XNRequestSuccess)success

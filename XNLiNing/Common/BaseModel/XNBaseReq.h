@@ -9,10 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <JSONModel.h>
 #import <AFNetworking.h>
+#import "XNReqeustManager.h"
 
 typedef void(^XNRequestSuccess)(id response);
 
 typedef void(^XNRequestFailure)(NSError *error);
+
+typedef void(^XNReqeustProgress)(NSProgress *progress);
 
 @interface XNBaseReq : JSONModel
 
@@ -41,6 +44,13 @@ typedef void(^XNRequestFailure)(NSError *error);
 +(NSURLSessionTask *)getRCIMToken:(id)parameters
                           success:(XNRequestSuccess)success
                           failure:(XNRequestFailure)failure;
+
+/** 上传多图片 */
++ (NSURLSessionTask *)uploadImages:(NSArray<UIImage *> *)images
+                         fileNames:(NSArray<NSString *> *)imageNames
+                          progress:(XNReqeustProgress)progresses
+                           success:(XNRequestSuccess)success
+                           failure:(XNRequestFailure)failure;
 
 
 @end

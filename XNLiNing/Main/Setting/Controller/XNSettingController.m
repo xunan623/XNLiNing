@@ -15,6 +15,7 @@
 #import "XNProfileController.h"
 #import <MJExtension.h>
 #import "XNShareView.h"
+#import <SVProgressHUD.h>
 
 
 
@@ -173,6 +174,10 @@ static NSString *cellId = @"XNSettingCell";
             [[XNShareView msGetInstance] show];
         }
             break;
+        case 0: { // 上传多张图片
+            [self uploadImages];
+        }
+            break;
         default:
             break;
     }
@@ -184,6 +189,23 @@ static NSString *cellId = @"XNSettingCell";
     //向上偏移量变正  向下偏移量变负
     self.navBar.alpha = (yOffset-20)/ 128.0;
     
+}
+
+#pragma mark - private
+
+- (void)uploadImages {
+    NSArray *imageName = @[@"图片1", @"图片2", @"图片3"];
+    
+    NSArray *images = @[[UIImage imageNamed:@"Setting_UploadImage"],
+                        [UIImage imageNamed:@"Setting_UploadImage"],
+                        [UIImage imageNamed:@"Setting_UploadImage"]];
+    [XNBaseReq uploadImages:images fileNames:imageName progress:^(NSProgress *progress) {
+        [SVProgressHUD showProgress:progress.fractionCompleted];
+    } success:^(NSString *response) {
+        
+    } failure:^(NSError *error) {
+        [SVProgressHUD showErrorWithStatus:[error localizedDescription]];
+    }];
 }
 
 @end

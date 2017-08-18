@@ -253,6 +253,7 @@ static AFHTTPSessionManager *_sessionManager;
                                imageScale:(CGFloat)imageScale imageType:(NSString *)imageType
                                  progress:(XNHTTPProgress)progress success:(XNHTTPRequestSuccess)success
                                   failure:(XNHTTPRequestFailed)failure {
+    
     NSURLSessionTask *sessionTask = [_sessionManager POST:URL parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData>  formData) {
         
         for (NSInteger i = 0; i< images.count; i++) {

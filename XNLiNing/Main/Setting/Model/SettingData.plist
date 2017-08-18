@@ -4,11 +4,11 @@
 <array>
 	<dict>
 		<key>icon</key>
-		<string>Setting_setting</string>
+		<string>Setting_UploadImage</string>
 		<key>titleId</key>
 		<integer>0</integer>
 		<key>title</key>
-		<string>设置</string>
+		<string>上传多图</string>
 	</dict>
 	<dict>
 		<key>icon</key>

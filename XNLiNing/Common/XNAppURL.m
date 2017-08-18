@@ -30,6 +30,8 @@ NSString *const AppRongCloudAppSecret = @"4ax8XsLDA1ch";
 
 #endif
 
+NSString *const AppRequestURL_uploadImages = @"http://chuantu.biz/upload.php";
+
 NSString *const AppRequestURL_ContactTree = @"getOrgansanListByUpdateApp.action?param.maxPage=0&param.currPage=0";
 NSString *const AppRequestURL_imagePath = @"imageVsApp.action?picPath=";
 NSString *const AppRequestURL_loginApp = @"loginApp.action";
@@ -51,6 +53,7 @@ NSString *const AppRequestURL_reportApp = @"reportApp.action";
 NSString *const AppRequestURL_WeiXin_Token = @"https://api.weixin.qq.com/sns/oauth2/access_token";
 NSString *const AppRequestURL_WeiXin_UserInfo = @"https://api.weixin.qq.com/sns/userinfo";
 NSString *const AppRequestURL_Weibo_UserInfo = @"https://api.weibo.com/2/users/show.json";
+
 
 
 NSString *const RCIM_TOKEN = @"RCIM_TOKEN";

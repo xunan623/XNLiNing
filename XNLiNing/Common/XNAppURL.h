@@ -12,6 +12,8 @@
 
 FOUNDATION_EXTERN NSString *const AppRequestURL;
 
+
+FOUNDATION_EXTERN NSString *const AppRequestURL_uploadImages;           // 上传图片地址
 FOUNDATION_EXTERN NSString *const AppRequestURL_ContactTree;            // 联系人
 FOUNDATION_EXTERN NSString *const AppRequestURL_imagePath;              // 图片路径
 FOUNDATION_EXTERN NSString *const AppRequestURL_loginApp;               // 登录
