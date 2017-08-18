@@ -96,23 +96,39 @@
                              @"name"        : [XNUserDefaults new].userName.length ? [XNUserDefaults new].userName : @"",
                              @"portraitUri" : @"https://www.baidu.com/img/baidu_jgylogo3.gif"
                             };
-    [XNRCIMBaseReq requestGetWithUrl:RCIM_GET_TOKEN params:params
-                                type:XNReqeustTypePost
-                     responseSucceed:^(NSDictionary *res) {
-         XNLog(@"%@--", res);
-         NSString *token = res[@"token"];
-         if (token.length) {
-             [[NSUserDefaults standardUserDefaults]  setObject:token forKey:RCIM_TOKEN];
-             [[NSUserDefaults standardUserDefaults] synchronize];
-         }
-         completion(token.length);
+    [XNBaseReq getRCIMToken:params success:^(NSDictionary *res) {
+        XNLog(@"%@--", res);
+        NSString *token = res[@"token"];
+        if (token.length) {
+            [[NSUserDefaults standardUserDefaults]  setObject:token forKey:RCIM_TOKEN];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
+        completion(token.length);
 
-    } responseFailed:^(NSString *error) {
+    } failure:^(NSError *error) {
         XNLog(@"%@--", error);
         [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:RCIM_TOKEN];
         [[NSUserDefaults standardUserDefaults] synchronize];
         completion(NO);
     }];
+    
+//    [XNRCIMBaseReq requestGetWithUrl:RCIM_GET_TOKEN params:params
+//                                type:XNReqeustTypePost
+//                     responseSucceed:^(NSDictionary *res) {
+//         XNLog(@"%@--", res);
+//         NSString *token = res[@"token"];
+//         if (token.length) {
+//             [[NSUserDefaults standardUserDefaults]  setObject:token forKey:RCIM_TOKEN];
+//             [[NSUserDefaults standardUserDefaults] synchronize];
+//         }
+//         completion(token.length);
+//
+//    } responseFailed:^(NSString *error) {
+//        XNLog(@"%@--", error);
+//        [[NSUserDefaults standardUserDefaults] setObject:@"" forKey:RCIM_TOKEN];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+//        completion(NO);
+//    }];
 }
 
 -(void)loginRongCloudWithUserInfo:(RCUserInfo *)userInfo withToken:(NSString *)token{

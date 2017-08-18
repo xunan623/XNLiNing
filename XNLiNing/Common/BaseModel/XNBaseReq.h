@@ -37,5 +37,10 @@ typedef void(^XNRequestFailure)(NSError *error);
                                success:(XNRequestSuccess)success
                                failure:(XNRequestFailure)failure;
 
+/** 融云token获取 */
++(NSURLSessionTask *)getRCIMToken:(id)parameters
+                          success:(XNRequestSuccess)success
+                          failure:(XNRequestFailure)failure;
+
 
 @end
