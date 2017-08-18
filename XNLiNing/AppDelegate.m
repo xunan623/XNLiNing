@@ -288,15 +288,16 @@
                                      @"code"  : weChatResp.code,
                                      @"grant_type" : @"authorization_code"};
             
-            [XNBaseReq requestGetWithUrl:AppRequestURL_WeiXin_Token
-                                  params:params responseSucceed:^(NSDictionary *res) {
-                 NSString *accessToken = (NSString *)res[@"access_token"];
-                 weakSelf.weChatOpenId = (NSString *)res[@"openid"];
-                  if (weakSelf.weChatOpenId.length && accessToken.length) {
-                      [weakSelf weixinOAuthSuccessWithAccessToken:accessToken weixinOpenId:weakSelf.weChatOpenId];
-                  }
-            } responseFailed:^(NSString *error) {
+     
+            [XNBaseReq getWeChatToken:params success:^(NSDictionary *res) {
+                NSString *accessToken = (NSString *)res[@"access_token"];
+                weakSelf.weChatOpenId = (NSString *)res[@"openid"];
+                if (weakSelf.weChatOpenId.length && accessToken.length) {
+                    [weakSelf weixinOAuthSuccessWithAccessToken:accessToken weixinOpenId:weakSelf.weChatOpenId];
+                }
+            } failure:^(NSError *error) {
                 XNLog(@"获取token失败:%@", error);
+
             }];
         }
     }
@@ -307,13 +308,13 @@
     NSDictionary *params = @{@"openid" : weixinOpenId,
                              @"access_token" : accessToken
                              };
-    [XNBaseReq requestGetWithUrl:AppRequestURL_WeiXin_UserInfo params:params responseSucceed:^(NSDictionary *res) {
-        
+    [XNBaseReq getWeChatUserInfo:params success:^(NSDictionary *res) {
         weakSelf.thirdPlatformNickName = (NSString *)res[@"nickname"];
         weakSelf.thirdPlatformHeadImgUrl = (NSString *)res[@"headimgurl"];
         [weakSelf setThirdPlatformLoginResult:YES];
         [XNAlertView showWithTitle:@"获取用户信息成功"];
-    } responseFailed:^(NSString *error) {
+
+    } failure:^(NSError *error) {
         XNLog(@"获取用户信息失败:%@", error);
         [weakSelf setThirdPlatformLoginResult:NO];
 
@@ -350,7 +351,7 @@
             case WeiboSDKResponseStatusCodeSuccess: {
                 NSDictionary *params = @{@"uid"          : authResponse.userID,
                                          @"access_token" : authResponse.accessToken};
-                [XNBaseReq requestGetWithUrl:AppRequestURL_Weibo_UserInfo params:params responseSucceed:^(NSDictionary *res) {
+                [XNBaseReq getWeiBoUserInfo:params success:^(NSDictionary *res) {
                     XNLog(@"请求微博用户信息成功:%@", res);
                     self.qqOpenId = [NSString stringWithFormat:@"%@",authResponse.userID];
                     
@@ -361,8 +362,9 @@
                     [self setThirdPlatformLoginResult:YES];
                     
                     [XNAlertView showWithTitle:@"登录成功"];
-                } responseFailed:^(NSString *error) {
-                    [XNAlertView showWithTitle:error];
+
+                } failure:^(NSError *error) {
+                    [XNAlertView showWithTitle:[error localizedDescription]];
                 }];
             }
                 break;

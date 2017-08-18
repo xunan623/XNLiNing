@@ -8,13 +8,34 @@
 
 #import <Foundation/Foundation.h>
 #import <JSONModel.h>
+#import <AFNetworking.h>
+
+typedef void(^XNRequestSuccess)(id response);
+
+typedef void(^XNRequestFailure)(NSError *error);
 
 @interface XNBaseReq : JSONModel
 
-+ (void)requestGetWithUrl:(NSString *)urlString
-                params:(NSDictionary *)params
-          responseSucceed:(void(^)(NSDictionary *res))succeedBlock
-           responseFailed:(void(^)(NSString *error))fieldBlock;
+
+/** 登录接口 */
++ (NSURLSessionTask *)getLoginWithParameters:(id)parameters
+                                     success:(XNRequestSuccess)success
+                                     failure:(XNRequestFailure)failure;
+
+/** 微信Token */
++ (NSURLSessionTask *)getWeChatToken:(id)parameters
+                             success:(XNRequestSuccess)success
+                             failure:(XNRequestFailure)failure;
+
+/** 获取微信用户信息 */
++ (NSURLSessionTask *)getWeChatUserInfo:(id)parameters
+                                success:(XNRequestSuccess)success
+                                failure:(XNRequestFailure)failure;
+
+/** 获取微博用户信息 */
++ (NSURLSessionTask *)getWeiBoUserInfo:(id)parameters
+                               success:(XNRequestSuccess)success
+                               failure:(XNRequestFailure)failure;
 
 
 @end

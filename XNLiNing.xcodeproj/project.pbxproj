@@ -45,6 +45,7 @@
 		7122B2B41E6E55BE00068216 /* UIWindow+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7122B2B31E6E55BE00068216 /* UIWindow+Extension.m */; };
 		7122B2B71E6E5DB500068216 /* XNBaseRes.m in Sources */ = {isa = PBXBuildFile; fileRef = 7122B2B61E6E5DB500068216 /* XNBaseRes.m */; };
 		7122CE941E764CAC00C4F882 /* XNBaseNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7122CE931E764CAC00C4F882 /* XNBaseNavigationBar.m */; };
+		7129C6661F4594BD00AC9102 /* XNReqeustCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7129C6651F4594BD00AC9102 /* XNReqeustCache.m */; };
 		712BD15A1E8C9DD200661C96 /* AppDelegate+XNThirdPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 712BD1591E8C9DD200661C96 /* AppDelegate+XNThirdPlatform.m */; };
 		712CF6CE1F25985B00176AA8 /* XNClassMainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 712CF6CD1F25985B00176AA8 /* XNClassMainItem.m */; };
 		712CF6D11F2598AE00176AA8 /* XNClassSubItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 712CF6D01F2598AE00176AA8 /* XNClassSubItem.m */; };
@@ -122,6 +123,7 @@
 		71B7DB031E6D5EC70052E450 /* RWUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B7DB021E6D5EC70052E450 /* RWUserDefaults.m */; };
 		71B7DB071E6D5F460052E450 /* XNSaveUserDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B7DB061E6D5F460052E450 /* XNSaveUserDefault.m */; };
 		71B7DB0A1E6D5FE30052E450 /* XNUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 71B7DB091E6D5FE30052E450 /* XNUserDefaults.m */; };
+		71C63A9B1F443D3400951E4F /* XNReqeustManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C63A9A1F443D3400951E4F /* XNReqeustManager.m */; };
 		71D24DB31F26E0B5006474A9 /* XNShopCartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D24DB21F26E0B5006474A9 /* XNShopCartController.m */; };
 		71D24DB61F26E734006474A9 /* XNShopCartEndView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D24DB51F26E734006474A9 /* XNShopCartEndView.m */; };
 		71D24DB91F26E8D9006474A9 /* XNShopViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D24DB81F26E8D9006474A9 /* XNShopViewModel.m */; };
@@ -210,6 +212,8 @@
 		7122CE921E764CAC00C4F882 /* XNBaseNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNBaseNavigationBar.h; sourceTree = "<group>"; };
 		7122CE931E764CAC00C4F882 /* XNBaseNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNBaseNavigationBar.m; sourceTree = "<group>"; };
 		71237EC41E891E5B00E19B23 /* XNLiNing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XNLiNing.entitlements; sourceTree = "<group>"; };
+		7129C6641F4594BD00AC9102 /* XNReqeustCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNReqeustCache.h; sourceTree = "<group>"; };
+		7129C6651F4594BD00AC9102 /* XNReqeustCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNReqeustCache.m; sourceTree = "<group>"; };
 		712BD1581E8C9DD200661C96 /* AppDelegate+XNThirdPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+XNThirdPlatform.h"; sourceTree = "<group>"; };
 		712BD1591E8C9DD200661C96 /* AppDelegate+XNThirdPlatform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+XNThirdPlatform.m"; sourceTree = "<group>"; };
 		712CF6CC1F25985B00176AA8 /* XNClassMainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNClassMainItem.h; sourceTree = "<group>"; };
@@ -332,6 +336,8 @@
 		71B7DB061E6D5F460052E450 /* XNSaveUserDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNSaveUserDefault.m; sourceTree = "<group>"; };
 		71B7DB081E6D5FE30052E450 /* XNUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNUserDefaults.h; sourceTree = "<group>"; };
 		71B7DB091E6D5FE30052E450 /* XNUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNUserDefaults.m; sourceTree = "<group>"; };
+		71C63A991F443D3400951E4F /* XNReqeustManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNReqeustManager.h; sourceTree = "<group>"; };
+		71C63A9A1F443D3400951E4F /* XNReqeustManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNReqeustManager.m; sourceTree = "<group>"; };
 		71D24DB11F26E0B5006474A9 /* XNShopCartController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNShopCartController.h; sourceTree = "<group>"; };
 		71D24DB21F26E0B5006474A9 /* XNShopCartController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNShopCartController.m; sourceTree = "<group>"; };
 		71D24DB41F26E734006474A9 /* XNShopCartEndView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNShopCartEndView.h; sourceTree = "<group>"; };
@@ -906,6 +912,7 @@
 		717429861D845CCA00EC2910 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				71C63A981F443CED00951E4F /* BaseReq */,
 				7134C7B31E72A8D7005BC6F0 /* RCDataService */,
 				713F4CEA1E6FB74100CDC534 /* XNRefreshView */,
 				71B7DB041E6D5F120052E450 /* UserInfo */,
@@ -1026,6 +1033,17 @@
 				7122B2B31E6E55BE00068216 /* UIWindow+Extension.m */,
 			);
 			path = UserInfo;
+			sourceTree = "<group>";
+		};
+		71C63A981F443CED00951E4F /* BaseReq */ = {
+			isa = PBXGroup;
+			children = (
+				71C63A991F443D3400951E4F /* XNReqeustManager.h */,
+				71C63A9A1F443D3400951E4F /* XNReqeustManager.m */,
+				7129C6641F4594BD00AC9102 /* XNReqeustCache.h */,
+				7129C6651F4594BD00AC9102 /* XNReqeustCache.m */,
+			);
+			path = BaseReq;
 			sourceTree = "<group>";
 		};
 		71D24DAC1F26E06E006474A9 /* ShoppingCart */ = {
@@ -1332,12 +1350,14 @@
 				712CF7031F25DEB000176AA8 /* XNHomeGoodsController.m in Sources */,
 				710B56641E84FB91009A372D /* AppDelegate+XNBaiduLocation.m in Sources */,
 				71F618321E6972A600E5F223 /* XNLoginModel.m in Sources */,
+				7129C6661F4594BD00AC9102 /* XNReqeustCache.m in Sources */,
 				7102E1211E66AB4E006117B6 /* UITextField+Ext.m in Sources */,
 				71DDAA7C1E768D3900A37F09 /* UIView+XNGetController.m in Sources */,
 				71D24DC61F26F87E006474A9 /* XNShopCartCell.m in Sources */,
 				7134C7B91E72AC1E005BC6F0 /* RCUserInfo+XNAddition.m in Sources */,
 				717687AA1E8E4F11005BD9A2 /* XNShareView.m in Sources */,
 				712CF6DA1F25A7C000176AA8 /* XNGoodsSortCell.m in Sources */,
+				71C63A9B1F443D3400951E4F /* XNReqeustManager.m in Sources */,
 				7102E1221E66AB4E006117B6 /* XNGCDHelper.m in Sources */,
 				7102E11D1E66AB4E006117B6 /* NSObject+Notification.m in Sources */,
 				7134C7B11E728512005BC6F0 /* XNMessageListCell.m in Sources */,

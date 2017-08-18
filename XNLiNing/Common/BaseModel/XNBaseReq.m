@@ -11,42 +11,58 @@
 #import <SVProgressHUD.h>
 #import <Reachability.h>
 #import <MJExtension.h>
+#import "XNReqeustManager.h"
 
 @implementation XNBaseReq
 
-+ (void)requestGetWithUrl:(NSString *)urlString
-                params:(NSDictionary *)params
-       responseSucceed:(void(^)(NSDictionary *res))succeedBlock
-        responseFailed:(void(^)(NSString *error))fieldBlock {
+#pragma mark - 登录接口
 
-    // 1.先检查网络
-    Reachability * reach = [Reachability reachabilityForInternetConnection];
-    if (reach.currentReachabilityStatus == NotReachable) {
-        if (fieldBlock) fieldBlock(@"无网络连接");
-        return;
-    }
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
++ (NSURLSessionTask *)getLoginWithParameters:(id)parameters
+                                     success:(XNRequestSuccess)success
+                                     failure:(XNRequestFailure)failure {
+    NSString *url = [NSString stringWithFormat:@"%@%@",AppRequestURL,AppRequestURL_loginApp];
+    return [self requestWithURL:url parameters:parameters success:success failure:failure];
+}
+
+#pragma mark - 微信Token
+
++ (NSURLSessionTask *)getWeChatToken:(id)parameters
+                             success:(XNRequestSuccess)success
+                             failure:(XNRequestFailure)failure {
+
+    return [self requestWithURL:AppRequestURL_WeiXin_Token parameters:parameters success:success failure:failure];
+}
+
+#pragma mark - 获取微信用户信息
+
++ (NSURLSessionTask *)getWeChatUserInfo:(id)parameters
+                                success:(XNRequestSuccess)success
+                                failure:(XNRequestFailure)failure {
+    return [self requestWithURL:AppRequestURL_WeiXin_UserInfo parameters:parameters success:success failure:failure];
+}
+
+#pragma mark - 获取微博信息
+
++ (NSURLSessionTask *)getWeiBoUserInfo:(id)parameters
+                               success:(XNRequestSuccess)success
+                               failure:(XNRequestFailure)failure {
+    return [self requestWithURL:AppRequestURL_Weibo_UserInfo parameters:parameters success:success failure:failure];
+}
+
++ (NSURLSessionTask *)requestWithURL:(NSString *)URL
+                          parameters:(NSDictionary *)parameters
+                             success:(XNRequestSuccess)success
+                             failure:(XNRequestFailure)failure {
+    [XNReqeustManager setRequestTimeoutInterval:10.0f];
     
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
+    return [XNReqeustManager GET:URL parameters:parameters success:^(id responseObject) {
         
-    NSString *url = [urlString containsString:@"http"] ? urlString : [NSString stringWithFormat:@"%@%@", AppRequestURL, urlString];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:
-                                                         @"application/json",
-                                                         @"text/json",
-                                                         @"text/javascript",
-                                                         @"text/plain",
-                                                         @"text/html",nil];
-    manager.requestSerializer.timeoutInterval = 10;
-    [manager GET:url parameters:params progress:nil success:^(NSURLSessionDataTask *task, NSDictionary *responseObject) {
-  
-        XNLog(@"%@ \n \n %@", responseObject, responseObject.mj_JSONString);
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        if (succeedBlock) succeedBlock(responseObject);
+        // 在这里你可以根据项目自定义其他一些重复操作,比如加载页面时候的等待效果, 提醒弹窗....
+        success(responseObject);
 
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        if (fieldBlock) fieldBlock([error localizedDescription]);
+    } failure:^(NSError *error) {
+        // 同上
+        failure(error);
     }];
 }
 

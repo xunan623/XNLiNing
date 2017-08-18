@@ -115,21 +115,16 @@
                              @"param.from"     : @"iOS",
                              @"param.version"  : [XNSimpleTool getApplyVersion]};
     
-    [XNBaseReq requestGetWithUrl:AppRequestURL_loginApp
-                          params:params
-                 responseSucceed:^(NSDictionary *res) {
-                     
+    [XNBaseReq getLoginWithParameters:params success:^(NSDictionary *res) {
         XNLoginModel *model = [[XNLoginModel alloc] initWithDictionary:res error:nil];
-                     
+        
         if ([model.retVal boolValue]) [XNSaveUserDefault saveUserDefaultWith:model.userInfo];
         
         [weakSelf setRootVC:model.failMessage];
-                     
-    } responseFailed:^(NSString *error) {
-        XNLog(@"%@", error);
-        [weakSelf setRootVC:error];
 
-    
+    } failure:^(NSError *error) {
+        XNLog(@"%@", error);
+        [weakSelf setRootVC:[error localizedDescription]];
     }];
 }
 
