@@ -201,6 +201,7 @@ static NSString *cellId = @"XNSettingCell";
                         [UIImage imageNamed:@"Setting_UploadImage"]];
     [XNBaseReq uploadImages:images fileNames:imageName progress:^(NSProgress *progress) {
         [SVProgressHUD showProgress:progress.fractionCompleted];
+
     } success:^(NSString *response) {
         
     } failure:^(NSError *error) {

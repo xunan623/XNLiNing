@@ -89,6 +89,7 @@
     
     [XNReqeustManager setResponseSerializer:XNResponseSerializerHTTP];
     return [XNReqeustManager uploadImagesWithURL:AppRequestURL_uploadImages parameters:nil name:@"uploadimg" images:images fileNames:imageNames imageScale:1.0f imageType:@"jpg" progress:^(NSProgress *progress) {
+        XNLog(@"%lf",1.0 * progress.completedUnitCount / progress.totalUnitCount);
         progresses ? progresses(progress):nil;
     } success:^(id responseObject) {
         
@@ -103,7 +104,7 @@
         }
         [SVProgressHUD showSuccessWithStatus:resObject];
 
-        success ? success(result) : nil;
+        success ? success(resObject) : nil;
 
     } failure:^(NSError *error) {
         failure ? failure(error) : nil;
