@@ -8,6 +8,7 @@
 
 #import "XNReqeustCache.h"
 #import <YYCache.h>
+#import <YYKit.h>
 
 static NSString *const kXNNetworkResponseCache = @"kXNNetworkResponseCache";
 

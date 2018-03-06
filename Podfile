@@ -22,6 +22,7 @@ pod 'WeiboSDK', '~> 3.1.3'
 pod 'WeChatSDK-iOS', '~> 1.7.3'
 pod 'TencentOpenApiSDK', '~> 2.9.5'
 pod 'IQKeyboardManager', '~> 4.0.8'
-pod 'YYCache', '~> 1.0.4'
+#pod 'YYCache', '~> 1.0.4'
+pod 'YYKit', '~> 1.0.9'
 
 end

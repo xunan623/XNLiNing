@@ -135,6 +135,10 @@
 		71DDAA791E7689A400A37F09 /* XNChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DDAA781E7689A400A37F09 /* XNChatController.m */; };
 		71DDAA7C1E768D3900A37F09 /* UIView+XNGetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71DDAA7B1E768D3900A37F09 /* UIView+XNGetController.m */; };
 		71F618321E6972A600E5F223 /* XNLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F618311E6972A600E5F223 /* XNLoginModel.m */; };
+		AF47A61D204D4FBA00105496 /* XNCacheHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AF47A61C204D4FBA00105496 /* XNCacheHelper.m */; };
+		AF47A61E204E266100105496 /* libYYKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF47A61F204E266100105496 /* libYYKit.a */; };
+		AF47A62A204E812800105496 /* XNBasePresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = AF47A629204E812800105496 /* XNBasePresenter.m */; };
+		AF47A62E204E82E300105496 /* XNContactListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = AF47A62D204E82E300105496 /* XNContactListPresenter.m */; };
 		E1350CEE173178D577914CF6 /* libPods-XNLiNing.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1A7DC8DA331D5B230EC7A7 /* libPods-XNLiNing.a */; };
 /* End PBXBuildFile section */
 
@@ -211,7 +215,6 @@
 		7122B2B61E6E5DB500068216 /* XNBaseRes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNBaseRes.m; sourceTree = "<group>"; };
 		7122CE921E764CAC00C4F882 /* XNBaseNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNBaseNavigationBar.h; sourceTree = "<group>"; };
 		7122CE931E764CAC00C4F882 /* XNBaseNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNBaseNavigationBar.m; sourceTree = "<group>"; };
-		71237EC41E891E5B00E19B23 /* XNLiNing.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = XNLiNing.entitlements; sourceTree = "<group>"; };
 		7129C6641F4594BD00AC9102 /* XNReqeustCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNReqeustCache.h; sourceTree = "<group>"; };
 		7129C6651F4594BD00AC9102 /* XNReqeustCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNReqeustCache.m; sourceTree = "<group>"; };
 		712BD1581E8C9DD200661C96 /* AppDelegate+XNThirdPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+XNThirdPlatform.h"; sourceTree = "<group>"; };
@@ -360,6 +363,13 @@
 		71F618311E6972A600E5F223 /* XNLoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNLoginModel.m; sourceTree = "<group>"; };
 		9D1A7DC8DA331D5B230EC7A7 /* libPods-XNLiNing.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XNLiNing.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A576F1F6B5BDC2714C6D3BD9 /* Pods-XNLiNing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XNLiNing.release.xcconfig"; path = "Pods/Target Support Files/Pods-XNLiNing/Pods-XNLiNing.release.xcconfig"; sourceTree = "<group>"; };
+		AF47A61B204D4FBA00105496 /* XNCacheHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XNCacheHelper.h; sourceTree = "<group>"; };
+		AF47A61C204D4FBA00105496 /* XNCacheHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XNCacheHelper.m; sourceTree = "<group>"; };
+		AF47A61F204E266100105496 /* libYYKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libYYKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF47A628204E812800105496 /* XNBasePresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XNBasePresenter.h; sourceTree = "<group>"; };
+		AF47A629204E812800105496 /* XNBasePresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XNBasePresenter.m; sourceTree = "<group>"; };
+		AF47A62C204E82E300105496 /* XNContactListPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XNContactListPresenter.h; sourceTree = "<group>"; };
+		AF47A62D204E82E300105496 /* XNContactListPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XNContactListPresenter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,6 +377,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF47A61E204E266100105496 /* libYYKit.a in Frameworks */,
 				7102E1421E66BF03006117B6 /* libsqlite3.0.tbd in Frameworks */,
 				E1350CEE173178D577914CF6 /* libPods-XNLiNing.a in Frameworks */,
 			);
@@ -731,6 +742,7 @@
 		712CF6E11F25DCED00176AA8 /* ContactList */ = {
 			isa = PBXGroup;
 			children = (
+				AF47A62B204E82C600105496 /* Presenter */,
 				712CF6E21F25DCED00176AA8 /* Controller */,
 				712CF6E91F25DCED00176AA8 /* Model */,
 				712CF6ED1F25DCED00176AA8 /* View */,
@@ -777,8 +789,6 @@
 			isa = PBXGroup;
 			children = (
 				712CF6FD1F25DE8000176AA8 /* Controller */,
-				712CF6FE1F25DE8000176AA8 /* Model */,
-				712CF6FF1F25DE8000176AA8 /* View */,
 			);
 			path = HomeGoods;
 			sourceTree = "<group>";
@@ -791,20 +801,6 @@
 				712CF7021F25DEB000176AA8 /* XNHomeGoodsController.xib */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		712CF6FE1F25DE8000176AA8 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		712CF6FF1F25DE8000176AA8 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		7134C7B31E72A8D7005BC6F0 /* RCDataService */ = {
@@ -869,7 +865,6 @@
 		7174296C1D845B5400EC2910 /* XNLiNing */ = {
 			isa = PBXGroup;
 			children = (
-				71237EC41E891E5B00E19B23 /* XNLiNing.entitlements */,
 				7102E1241E66AB59006117B6 /* DataHelper */,
 				7102E1071E66AB4E006117B6 /* Category */,
 				717429861D845CCA00EC2910 /* Common */,
@@ -912,6 +907,7 @@
 		717429861D845CCA00EC2910 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				AF47A626204E7BDA00105496 /* BasePresent */,
 				71C63A981F443CED00951E4F /* BaseReq */,
 				7134C7B31E72A8D7005BC6F0 /* RCDataService */,
 				713F4CEA1E6FB74100CDC534 /* XNRefreshView */,
@@ -947,6 +943,7 @@
 		7194D0AC1E666AF200C463A3 /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				AF47A627204E811600105496 /* Presenter */,
 				710B565C1E84FB5F009A372D /* AppDelegate+Extension */,
 				7102E1001E66A997006117B6 /* Controller */,
 				7102E1011E66A997006117B6 /* Model */,
@@ -1038,6 +1035,8 @@
 		71C63A981F443CED00951E4F /* BaseReq */ = {
 			isa = PBXGroup;
 			children = (
+				AF47A61B204D4FBA00105496 /* XNCacheHelper.h */,
+				AF47A61C204D4FBA00105496 /* XNCacheHelper.m */,
 				71C63A991F443D3400951E4F /* XNReqeustManager.h */,
 				71C63A9A1F443D3400951E4F /* XNReqeustManager.m */,
 				7129C6641F4594BD00AC9102 /* XNReqeustCache.h */,
@@ -1116,10 +1115,36 @@
 		A31858F380BB8AF41550B8CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF47A61F204E266100105496 /* libYYKit.a */,
 				7102E1411E66BF03006117B6 /* libsqlite3.0.tbd */,
 				9D1A7DC8DA331D5B230EC7A7 /* libPods-XNLiNing.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF47A626204E7BDA00105496 /* BasePresent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BasePresent;
+			sourceTree = "<group>";
+		};
+		AF47A627204E811600105496 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				AF47A628204E812800105496 /* XNBasePresenter.h */,
+				AF47A629204E812800105496 /* XNBasePresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		AF47A62B204E82C600105496 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				AF47A62C204E82E300105496 /* XNContactListPresenter.h */,
+				AF47A62D204E82E300105496 /* XNContactListPresenter.m */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1157,11 +1182,11 @@
 				TargetAttributes = {
 					717429691D845B5400EC2910 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = WT44JA8HJ5;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = B8YX7Z786Q;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Push = {
 								enabled = 1;
@@ -1262,13 +1287,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-XNLiNing-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E79B8F88E6A4E4BC13892174 /* [CP] Copy Pods Resources */ = {
@@ -1277,9 +1305,38 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-XNLiNing/Pods-XNLiNing-resources.sh",
+				"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/Resources/mapapi.bundle",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RongCloud.bundle",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/en.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/Emoji.plist",
+				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RCConfig.plist",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+				"${PODS_ROOT}/WeiboSDK/libWeiboSDK/WeiboSDK.bundle",
+				"${PODS_ROOT}/XNStatusBarHUD/XNStatusBarHUD/XNStatusBarHUD.bundle/error.png",
+				"${PODS_ROOT}/XNStatusBarHUD/XNStatusBarHUD/XNStatusBarHUD.bundle/error@2x.png",
+				"${PODS_ROOT}/XNStatusBarHUD/XNStatusBarHUD/XNStatusBarHUD.bundle/success.png",
+				"${PODS_ROOT}/XNStatusBarHUD/XNStatusBarHUD/XNStatusBarHUD.bundle/success@2x.png",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mapapi.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RongCloud.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Emoji.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RCConfig.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WeiboSDK.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/error.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/error@2x.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/success.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/success@2x.png",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1305,6 +1362,7 @@
 				712FD54C1E88E9B200BCBE12 /* XNSimpleMessageCell.m in Sources */,
 				71D24DB91F26E8D9006474A9 /* XNShopViewModel.m in Sources */,
 				712CF6F31F25DCED00176AA8 /* XNContactListController.m in Sources */,
+				AF47A61D204D4FBA00105496 /* XNCacheHelper.m in Sources */,
 				711F79721E8279F5004D0892 /* XNRCIMBaseReq.m in Sources */,
 				7102E11F1E66AB4E006117B6 /* SSKeychain.m in Sources */,
 				71DDAA791E7689A400A37F09 /* XNChatController.m in Sources */,
@@ -1325,6 +1383,7 @@
 				7121E8DC1E68109D00EF8D4B /* UITableView+EmptyData.m in Sources */,
 				717429721D845B5400EC2910 /* AppDelegate.m in Sources */,
 				712CF6F51F25DCED00176AA8 /* XNSearchController.m in Sources */,
+				AF47A62E204E82E300105496 /* XNContactListPresenter.m in Sources */,
 				718354EF1E8F34E900694D38 /* XNShareTool.m in Sources */,
 				7122B2B41E6E55BE00068216 /* UIWindow+Extension.m in Sources */,
 				712CF6D11F2598AE00176AA8 /* XNClassSubItem.m in Sources */,
@@ -1376,6 +1435,7 @@
 				717687A01E8E305B005BD9A2 /* XNSettingModel.m in Sources */,
 				7167DDD41E712B5600F61886 /* XNDatabaseService.m in Sources */,
 				7102E1321E66ADDA006117B6 /* XNBaseReq.m in Sources */,
+				AF47A62A204E812800105496 /* XNBasePresenter.m in Sources */,
 				7121E8D51E68063000EF8D4B /* XNLoginController.m in Sources */,
 				713F4CED1E6FB75F00CDC534 /* XNHeaderView.m in Sources */,
 			);
@@ -1483,18 +1543,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = XNLiNing/XNLiNing.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 楠 许 (Z6824L6HT6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = WT44JA8HJ5;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B8YX7Z786Q;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XNLiNing/Common/info.pch";
 				INFOPLIST_FILE = XNLiNing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aist.XNLiNing;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aist.XNLiNing1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f5fbed4f-e7ed-4b03-aabd-12f26646b212";
-				PROVISIONING_PROFILE_SPECIFIER = "XC Ad Hoc: *";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -1504,18 +1564,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = XNLiNing/XNLiNing.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: 楠 许 (Z6824L6HT6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = WT44JA8HJ5;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B8YX7Z786Q;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XNLiNing/Common/info.pch";
 				INFOPLIST_FILE = XNLiNing/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.aist.XNLiNing;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aist.XNLiNing1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b6632096-74d2-4035-a5e7-29d7dca2d08f";
-				PROVISIONING_PROFILE_SPECIFIER = CentalineTest;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

@@ -18,7 +18,7 @@
 #import "XNSearchBar.h"
 #import "XNSearchController.h"
 #import "XNChatController.h"
-
+#import "XNContactListPresenter.h"
 
 
 @interface XNContactListController ()<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
@@ -26,10 +26,12 @@
 @property (nonatomic, strong) NSMutableArray *dataSource;
 @property (strong, nonatomic) NSMutableArray *sectionTitles;
 @property (strong, nonatomic) XNSearchBar *searchBar;
-
+@property (strong, nonatomic) XNContactListPresenter *present;
 @end
 
 @implementation XNContactListController
+
+#pragma mark - Setting & Getting
 
 - (NSMutableArray *)dataSource {
     if (!_dataSource) {
@@ -53,9 +55,16 @@
     return _searchBar;
 }
 
+- (XNContactListPresenter *)present {
+    if (!_present) {
+        _present = [[XNContactListPresenter alloc] initWithView:self];
+    }
+    return _present;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     [self setupNav];
     
     [self setupTableView];
