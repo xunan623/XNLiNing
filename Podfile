@@ -24,5 +24,6 @@ pod 'TencentOpenApiSDK', '~> 2.9.5'
 pod 'IQKeyboardManager', '~> 4.0.8'
 #pod 'YYCache', '~> 1.0.4'
 pod 'YYKit', '~> 1.0.9'
+pod 'DurexKit', '~> 1.0.0'
 
 end
